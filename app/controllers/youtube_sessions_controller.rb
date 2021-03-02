@@ -7,7 +7,7 @@ class YoutubeSessionsController < ApplicationController
     redirect_to auth_client.authorization_uri.to_s
   end
 
-  def create
+  def callback
     auth_client.code = params[:code]
     auth_client.fetch_access_token!
     auth_client.client_secret = nil
@@ -28,7 +28,7 @@ class YoutubeSessionsController < ApplicationController
             "auth_uri": "https://accounts.google.com/o/oauth2/auth",
             "token_uri": "https://oauth2.googleapis.com/token",
             "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-            "client_secret": Rails.application.credentials.dig(:youtube, :client_id),
+            "client_secret": Rails.application.credentials.dig(:youtube, :client_secret),
             "redirect_uris": [
               redirect_uri
             ]
