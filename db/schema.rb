@@ -53,4 +53,12 @@ ActiveRecord::Schema.define(version: 2021_03_02_099637) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "youtube_sessions", force: :cascade do |t|
+    t.string "session_token", null: false
+    t.json "credentials"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["session_token"], name: "index_youtube_sessions_on_session_token"
+  end
+
 end
