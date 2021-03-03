@@ -5,6 +5,7 @@ require 'google/api_client/client_secrets'
 class YoutubeSessionsController < ApplicationController
   def new
     redirect_to auth_client.authorization_uri.to_s
+    # add a buttom to tell the user to log in/ will be a link to authorization
   end
 
   def callback
