@@ -27,14 +27,18 @@
         <% if user_signed_in? %>
           <ul class="links">
             <li>
-              <%= link_to 'Overview', destroy_user_session_path, method: :delete, class:"btn btn-flat"%>
+              <%= link_to 'Overview', destroy_user_session_path, method: :delete, class:"btn btn-flat subrayado"%>
             <li>
             <li>
-              <%= link_to 'Publisher', destroy_user_session_path, method: :delete, class:"btn btn-flat"%>
+              <%= link_to 'Publisher', destroy_user_session_path, method: :delete, class:"btn btn-flat subrayado"%>
             <li>
             <li>
-                <%= link_to 'Monetizer', destroy_user_session_path, method: :delete, class:"btn btn-flat"%>
-            </li> 
+              <%= link_to 'Overview', destroy_user_session_path, method: :delete, class:"btn btn-flat subrayado"%>
+            <li>
+            <li>
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"btn btn-flat subrayado"%>
+            </li>
+              
           </ul>
         <% else %>
           <ul class="links">
