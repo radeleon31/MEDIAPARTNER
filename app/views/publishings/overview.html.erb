@@ -1,5 +1,5 @@
 <body class="background-image">
-  <div class="search-wrap d-flex align-items-center">
+  <div class="search-wrap d-flex align-items-center float-right">
     <%= form_tag overview_path, class:"search", method: :get do %>
       <%= text_field_tag :query,
         params[:query],
