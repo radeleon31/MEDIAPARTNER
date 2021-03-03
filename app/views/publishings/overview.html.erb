@@ -1,12 +1,52 @@
-<div class="container">
-  <h1>Publishingss#overview</h1>
-  <% @videos.each do |video_hash|%>
-    <div class="container">
-      <p> <%=  video_hash[:title] %> </p>
-      <p> <%=  video_hash[:description] %> </p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=video_hash[:id]%>" 
-      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen></iframe>
-    </div>
-  <% end %>  
-</div>
+<body class="background-image">
+    <div class="container background-style p-5 d-flex">
+      <% @videos.each do |video_hash|%>
+        <div class="card-trip m-5">
+          <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/<%=video_hash[:id]%>" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%=video_hash[:title]%></h2>
+              <p><%=video_hash[:description]%></p>
+            </div>
+            
+            <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+          </div>
+          <div class="card-trip-infos d-flex">
+              <div class="d-flex">
+                <i class="far fa-thumbs-up mr-1"></i>
+                <h2>Likes</h2>
+              </div>
+              <div class="d-flex">
+                 <i class="far fa-eye mr-1"></i></i>
+                <h2>Views</h2>
+              </div>
+              <div class="d-flex">
+                 <i class="far fa-comment mr-1"></i>
+                <h2>Comments</h2>
+              </div>
+            </div>
+        </div>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        
+      <% end %>  
+  </div>
+</body>
+
+
+
+
+<%# <p> <%=  video_hash[:title] %> 
+          <%# <p> <%=  video_hash[:description] %>

@@ -6,6 +6,7 @@ class PublishingsController < ApplicationController
   end
 
   def show
+    # Aca seria solo set_publishing
     @Publishing = Publishing.new
   end
 
@@ -43,8 +44,6 @@ class PublishingsController < ApplicationController
   # end
 
   def overview
-    # @videos = FetchYoutubeVideos.call(YoutubeSession.last) 
-    # if YoutubeSession.last[:client_secret] != nil
     if YoutubeSession.last.nil?
         redirect_to youtube_sessions_path
     else
