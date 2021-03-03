@@ -32,14 +32,17 @@
       </thead>
       <tbody>
             <tr>
-              <td scope="row"><div class="helicopter-card-image" style="background-image: url('<%= image_url "testimage.jpg", alt: "test", width: 100 %>')"></div></td>
-              <td>this video</td>
+              <% @publishings.each do |publishing| %>
+              <%= link_to publishing_path(publishing.id) do %>
+              <td scope="row"><div class="publishing-card-video" style="background-image: url('<%= cl_video_path publishing.photo.key %>')"></div></td>
+              <td>publishing.title</td>
               <td>Mark</td>
               <td>Otto</td>
               <td>@mdo</td>
               <td><i class="mdi mdi-circle text-success"></i> Published</td>
             </tr>
           </tbody>
+          <% end %>
     </table>
 </div>
 

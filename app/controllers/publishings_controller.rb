@@ -43,7 +43,7 @@ class PublishingsController < ApplicationController
   # end
 
   def overview
-    # @videos = FetchYoutubeVideos.call(YoutubeSession.last) 
+    # @videos = FetchYoutubeVideos.call(YoutubeSession.last)
     # if YoutubeSession.last[:client_secret] != nil
     if YoutubeSession.last.nil?
         redirect_to youtube_sessions_path
@@ -59,6 +59,6 @@ class PublishingsController < ApplicationController
   end
 
   def publishing_params
-    params.require(:publishing).permit(:video, :title, :description, :status, :uid, :photo)
+    params.require(:publishing).permit(:video, :title, :description, :status, :uid, :video)
   end
 end

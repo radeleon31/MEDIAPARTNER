@@ -58,7 +58,7 @@ Rails.application.configure do
 
   config.assets.compile = true
 
-
+  config.active_storage.service = :cloudinary
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
