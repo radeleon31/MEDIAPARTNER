@@ -1,27 +1,45 @@
 
-
-<div><%= link_to "New Post", new_publishing_path, class:"btn btn-dark"%> </div>
-<div class= "container">
-<table class="table table-dark table-hover pt-3 text-center m-4">
-  <thead>
-    <tr>
-      <th scope="col">Video</th>
-      <th scope="col">Publication Date</th>
-      <th scope="col">Total Views</th>
-      <th scope="col">Video Average Watch</th>
-    </tr>
-  </thead>
-</table>
-    <div>
-    <table class="table table-dark table-hover pt-3 theother text-center m-4">
-      <tbody>
-        <tr>
-          <th scope="row"><div class="helicopter-card-image" style="background-image: url('<%= image_url "testimage.jpg", alt: "test", width: 100 %>')"></div></th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-      </tbody>
-    </table>
+<div class="container-fluid background-purple vh-80">
+  <div class="pushing-aside d-flex justify-content-between">
+  <div><%= link_to "New Post", new_publishing_path, class:"btn btn-dark"%>
+    <div class="btn-group">
+      <button type="button" class="btn btn-dark">Platform</button>
+      <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">youtube</a>
+        <a class="dropdown-item" href="#">facebook</a>
+        <a class="dropdown-item" href="#">Tiktok</a>
+        <a class="dropdown-item" href="#">Instagram</a>
+      </div>
+    </div>
   </div>
 </div>
+  <div class= "container background-purple">
+  <table class="table table-dark table-hover pt-3 text-center m-2">
+    <div data-simplebar data-simplebar-lg style="max-height: 250px;">
+</div>
+      <thead class="m-2">
+        <tr>
+          <th scope="col">Video</th>
+          <th scope="col">Publication Date</th>
+          <th scope="col">Total Views</th>
+          <th scope="col">Video Average Watch</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr>
+              <td scope="row"><div class="helicopter-card-image" style="background-image: url('<%= image_url "testimage.jpg", alt: "test", width: 100 %>')"></div></td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td><i class="mdi mdi-circle text-success"></i> Published</td>
+            </tr>
+          </tbody>
+    </table>
+</div>
+
+
+

@@ -5,6 +5,7 @@ require 'google/api_client/client_secrets'
 class YoutubeSessionsController < ApplicationController
   def new
     redirect_to auth_client.authorization_uri.to_s
+    # add a buttom to tell the user to log in/ will be a link to authorization
   end
 
   def callback
@@ -14,7 +15,7 @@ class YoutubeSessionsController < ApplicationController
 
     # Store the auth client creds in the db
     session[:credentials] = auth_client.to_json
-    YoutubeSession.create!(credentials: JSON.parse(auth_client.to_json))
+    YoutubeSession.create!(credentials: JSON.parse(auth_client.to_json), user:current_user)
     redirect_to '/'
   end
 

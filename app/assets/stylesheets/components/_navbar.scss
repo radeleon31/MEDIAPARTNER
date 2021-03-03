@@ -1,6 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  color: rgb(110, 1, 195);
+}
+
+.nav-fixed-black {
+  background-color: black;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,3 +14,108 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.nav-link a {
+  color: #ffffff;
+}
+
+
+.back-white{
+  background: white;
+}
+
+.nav-fixed {
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  overflow: hidden;
+  z-index: 2;
+}
+nav {
+  background: transparent;
+  transition: 0.5s background-color ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.nav-toggle:hover {
+  color: white;
+  transform: rotate(90deg);
+}
+.logo {
+  height: 40px;
+}
+.links li {
+  text-transform: capitalize;
+  display: block;
+  transition: all 0.3s linear;
+}
+.btn, .form-control{
+  margin-right:10px;
+  margin-top:10px;
+}
+
+.show-links {
+  height: 250px;
+  background-color: white;
+}
+
+.btn-flat {
+  color: rgb(110, 1, 195);
+  font-weight: bold;
+}
+
+.btn-primary{
+  background:#dd1188 !important;
+  }
+.brand-one{
+  letter-spacing: 3px;
+  font-size: 24px;
+  color: #dd1188;
+}
+
+.brand-two{
+  letter-spacing: 3px;
+  font-size: 24px;
+  color:#9955cc;
+}
+
+.brand-one:hover {
+  color: #9955cc;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 800px) {
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .nav-header {
+    padding: 0;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .show-links {
+    background-color: transparent;
+  }
+  .links {
+    height: auto;
+    display: flex;
+  }
+}
+
+.subrayado:hover {
+  color: rgb(110, 1, 195);
+  text-decoration: underline;
+}
+
+
