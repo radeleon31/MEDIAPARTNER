@@ -44,7 +44,7 @@ class PublishingsController < ApplicationController
   # end
 
   def overview
-      @videos =  [{
+      @videos = [{
         title: "test",
         description: "test",
         thumbnail: "test",
