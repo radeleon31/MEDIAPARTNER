@@ -1,5 +1,6 @@
 class Publishing < ApplicationRecord
   has_one_attached :video
-  validates :video, :title, :description, :status, :uid, presence: true
+  belongs_to :user
+  validates :video, :title, :description, :status, presence: true
 
 end
