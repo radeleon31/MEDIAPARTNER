@@ -1,16 +1,2 @@
-<div class="container">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-  <% @videos.each do |video_hash|%>
-    <div class="container">
-      <p> <%=  video_hash[:title] %> </p>
-      <p> <%=  video_hash[:description] %> </p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=video_hash[:id]%>" 
-      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen></iframe>
-    </div>
-  <% end %>  
 
-
-</div>
 
