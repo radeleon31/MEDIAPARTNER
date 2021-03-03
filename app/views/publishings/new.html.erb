@@ -21,15 +21,19 @@
     <%= simple_form_for(@publishing) do |f| %>
 <div class="tab-content">
     <div class="tab-pane" id="home-b2">
+      <h4> Video Upload </h4>
       <%= f.input :video, as: :file %>
     </div>
     <div class="tab-pane show active" id="profile-b2">
+      <h4> Details </h4>
       <%= f.input :title %>
       <%= f.input :description, as: :text %>
     </div>
     <div class="tab-pane" id="settings-b2">
+      <h4> Visibility </h4>
       <%= f.input :status %>
       <%= f.submit %>
     </div>
+     <%= link_to "Cancel", "#", class: "btn btn-danger" %>
 </div>
 <% end %>
