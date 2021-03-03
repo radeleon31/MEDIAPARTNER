@@ -1,15 +1,43 @@
+<ul class="nav nav-tabs nav-justified nav-bordered mb-3">
+    <li class="nav-item">
+        <a href="#home-b2" data-toggle="tab" aria-expanded="false" class="nav-link">
+            <i class="mdi mdi-home-variant d-md-none d-block"></i>
+            <span class="d-none d-md-block">Video Upload</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#profile-b2" data-toggle="tab" aria-expanded="true" class="nav-link active">
+            <i class="mdi mdi-account-circle d-md-none d-block"></i>
+            <span class="d-none d-md-block">Select Video Content</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#settings-b2" data-toggle="tab" aria-expanded="false" class="nav-link">
+            <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+            <span class="d-none d-md-block">Select Assets</span>
+        </a>
+    </li>
+</ul>
 
-<H2 class="title"> Create New Post </h2>
-<div class="container mt-4">
-  <div class="row">
-    <div class="col-6 m-auto">
-      <div>
-        <h1></h1>
-        <div class="mt-3">
-          <%= render "form", publishing: @publishing %>
-          <%= link_to "Bach to home", root_path, class:"btn btn-dark" %>
-        </div>
-      </div>
+<div class="tab-content">
+    <div class="tab-pane" id="home-b2">
+      <%= simple_form_for(@publishing) do |f| %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit %>
+      <% end %>
     </div>
-  </div>
+    <div class="tab-pane show active" id="profile-b2">
+      <%= simple_form_for(@publishing) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description, as: :text %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+    <div class="tab-pane" id="settings-b2">
+        <%= simple_form_for(@publishing) do |f| %>
+      <%= f.input :status %>
+      <%= f.submit %>
+      <% end %>
+    </div>
 </div>
