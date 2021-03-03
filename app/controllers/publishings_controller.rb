@@ -44,7 +44,7 @@ class PublishingsController < ApplicationController
   # end
 
   def overview
-      @videos =  [{
+      @videos = [{
         title: "test",
         description: "test",
         thumbnail: "test",
@@ -73,6 +73,6 @@ class PublishingsController < ApplicationController
   end
 
   def publishing_params
-    params.require(:publishing).permit(:video, :title, :description, :status, :uid, :photo)
+    params.require(:publishing).permit(:video, :title, :description, :status, :uid )
   end
 end
