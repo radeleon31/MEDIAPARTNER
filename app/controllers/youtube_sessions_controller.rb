@@ -14,7 +14,7 @@ class YoutubeSessionsController < ApplicationController
 
     # Store the auth client creds in the db
     session[:credentials] = auth_client.to_json
-    YoutubeSession.create!(credentials: JSON.parse(auth_client.to_json))
+    YoutubeSession.create!(credentials: JSON.parse(auth_client.to_json), user:current_user)
     redirect_to '/'
   end
 
