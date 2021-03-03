@@ -75,6 +75,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    chartkick (3.4.2)
     childprocess (3.0.0)
     cloudinary (1.16.1)
       aws_cf_signer
@@ -140,6 +141,8 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    groupdate (5.2.2)
+      activesupport (>= 5)
     httpclient (2.8.3)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
@@ -317,10 +320,12 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   cloudinary (~> 1.16.0)
+  chartkick
   devise
   dotenv-rails
   font-awesome-sass
   google-api-client
+  groupdate
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
