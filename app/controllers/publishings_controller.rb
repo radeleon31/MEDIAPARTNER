@@ -42,6 +42,17 @@ class PublishingsController < ApplicationController
   #   end
   # end
 
+  def overview
+
+    @videos = FetchYoutubeVideos.call(YoutubeSession.last) 
+    # if YoutubeSession.last[:client_secret] != nil
+    # if YoutubeSession.last[:client_secret].nil?
+    #     redirect_to youtube_sessions_path
+    # else
+    #   @videos = FetchYoutubeVideos.call(YoutubeSession.last)
+    # end
+  end
+
   private
 
   def set_publishing
