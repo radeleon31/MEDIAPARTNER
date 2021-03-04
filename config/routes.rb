@@ -4,7 +4,18 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about' # Revisar esta ruta de about
   get 'overview', to: 'publishings#overview'
   resources :publishings
-  resources :channels, only: [:show]
+  resources :channels, only: [:index, :show]do
+    get 'last_day', on: :member
+    get 'last_week', on: :member
+    get 'last_month', on: :member
+    get 'last_year', on: :member
+  end
+  # resources :channels,   do 
+  #   get "last_day, on: :member"
+  #   # get "last_week, on: :member"
+  #   # get "last_mont, on: :member"
+  #   # get "last_year, on: :member"
+  # end
   #Authenticate to youtube chanel
   get '/youtube_sessions', to: 'youtube_sessions#new'
   get '/youtube_sessions/callback', to: 'youtube_sessions#callback'
