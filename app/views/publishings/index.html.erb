@@ -50,3 +50,39 @@
 
 
 
+<div class="navbar-wagon">
+  <!-- Logo -->
+
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <p class="logo-text"> <strong>Media</strong> Partner</p>
+    <p class="logo-text-tagline">Gain Control of your digital foot print</p>
+  <% end %>
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+       <ul>
+       <li class="nav-item dropdown">
+         <% if user_signed_in? %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "overview", "#", class: "dropdown-item" %>
+          <%= link_to "Publisher", "#", class: "dropdown-item" %>
+          <%= link_to "Monetizer", "#", class: "dropdown-item" %>
+          <%= link_to "Logout", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+
+       <% else %>
+      <!-- Login link (when logged out) -->
+      <%= link_to t(".sign_in", default: "Login | Sign up"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- ------------
+ -->
+
+
