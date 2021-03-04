@@ -11,17 +11,10 @@
     <i class="fas fa-times clear"></i>
   </div>
     <div class="container background-style p-5 d-flex flex-wrap">
-      <%= link_to myvideo_path(publishing.id) do %>
       <% @videos.each do |video_hash|%>
-<<<<<<< HEAD
-        <div class="card-trip m-5">
-          <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/<%=video_hash[:id]%>"
-          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-=======
         <div class="card-trip m-3">
           <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/<%=video_hash[:id]%>"
           frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
->>>>>>> d6d11e4195b022f90061fd23cedd74f2b5c3e5da
           allowfullscreen></iframe>
           <div class="card-trip-infos">
             <div>
@@ -62,7 +55,7 @@
 
       <% end %>
   </div>
-   <% end %>
+
 </body>
 
 
