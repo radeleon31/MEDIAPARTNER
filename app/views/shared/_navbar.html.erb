@@ -1,4 +1,4 @@
-<nav class="nav-fixed-black">
+<nav class="nav-fixed <%= yield(:navbar_class) %>">
       <div class="nav-center">
         <!-- nav header -->
         <% if user_signed_in? %>

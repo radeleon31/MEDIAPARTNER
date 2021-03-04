@@ -1,0 +1,22 @@
+.banner {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color:#FCE621;
+  .banner-content {
+    padding-left: 20px;
+  }
+  .home-p {
+    font-size: 18px;
+  }
+  .btn {
+    padding: 10px 40px;
+    font-weight: bold;
+  }
+  .home-image {
+    height: 300px;
+    width: 600px;
+    padding-top: 50px;
+  }
+}
+

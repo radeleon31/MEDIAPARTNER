@@ -1,6 +1,5 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: black;
   height: 15vh;
   color: white;
 }
@@ -27,9 +26,9 @@
 }
 
 .nav-fixed {
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
+  position: fixed; 
+  top: 0;
+  width: 100%; 
   overflow: hidden;
   z-index: 2;
 }
@@ -67,12 +66,12 @@ nav {
 }
 
 .btn-flat {
-  color: rgb(110, 1, 195);
+  color: #6D01C2;
   font-weight: bold;
 }
 
 .btn-primary{
-  background:#dd1188 !important;
+  background:#6D01C2 !important;
   }
 .brand-one{
   letter-spacing: 3px;
