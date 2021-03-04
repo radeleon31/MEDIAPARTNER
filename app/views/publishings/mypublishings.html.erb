@@ -4,9 +4,9 @@
   <% @publishings.each do |publishing| %>
     <% counter += 1 %>
     <div class="d-flex justify-content-center">
-      <div class="card-product">
+      <div class="background-card">
         <%= cl_video_tag publishing.video.key, height: 100, width: 100 %>
-        <h3 class="card-product-infos"><strong><%= publishing.title %></strong> <span class="light-text">(<%= publishing.description %>)</span>
+        <h3 id="my-castles-card-castle-title"><strong><%= publishing.title %></strong> <span class="light-text">(<%= publishing.description %>)</span>
         </h3>
         <div id= "my-castles-delete-button">
           <p><%= link_to  "Delete Post", publishing_path(publishing.id), method: :delete, class: "btn btn-danger" %></p>
