@@ -1,5 +1,5 @@
 class PublishingsController < ApplicationController
-  before_action :set_publishing, only: [:show, :edit, :update, :destroy]
+  before_action :set_publishing, only: [:show, :edit, :update, :destroy, :myvideo]
 
   def index
     @publishings = Publishing.all
@@ -7,7 +7,6 @@ class PublishingsController < ApplicationController
 
   def show
     # Aca seria solo set_publishing
-    @Publishing = Publishing.new
   end
 
   def new
@@ -33,6 +32,14 @@ class PublishingsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def mypublishings
+    @publishings = Publishing.where(user: current_user)
+  end
+
+  def insight
+
   end
 
   # def destroy

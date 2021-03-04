@@ -17,6 +17,8 @@
     </div>
   </div>
 </div>
+
+
   <div class= "container background-purple">
   <table class="table table-light table-hover pt-3 text-center m-2">
     <div data-simplebar data-simplebar-lg style="max-height: 250px;">
@@ -51,9 +53,32 @@
 
 
 
-
 <!-- ------------
  -->
+ <% @publishings.each do |publishing| %>
+ <%= link_to publishing_path(publishing.id) do %>
+ <div class="card-product">
+  <%= cl_video_tag publishing.video.key, height: 100, width: 100 %>
+  <div class="card-product-infos">
+    <h2><%= publishing.title %></h2>
+    <p><%= publishing.description %></p>
+  </div>
+  <div class="card-product-infos">
+    <h2>Publication date</h2>
+  </div>
+  <div class="card-product-infos">
+    <h2>total view</h2>
+  </div>
+   <div class="card-product-infos">
+    <h2>video average watch</h2>
+  </div>
+   <div class="card-product-infos">
+    <h2>status</h2>
+  </div>
+  <% end %>
+  <% end %>
+</div>
+
 
 <!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <div>

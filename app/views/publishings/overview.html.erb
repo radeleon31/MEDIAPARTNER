@@ -11,17 +11,18 @@
     <i class="fas fa-times clear"></i>
   </div>
     <div class="container background-style p-5 d-flex flex-wrap">
+      <%= link_to myvideo_path(publishing.id) do %>
       <% @videos.each do |video_hash|%>
         <div class="card-trip m-5">
-          <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/<%=video_hash[:id]%>" 
-          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/<%=video_hash[:id]%>"
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
           <div class="card-trip-infos">
             <div>
               <h2><%=video_hash[:title]%></h2>
               <p><%=video_hash[:description]%></p>
             </div>
-            
+
             <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
           </div>
           <div class="card-trip-infos d-flex">
@@ -38,8 +39,8 @@
                 <h2>Comments</h2>
               </div>
             </div>
+
         </div>
-          
 
 
 
@@ -50,14 +51,16 @@
 
 
 
-          
-        
-      <% end %>  
+
+
+
+      <% end %>
   </div>
+   <% end %>
 </body>
 
 
 
 
-<%# <p> <%=  video_hash[:title] %> 
+<%# <p> <%=  video_hash[:title] %>
           <%# <p> <%=  video_hash[:description] %>
