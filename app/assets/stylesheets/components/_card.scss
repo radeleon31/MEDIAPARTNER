@@ -49,8 +49,37 @@
   display: flex;
   align-items: center;
   border-radius: 15px;
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  }
+
+.card-product-main {
+  overflow: hidden;
+  height: 40px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
   width: 70%;
+  padding: 10px;
+  margin: 10px;
 }
+
+.card-product-my {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  width: 70%;
+  padding: 10px;
+  margin: 10px;
+}
+
 
 .card-product img {
   height: 100%;
@@ -62,7 +91,22 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  width: 120px;
 }
+
+.card-product-infos-main h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  width: 120px;
+}
+.card-product-infos-my h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0px;
+  width: 120px;
+}
+
 
 .card-product p {
   font-size: 12px;
@@ -162,8 +206,8 @@
 #my-castles-delete-button {
   float: right;
   position: relative;
-  bottom: 0;
-  right: -10px;
+  bottom: 60px;
+  right: 230px;
 }
 
 #castle-banner {
