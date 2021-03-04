@@ -40,3 +40,183 @@
   top: -20px;
   width: 40px;
 }
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  }
+
+.card-product-main {
+  overflow: hidden;
+  height: 40px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  width: 70%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.card-product-my {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  width: 70%;
+  padding: 10px;
+  margin: 10px;
+}
+
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  width: 120px;
+}
+
+.card-product-infos-main h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  width: 120px;
+}
+.card-product-infos-my h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0px;
+  width: 120px;
+}
+
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.castle-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 3% 5%;
+  border-radius: 15px;
+}
+
+.castle-card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.castle-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.castle-card p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.castle-card .castle-card-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.castle-card-infos .castle-card-pricing {
+  position: absolute;
+  right: 40px;
+  top: 24px;
+  width: 40px;
+}
+
+#my-castles-title-card {
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+  background-color: rgb(240, 240, 240);
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.329);
+}
+
+#my-castles-card-castle-title {
+  padding: 1%;
+}
+
+#my-castles-background {
+  background: linear-gradient(rgba(255,255,255, .25), rgba(255,255,255, .15)), url("background-image-overview-v2.jpg");
+  width: 100%;
+  height: 800px;
+}
+
+.background-card {
+  margin-top: 5%;
+  height: 150px;
+  width: 600px;
+  background-color: rgb(240, 240, 240);
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.329);
+}
+
+.card-castle-image {
+  float: left;
+  height: 150px;
+  width: 190px;
+  border-radius: 5px;
+  margin-right: 1%;
+}
+
+.light-text {
+  font-size: 70%;
+  color: rgba(0, 0, 0, 0.651);
+}
+
+
+#my-castles-delete-button {
+  float: right;
+  position: relative;
+  bottom: 60px;
+  right: 230px;
+}
+
+#castle-banner {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.margin-top-negative {
+  margin-top: -75px;
+}

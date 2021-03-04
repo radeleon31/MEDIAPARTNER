@@ -1,84 +1,20 @@
+<div class="container-fluid p-0" id="castle-banner" > <%= cl_video_tag @publishing.video.key, height: 100, width: 100 %> </div>
 
-<!-- Example split danger button -->
 
-<div class="container " >
-
-  <div class="btn-group">
-    <button type="button" class="btn btn-primary">Date Monetizer</button>
-    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="sr-only">Toggle Dropdown</span>
-    </button>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Last Day</a>
-      <a class="dropdown-item" href="#">Last Week</a>
-      <a class="dropdown-item" href="#">Last Month</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Last Year</a>
-    </div>
-  </div>
-
-  <div class="card-group mt-2">
-    <div class="card">
-      <div class="card-body border border-primary rounded  bg-dark text-white">
-        <h5 class="card-title">227.1 M</h5>
-        <p class="card-text">Minutes Viewed</p>
-        <p class="card-text"><small class="text-muted badge badge-success">52.6%</small></p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body border border-primary rounded bg-dark text-white">
-        <h5 class="card-title">74.8 M</h5>
-        <p class="card-text">1-Minute Video Views</p>
-        <p class="card-text"><small class="text-muted badge badge-success">51.0%</small></p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body border border-primary rounded bg-dark text-white">
-        <h5 class="card-title">216.3 M</h5>
-        <p class="card-text">3-Second Video Views</p>
-        <p class="card-text"><small class="text-muted badge badge-success">36.3%</small></p>
-      </div>
-    </div>
-      <div class="card">
-      <div class="card-body border border-primary rounded bg-dark text-white">
-        <h5 class="card-title">5.4 M</h5>
-        <p class="card-text">Engagement</p>
-        <p class="card-text"><small class="text-muted badge badge-success">17%</small></p>
-      </div>
-    </div>
-      <div class="card">
-      <div class="card-body border border-primary rounded bg-dark text-white">
-        <h5 class="card-title">227.1 M</h5>
-        <p class="card-text">Net Followers</p>
-        <p class="card-text"><small class="text-muted badge badge-success">33.3%</small></p>
-      </div>
-    </div>  
-  </div>
-
-  <div class="row m-3" >
-    <div class="col-sm-8">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title mb-0">Viewed</h5>
-          <p class="card-text badge badge-primary">227,142,946 Minutes Viewed</p>
-          <h5 class="card-title">aqui va el grafico</h5>
-          <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+  <div class="container margin-top-negative bg-white p-5 rounded">
+    <div class="row mb-3">
+      <div class="col-md-8">
+        <div p-5>
+          <h1><strong><%= @publishing.title %></strong></h1>
+          <p class="text-justify"><%= @publishing.description %></p>
+          <%= link_to "Back to Overview", root_path, class: "btn btn-secondary" %>
         </div>
       </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title font-weight-bold">Show by:</h5>
-          <p class="card-text">see how yourn different types of posts are performing</p>
-
-          <p class="card-text mb-0">Organic</p>
-          <div class="progress" style="height: 10px;">
-            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-          </div>
-          <p class="card-text mb-0">Paid</p>
-          <div class="progress" style="height: 10px;">
-            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+      <div class="col-md-4 d-flex flex-column">
+          <div>
+            <div class="card p-3 mb-3">
+              <h1>data will go here</h1>
+              </div>
           </div>
 
           <p class="card-text mb-0">Posted</p>
@@ -116,9 +52,11 @@
         </div>
       </div>
     </div>
+          <!-- <div class="container" id="map"
+          style="width: 100%; height: 600px; border-radius: 15px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+           -->
   </div>
-</div>
-
-
-
 

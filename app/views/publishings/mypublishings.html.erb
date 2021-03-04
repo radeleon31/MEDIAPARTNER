@@ -1,0 +1,32 @@
+<div id="my-castles-background">
+  <h1 id="my-castles-title-card"> My Posts </h1>
+  <% counter = 0 %>
+  <% @publishings.each do |publishing| %>
+    <% counter += 1 %>
+ <%= link_to publishing_path(publishing.id) do %>
+ <div class="card-product-my justify-content-center">
+  <%= cl_video_tag publishing.video.key, height: 100, width: 100 %>
+  <div class="card-product-infos-my">
+    <h2><%= publishing.title %></h2>
+    <p><%= publishing.description %></p>
+  </div>
+  <div class="card-product-infos-my">
+    <h2>Publication date</h2>
+  </div>
+  <div class="card-product-infos-my">
+    <h2>status</h2>
+  </div>
+  </div>
+  <div id= "my-castles-delete-button">
+          <p><%= link_to  "Delete Post", publishing_path(publishing.id), method: :delete, class: "btn btn-danger" %></p>
+        </div>
+
+  <% end %>
+        <!-- <#% castle.bookings.each do |booking| %>
+          <p>It looks like you have a booking!</p>
+          <p><strong>Go and check it!</strong></p>
+        <#% end %> -->
+  <% end %>
+</div>
+
+

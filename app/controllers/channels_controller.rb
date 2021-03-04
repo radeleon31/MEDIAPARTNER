@@ -4,7 +4,7 @@ class ChannelsController < ApplicationController
     end
 
     def last_day
-   
+        
     end
     def last_week
     end

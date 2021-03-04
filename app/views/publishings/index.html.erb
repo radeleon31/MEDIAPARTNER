@@ -1,5 +1,5 @@
 
-<div class="container-fluid background-purple vh-80">
+
   <div class="pushing-aside d-flex justify-content-between">
   <div><%= link_to "New Post", new_publishing_path, class:"btn btn-dark"%>
     <div class="btn-group">
@@ -55,4 +55,65 @@
 </div>
 
 
+ <div>
+ <% @publishings.each do |publishing| %>
+ <%= link_to publishing_path(publishing.id) do %>
+ <div class="card-product justify-content-center border border-dark">
+  <%= cl_video_tag publishing.video.key, height: 100, width: 100 %>
+  <div class="card-product-infos">
+    <h2><%= publishing.title %></h2>
+    <p><%= publishing.description %></p>
+  </div>
+  <div class="card-product-infos">
+    <h2>Publication date</h2>
+  </div>
+  <div class="card-product-infos">
+    <h2>total view</h2>
+  </div>
+   <div class="card-product-infos">
+    <h2>video average watch</h2>
+  </div>
+   <div class="card-product-infos">
+    <h2>status</h2>
+  </div>
+  </div>
+  <% end %>
+  <% end %>
+</div>
 
+</div>
+<!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div>
+      <i class="fas fa-chart-line"></i> -->
+      <!-- <span><strong>Media</strong>Partner</span>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto"> -->
+      <!--   <#% if user_signed_in? %>
+        <li class="nav-item active">
+          <#%= link_to  "Post Video", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <#%= link_to "Overview", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <#%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <#%= link_to "publishing", root_path, class: "dropdown-item" %>
+            <#%= link_to "Monetizer", root_path, class: "dropdown-item" %>
+            <#%= link_to "Log out", root_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+        <#% else %>
+        <li class="nav-item">
+          <#%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+        <#% end %>
+      </ul>
+    </div>
+</div>
+
+ -->

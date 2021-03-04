@@ -1,4 +1,4 @@
-<body class="background-image">
+<body class="background-image"
   <div class="search-wrap d-flex align-items-center float-right">
     <%= form_tag overview_path, class:"search", method: :get do %>
       <%= text_field_tag :query,
@@ -10,18 +10,17 @@
     <i class="fas fa-search searchIcon"></i>
     <i class="fas fa-times clear"></i>
   </div>
-    <div class="container background-style p-5 d-flex flex-wrap">
+    <div class="container background-style p-5 d-flex flex-wrap justify-content-around">
       <% @videos.each do |video_hash|%>
         <div class="card-trip m-3">
-          <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/<%=video_hash[:id]%>" 
-          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/<%=video_hash[:id]%>"
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
           <div class="card-trip-infos">
             <div>
               <h2><%=video_hash[:title]%></h2>
               <p><%=video_hash[:description]%></p>
             </div>
-            
             <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
           </div>
           <div class="card-trip-infos d-flex">
@@ -38,26 +37,34 @@
                 <h2>Comments</h2>
               </div>
             </div>
-        </div>
-          
-
-
-
-
-
-
-
-
-
-
-          
+<<<<<<< HEAD
+        </div>        
         
       <% end %>  
+=======
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <% end %>
+>>>>>>> 7fb2b8da9a0582071923cd1b64d7afc4b2a44aef
   </div>
+
 </body>
 
+<%= console %>
 
 
-
-<%# <p> <%=  video_hash[:title] %> 
+<%# <p> <%=  video_hash[:title] %>
           <%# <p> <%=  video_hash[:description] %>
