@@ -44,7 +44,15 @@ class PublishingsController < ApplicationController
   # end
 
   def overview
+    # Este Array es para no agotar quotas a la API
       @videos =  [{
+        title: "test",
+        description: "test",
+        thumbnail: "test",
+        id: "23",
+        channel_id: "23"
+      },
+      {
         title: "test",
         description: "test",
         thumbnail: "test",

@@ -38,7 +38,7 @@ class YoutubeSessionsController < ApplicationController
       )
       auth_client = client_secrets.to_authorization
       auth_client.update!(
-        scope: 'https://www.googleapis.com/auth/youtube.force-ssl',
+        scope: ['https://www.googleapis.com/auth/youtube.force-ssl','https://www.googleapis.com/auth/yt-analytics.readonly','https://www.googleapis.com/auth/yt-analytics-monetary.readonly','https://www.googleapis.com/auth/youtubepartner','https://www.googleapis.com/auth/youtube.readonly','https://www.googleapis.com/auth/youtube','https://www.googleapis.com/auth/analytics'],
         redirect_uri: redirect_uri,
         additional_parameters: {
           access_type:'offline',
