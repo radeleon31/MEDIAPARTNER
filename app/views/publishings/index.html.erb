@@ -3,9 +3,10 @@
   <div class="pushing-aside d-flex justify-content-between">
   <div><%= link_to "New Post", new_publishing_path, class:"btn btn-dark"%>
     <div class="btn-group">
-      <button type="button" class="btn btn-dark">Platform</button>
+      <button type="button" class="btn btn-dark btn-rounded">Platform</button>
       <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="sr-only">Toggle Dropdown</span>
+
       </button>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="#">youtube</a>
@@ -23,6 +24,7 @@
       <thead class="m-2">
         <tr>
           <th scope="col">Video</th>
+          <th scope="col">Title</th>
           <th scope="col">Publication Date</th>
           <th scope="col">Total Views</th>
           <th scope="col">Video Average Watch</th>
@@ -31,13 +33,18 @@
       </thead>
       <tbody>
             <tr>
-              <td scope="row"><div class="helicopter-card-image" style="background-image: url('<%= image_url "testimage.jpg", alt: "test", width: 100 %>')"></div></td>
+              <% @publishings.each do |publishing| %>
+                <%= link_to publishing_path(publishing.id) do %>
+              <td scope="row"><div class="publishing-card-video" style="background-image: url('<%= cl_video_path publishing.video.key %>')"></div></td>
+              <td><%= publishing.title %> </td>
               <td>Mark</td>
               <td>Otto</td>
               <td>@mdo</td>
               <td><i class="mdi mdi-circle text-success"></i> Published</td>
             </tr>
           </tbody>
+              <% end %>
+            <% end %>
     </table>
 </div>
 

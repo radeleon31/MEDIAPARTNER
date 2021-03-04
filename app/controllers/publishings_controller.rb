@@ -45,7 +45,7 @@ class PublishingsController < ApplicationController
 
   def overview
     # Este Array es para no agotar quotas a la API
-      @videos =  [{
+      @videos = [{
         title: "test",
         description: "test",
         thumbnail: "test",
@@ -81,6 +81,6 @@ class PublishingsController < ApplicationController
   end
 
   def publishing_params
-    params.require(:publishing).permit(:video, :title, :description, :status, :uid, :photo)
+    params.require(:publishing).permit(:video, :title, :description, :status, :uid )
   end
 end
