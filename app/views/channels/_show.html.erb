@@ -7,11 +7,13 @@
     </button>
     <div class="dropdown-menu">
      <%# # link_to "" %>
-      <a class="dropdown-item" href="">Last Day</a>
-      <a class="dropdown-item" href="#">Last Week</a>
-      <a class="dropdown-item" href="#">Last Month</a>
+      <a class="dropdown-item" <% link_to last_day_channel_path %> >Last Day</a>
+      <a class="dropdown-item" <% link_to last_week_channel_path %>>Last Week</a>
+      <a class="dropdown-item" <% link_to last_month_channel_path %>>Last Month</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Last Year</a>
+      <a class="dropdown-item" <% link_to last_year_channel_path %>>Last Year</a>
+
+       
     </div>
     
   </div>
@@ -19,30 +21,30 @@
   <div class="card-group mt-2">
     <div class="card">
       <div class="card-body border border-primary rounded  bg-dark text-white">
-        <h5 id="cd1-valor" class="card-title  mb-0">65.82%</h5>
-        <p class="card-text">Fill Rate</p>
-        <p id="cd1-porc"class="card-text"><small class="text-muted badge badge-success">190.00%</small></p>
+      <h5 id="cd1-valor" class="card-title  mb-0"><%= @data[:fill_rate_value] %></h5> 
+      <p class="card-text">Fill Rate</p>
+      <p id="cd1-porc"class="card-text"><small class="text-muted badge badge-success"><%= @data[:fill_rate_porcen] %>%</small></p>
       </div>
     </div>
     <div class="card">
       <div class="card-body border border-primary rounded bg-dark text-white">
-        <h5 class="card-title mb-0">215,000</h5>
+        <h5 class="card-title mb-0"><%= @data[:Impressions_value] %></h5>
         <p class="card-text">Impressions</p>
-        <p class="card-text"><small class="text-muted badge badge-warning">27.48%</small></p>
+        <p class="card-text"><small class="text-muted badge badge-warning"><%= @data[:Impressions_porcen] %>%</small></p>
       </div>
     </div>
     <div class="card">
       <div class="card-body border border-primary rounded bg-dark text-white">
-        <h5 class="card-title  mb-0">$1.55</h5>
+        <h5 class="card-title  mb-0">$<%= @data[:eCPM_value] %></h5>
         <p class="card-text">eCPM</p>
-        <p class="card-text"><small class="text-muted badge badge-success">29.43 %</small></p>
+        <p class="card-text"><small class="text-muted badge badge-success"><%= @data[:eCPM_value] %>%</small></p>
       </div>
     </div>
       <div class="card">
       <div class="card-body border border-primary rounded bg-dark text-white">
-        <h5 class="card-title  mb-0">$334</h5>
+        <h5 class="card-title  mb-0">$<%= @data[:est_rev_value] %></h5>
         <p class="card-text">Estimated Revenue</p>
-        <p class="card-text"><small class="text-muted badge badge-success">6.13%</small></p>
+        <p class="card-text"><small class="text-muted badge badge-success"><%= @data[:est_rev_porcen] %>%</small></p>
       </div>
     </div>
   </div>
@@ -72,7 +74,7 @@
       <% rows_vals = ["1", "2", "3", "4"] %>
       <% rows_vals.each do |col| %> 
       <tr>
-        <td> <%= col %> </td>
+        <td>Mi Channel <%= col %> </td>
         <td>76,25% <br><p class="card-text"><small class="text-muted badge badge-success">351.9%</small></p></td>
         <td>196,840<br><p class="card-text"><small class="text-muted badge badge-warning">31.83%</small></p></td>
         <td>$1.63<br><p class="card-text"><small class="text-muted badge badge-success">34.99%</small></p></td>
