@@ -18,6 +18,35 @@
     </div>
   </div>
 </div>
+  <div class= "container background-purple">
+  <table class="table table-dark table-hover pt-3 text-center m-2">
+    <div data-simplebar data-simplebar-lg style="max-height: 250px;">
+</div>
+      <thead class="m-2">
+        <tr>
+          <th scope="col">Video</th>
+          <th scope="col">Title</th>
+          <th scope="col">Publication Date</th>
+          <th scope="col">Total Views</th>
+          <th scope="col">Video Average Watch</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr>
+              <% @publishings.each do |publishing| %>
+                <%= link_to publishing_path(publishing.id) do %>
+              <td scope="row"><div class="publishing-card-video" style="background-image: url('<%= cl_video_path publishing.video.key %>')"></div></td>
+              <td><%= publishing.title %> </td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td><i class="mdi mdi-circle text-success"></i> Published</td>
+            </tr>
+          </tbody>
+              <% end %>
+            <% end %>
+    </table>
 
 
 <div class="d-flex flex-column container-fluid align-items-end">
