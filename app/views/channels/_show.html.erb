@@ -1,5 +1,7 @@
 <div class="container " >
-
+  <% if (@name_view) %> 
+    <h1><%= @name_view %></h1>
+  <% end %>
   <div class="btn-group" >
     <button type="button" class="btn btn-primary">Date Monetizer</button>
     <button id="boton-date" type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -7,13 +9,10 @@
     </button>
     <div class="dropdown-menu">
      <%# # link_to "" %>
-      <a class="dropdown-item" <% link_to last_day_channel_path %> >Last Day</a>
-      <a class="dropdown-item" <% link_to last_week_channel_path %>>Last Week</a>
-      <a class="dropdown-item" <% link_to last_month_channel_path %>>Last Month</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" <% link_to last_year_channel_path %>>Last Year</a>
-
-       
+       <%= link_to "Last Day",  last_day_channel_path, class:"dropdown-item" %> 
+       <%= link_to "Last Week",  last_week_channel_path, class:"dropdown-item" %> 
+       <%= link_to "Last Month",  last_month_channel_path, class:"dropdown-item" %> 
+       <%= link_to "Last Year",  last_year_channel_path, class:"dropdown-item" %> 
     </div>
     
   </div>

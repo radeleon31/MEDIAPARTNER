@@ -12,6 +12,7 @@ class ChannelsController < ApplicationController
         eCPM_value: 1.55, eCPM_porcen: 29.99,
         est_rev_value: 330, est_rev_porcen: 6.17,
       }
+      @name_view = "Last Day"
     end
 
     def last_week
@@ -20,6 +21,7 @@ class ChannelsController < ApplicationController
         eCPM_value: 1.98, eCPM_porcen: 47.34,
         est_rev_value: 967, est_rev_porcen: 8.08,
         }
+        @name_view = "Last Week"
     end
 
     def last_month
@@ -28,6 +30,7 @@ class ChannelsController < ApplicationController
         eCPM_value: 3.05, eCPM_porcen: 31.75,
         est_rev_value: 498, est_rev_porcen: 9.56,
         }
+        @name_view = "Last Month"
     end
 
     def last_year
@@ -38,7 +41,7 @@ class ChannelsController < ApplicationController
         }
         @data_channel = {
   "channel1" => {name: "Mi Channel Uff", views: 2388},
-
-}
+  }
+  @name_view = "Last Year"
     end
 end
