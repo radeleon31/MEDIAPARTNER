@@ -58,11 +58,12 @@ class PublishingsController < ApplicationController
           publishing.title = video_hash[:title]
           publishing.description = video_hash[:description]
           publishing.thumbnail = video_hash[:thumbnail]
-          publishing.channel_id = video_hash[:channel_id]
           publishing.status = "Published on Youtube"
           publishing.user = current_user
+          # publishing.channel_id = video_hash[:channel_id]
           # asignarle un channel
-          #publishing.uid = video_hash[:id]
+          # channel = Channel.find_or_initialize_by(name: video_hash[:channel_id])
+          # channel.user = current_user
         end
         # Tanto SI existe como si NO existe, quiero actualizar los likes y viwss y guardarlo
         publishing.likes = @data[publishing.uid][:likes]

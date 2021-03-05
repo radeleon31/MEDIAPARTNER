@@ -1,5 +1,5 @@
 class Channel < ApplicationRecord
 
-    validates :name, presence: true
+    validates :uid, presence: true
 
 end
