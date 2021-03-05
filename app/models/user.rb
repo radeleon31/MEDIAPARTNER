@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :youtube_sessions
   has_many :publishings
+  has_many :channels
 end
