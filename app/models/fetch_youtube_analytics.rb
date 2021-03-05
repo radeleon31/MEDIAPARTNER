@@ -10,7 +10,7 @@ class FetchYoutubeAnalytics
     analytics.query_report(
       options: { authorization: @auth_client},
       dimensions:"video",
-      end_date:"2021-03-03", # Test Only - Cambiar a fecha actual
+      end_date:"2021-03-03", # Test Only - Cambiar a fecha actual DATE.NOW
       ids:"channel==MINE",
       max_results:10, # Test Only - Cambiar a todos. paginacion?
       metrics:"views,likes",
@@ -74,5 +74,7 @@ class FetchYoutubeAnalytics
   #       metrics:"estimatedAdRevenue",
   #       sort:"-estimatedAdRevenue",
   #       start_date:"2019-01-01")
+  # INSIGHT: CHANNELS METRICS
+    #filtrar por user y channel_id
         
 end

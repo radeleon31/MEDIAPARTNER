@@ -64,22 +64,22 @@ ActiveRecord::Schema.define(version: 2021_03_05_014542) do
     t.bigint "user_id", null: false
     t.integer "likes"
     t.integer "views"
-    t.string "thumbnail"
     t.bigint "channels_id"
+    t.string "thumbnail"
     t.index ["channels_id"], name: "index_publishings_on_channels_id"
     t.index ["user_id"], name: "index_publishings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
