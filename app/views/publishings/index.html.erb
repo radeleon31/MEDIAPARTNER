@@ -1,4 +1,3 @@
-
 <body class="background-image-index">
   <div class="pushing-aside d-flex justify-content-between">
   <div><%= link_to "New Post", new_publishing_path, class:"btn btn-dark rounded-pill "%>
@@ -6,7 +5,6 @@
       <button type="button" class="btn btn-dark btn-rounded">Platform</button>
       <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="sr-only">Toggle Dropdown</span>
-
       </button>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="#"><i class="fab fa-youtube-square"></i> youtube</a>
@@ -18,11 +16,9 @@
     </div>
   </div>
 </div>
-
-
 <div class="d-flex flex-column container-fluid align-items-end">
-<div class="card-product-main justify-content-around">
-  <div class="card-product-infos-main">
+<div class="card-product-main justify-content-around card-position">
+  <div class="card-product-infos-main ">
     <h2> video </h2>
   </div>
   <div class="card-product-infos-main">
@@ -41,16 +37,19 @@
     <h2>status</h2>
   </div>
 </div>
-
-
  <div class="background-style-index">
+  <div class="card-position">
  <% @publishings.each do |publishing| %>
- <%= link_to publishing_path(publishing.id) do %>
+ <%= link_to publishing_path(publishing.id), class:"text-hover" do %>
  <div class="card-product justify-content-center border border-dark ">
-  <%= cl_video_tag publishing.video.key, height: 100, width: 100 %>
+  <% if publishing.uid %>
+    <img src="<%= publishing.thumbnail %>" alt="youtube-image" >
+  <% else %>
+     <%= cl_video_tag publishing.video.key, height: 100, width: 100 %>
+  <% end %>
   <div class="card-product-infos">
-    <h2><%= publishing.title %></h2>
-    <p><%= publishing.description %></p>
+    <h2><%= publishing.title.first(15) %></h2>
+    <p><%= publishing.description.first(15) %></p>
   </div>
   <div class="card-product-infos">
     <h2>Publication date</h2>
@@ -68,41 +67,24 @@
   <% end %>
   <% end %>
 </div>
-
+</div>
 </div>
 </body>
-<!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <div>
-      <i class="fas fa-chart-line"></i> -->
-      <!-- <span><strong>Media</strong>Partner</span>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto"> -->
-      <!--   <#% if user_signed_in? %>
-        <li class="nav-item active">
-          <#%= link_to  "Post Video", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <#%= link_to "Overview", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <#%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <#%= link_to "publishing", root_path, class: "dropdown-item" %>
-            <#%= link_to "Monetizer", root_path, class: "dropdown-item" %>
-            <#%= link_to "Log out", root_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-        <#% else %>
-        <li class="nav-item">
-          <#%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-        <#% end %>
-      </ul>
-    </div>
-</div>
 
- -->
+
+Enviar mensaje a Rey Ray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+user1= User.last
 
 5.times do |i|
-  Publishing.create(video: "video #{i}", title: "title #{i}", description: "Description #{i}", status: "publicado", uid: i)
+  Publishing.create(video: "video #{i}", title: "title #{i}", description: "Description #{i}", status: "publicado", uid: i, :user_id user1.id)
 end
 
 5.times do |i|
