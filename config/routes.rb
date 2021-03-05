@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'overview', to: 'publishings#overview'
   get 'mypublishings', to: 'publishings#mypublishings'
   get 'insight', to: 'publishings#insight'
+  get 'update_publishings', to:'publishings#update_publishings'
   resources :publishings
   resources :channels, only: [:index, :show]do
     get 'last_day', on: :member
