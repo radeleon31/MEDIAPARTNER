@@ -1,27 +1,29 @@
-<body class="background-image"
-  <div class="search-wrap d-flex align-items-center float-right">
-    <%= form_tag overview_path, class:"search", method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Tag | Description | Name"
-      %>
-    <% end %>
-    <i class="fas fa-search searchIcon"></i>
-    <i class="fas fa-times clear"></i>
-  </div>
+<body class="background-image">
+<div class="container d-flex flex-wrap justify-content-between">
+  <%= button_to 'Refresh video info!', update_publishings_path, class: "btn btn-success rounded-pill", method: :get %>
+    <div class="search-wrap d-flex align-items-center float-right">
+      <%= form_tag overview_path, class:"search", method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control rounded-pill",
+          placeholder: "Tag | Description | Name"
+        %>
+      <% end %>
+      <i class="fas fa-search searchIcon"></i>
+      <i class="fas fa-times clear"></i>
+    </div>
+</div>
     <div class="container background-style p-5 d-flex flex-wrap justify-content-around">
-      <% @videos.each do |video_hash|%>
+      <% @publishings.each do |publishing|%>
         <div class="card-trip m-3">
-          <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/<%=video_hash[:id]%>"
+          <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/<%=publishing.uid%>"
           frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
           <div class="card-trip-infos">
             <div>
-              <h2><%=video_hash[:title]%></h2>
-              <p><%=video_hash[:description]%></p>
+              <h2><%=publishing.title%></h2>
+              <p><%=publishing.description%></p>
             </div>
-            <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
           </div>
           <div class="card-trip-infos d-flex">
               <div class="d-flex">
@@ -37,34 +39,10 @@
                 <h2>Comments</h2>
               </div>
             </div>
-<<<<<<< HEAD
         </div>        
         
       <% end %>  
-=======
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <% end %>
->>>>>>> 7fb2b8da9a0582071923cd1b64d7afc4b2a44aef
   </div>
 
 </body>
 
-<%= console %>
-
-
-<%# <p> <%=  video_hash[:title] %>
-          <%# <p> <%=  video_hash[:description] %>

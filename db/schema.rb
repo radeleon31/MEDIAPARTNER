@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_04_203410) do
+ActiveRecord::Schema.define(version: 2021_03_05_014542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(version: 2021_03_04_203410) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "uid"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_channels_on_user_id"
   end
 
   create_table "publishings", force: :cascade do |t|
@@ -61,6 +64,7 @@ ActiveRecord::Schema.define(version: 2021_03_04_203410) do
     t.bigint "user_id", null: false
     t.integer "likes"
     t.integer "views"
+    t.string "thumbnail"
     t.index ["user_id"], name: "index_publishings_on_user_id"
   end
 
@@ -89,6 +93,7 @@ ActiveRecord::Schema.define(version: 2021_03_04_203410) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "channels", "users"
   add_foreign_key "publishings", "users"
   add_foreign_key "youtube_sessions", "users"
 end
