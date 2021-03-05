@@ -39,9 +39,8 @@
                   Monetizer <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "Last Day",  last_day_channel_path, class:"dropdown-item" %> </a></li>
-                  <li class="divider"></li>
-                  <li><a <%= link_to 'Monetizer 2', last_week_channel_path(1), class:"dropdown-toggle"%></a></li>
+                  <li> <%= link_to "Insight",  last_day_channel_path(1), class:"dropdown-item" %> </a></li>
+                  <li> <%= link_to "Performance",  channels_path(1), class:"dropdown-item" %> </a></li>
                 </ul>
             <li>
               <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"btn btn-flat subrayado"%>
