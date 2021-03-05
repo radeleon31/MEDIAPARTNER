@@ -16,7 +16,7 @@
     <div class="container background-style p-5 d-flex flex-wrap justify-content-around">
       <% @publishings.each do |publishing|%>
         <div class="card-trip m-3">
-        
+
           <%if publishing.uid %>
             <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/<%=publishing.uid%>"
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -29,8 +29,8 @@
 
           <div class="card-trip-infos">
             <div>
-              <h2><%=publishing.title%></h2>
-              <p><%=publishing.description%></p>
+              <h2><%=publishing.title.first(10)%></h2>
+              <p><%=publishing.description.first(10)%></p>
             </div>
           </div>
           <div class="card-trip-infos d-flex">
@@ -47,9 +47,9 @@
                 <h2>Comments</h2>
               </div>
             </div>
-        </div>        
-        
-      <% end %>  
+        </div>
+
+      <% end %>
   </div>
 
 </body>

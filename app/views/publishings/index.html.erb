@@ -6,7 +6,6 @@
       <button type="button" class="btn btn-dark btn-rounded">Platform</button>
       <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="sr-only">Toggle Dropdown</span>
-
       </button>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="#"><i class="fab fa-youtube-square"></i> youtube</a>
@@ -50,8 +49,8 @@
 
 
 <div class="d-flex flex-column container-fluid align-items-end">
-<div class="card-product-main justify-content-around">
-  <div class="card-product-infos-main">
+<div class="card-product-main justify-content-around card-position">
+  <div class="card-product-infos-main ">
     <h2> video </h2>
   </div>
   <div class="card-product-infos-main">
@@ -73,19 +72,20 @@
 
 
  <div class="background-style-index">
+  <div class="card-position">
  <% @publishings.each do |publishing| %>
- <%= link_to publishing_path(publishing.id) do %>
+ <%= link_to publishing_path(publishing.id), class:"text-hover" do %>
  <div class="card-product justify-content-center border border-dark ">
 
   <% if publishing.uid %>
     <img src="<%= publishing.thumbnail %>" alt="youtube-image" >
   <% else %>
      <%= cl_video_tag publishing.video.key, height: 100, width: 100 %>
-  <%end  %>
-  
+  <% end %>
+
   <div class="card-product-infos">
-    <h2><%= publishing.title %></h2>
-    <p><%= publishing.description %></p>
+    <h2><%= publishing.title.first(15) %></h2>
+    <p><%= publishing.description.first(15) %></p>
   </div>
   <div class="card-product-infos">
     <h2>Publication date</h2>
@@ -102,6 +102,7 @@
   </div>
   <% end %>
   <% end %>
+</div>
 </div>
 
 </div>
