@@ -16,9 +16,17 @@
     <div class="container background-style p-5 d-flex flex-wrap justify-content-around">
       <% @publishings.each do |publishing|%>
         <div class="card-trip m-3">
-          <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/<%=publishing.uid%>"
-          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+        
+          <%if publishing.uid %>
+            <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/<%=publishing.uid%>"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+          <%else%>
+            <iframe class="embed-responsive-item"  src="<%=cl_video_path publishing.video.key%>"
+              frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          <%end%>
+
           <div class="card-trip-infos">
             <div>
               <h2><%=publishing.title%></h2>

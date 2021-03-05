@@ -47,7 +47,13 @@
  <% @publishings.each do |publishing| %>
  <%= link_to publishing_path(publishing.id) do %>
  <div class="card-product justify-content-center border border-dark ">
-  <%= cl_video_tag publishing.video.key, height: 100, width: 100 %>
+
+  <% if publishing.uid %>
+    <img src="<%= publishing.thumbnail %>" alt="youtube-image" >
+  <% else %>
+     <%= cl_video_tag publishing.video.key, height: 100, width: 100 %>
+  <%end  %>
+  
   <div class="card-product-infos">
     <h2><%= publishing.title %></h2>
     <p><%= publishing.description %></p>
