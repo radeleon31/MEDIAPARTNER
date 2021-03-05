@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: "users/sessions" }
   root to: 'pages#home'
-  get 'about', to: 'pages#about' # Revisar esta ruta de about
+  # get 'about', to: 'pages#about' # Revisar esta ruta de about
   get 'overview', to: 'publishings#overview'
   get 'mypublishings', to: 'publishings#mypublishings'
   get 'insight', to: 'publishings#insight'

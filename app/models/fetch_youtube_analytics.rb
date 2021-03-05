@@ -10,7 +10,7 @@ class FetchYoutubeAnalytics
     analytics.query_report(
       options: { authorization: @auth_client},
       dimensions:"video",
-      end_date:"2021-03-03", # Test Only - Cambiar a fecha actual
+      end_date:"2021-03-03", # Test Only - Cambiar a fecha actual DATE.NOW
       ids:"channel==MINE",
       max_results:10, # Test Only - Cambiar a todos. paginacion?
       metrics:"views,likes",
@@ -25,6 +25,56 @@ class FetchYoutubeAnalytics
   # 2) require 'google/apis/youtube_analytics_v2'
   # 3) @auth_client = Signet::OAuth2::Client.new(YoutubeSession.last.credentials)
   # 4) analytics = Google::Apis::YoutubeAnalyticsV2::YouTubeAnalyticsService.new
-  # 5) analytics.query_report(options: { authorization: @auth_client},dimensions:"video",end_date:"2021-03-03",ids:"channel==MINE",max_results:10,metrics:"views,likes",sort:"-views",start_date:"2019-01-01")
+  # Queries:
+  # 1) TEST: analytics.query_report(options: { authorization: @auth_client}, 
+        # dimensions:"video",
+        # end_date:"2021-03-03",
+        # ids:"channel==MINE",
+        # max_results:10,
+        # metrics:"views,likes",
+        # sort:"-views",
+        # start_date:"2019-01-01")
+  # 2) analytics.query_report(options: { authorization: @auth_client}, 
+  #       dimensions:"video",
+  #       end_date:"2021-03-03",
+  #       ids:"channel==MINE",
+  #       max_results:10,
+  #       metrics:"views,comments,likes,dislikes,shares",
+  #       sort:"-views",
+  #       start_date:"2019-01-01")
+  # 2) analytics.query_report(options: { authorization: @auth_client}, 
+  #       dimensions:"video",
+  #       end_date:"2021-03-03",
+  #       ids:"channel==MINE",
+  #       max_results:10,
+  #       metrics:"views,comments,likes,dislikes,shares",
+  #       sort:"-views",
+  #       start_date:"2019-01-01")
+  # 3) analytics.query_report(options: { authorization: @auth_client}, 
+  #       dimensions:"video",
+  #       end_date:"2021-03-03",
+  #       ids:"channel==MINE",
+  #       max_results:10,
+  #       metrics:"estimatedMinutesWatched,views",
+  #       sort:"-views",
+  #       start_date:"2019-01-01")
+  # 4) analytics.query_report(options: { authorization: @auth_client}, 
+  #       dimensions:"video",
+  #       end_date:"2021-03-03",
+  #       ids:"channel==MINE",
+  #       max_results:10,
+  #       metrics:"averageViewPercentage,views",
+  #       sort:"-views",
+  #       start_date:"2019-01-01")
+  # 5)  forbidden:.query_report(options: { authorization: @auth_client}, 
+  #       dimensions:"channel",
+  #       end_date:"2021-03-03",
+  #       ids:"channel==MINE",
+  #       max_results:10,
+  #       metrics:"estimatedAdRevenue",
+  #       sort:"-estimatedAdRevenue",
+  #       start_date:"2019-01-01")
+  # INSIGHT: CHANNELS METRICS
+    #filtrar por user y channel_id
+        
 end
-  
