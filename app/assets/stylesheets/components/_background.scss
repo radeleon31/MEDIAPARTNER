@@ -1,0 +1,16 @@
+
+body.background-image-index {
+  background-color: #e6f3f8;
+  background-size: cover;
+  background-position: center;
+  z-index:1;
+}
+
+div.background-style-index {
+background-color: rgba(0,0,0,0.1);
+border-radius: 20px;
+margin-top: 2px;
+padding-left: -50px;
+padding: 10px;
+// background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("background-image-overview.jpg");
+}

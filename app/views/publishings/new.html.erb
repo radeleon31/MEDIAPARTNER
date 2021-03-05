@@ -1,3 +1,4 @@
+
 <ul class="nav nav-tabs nav-justified nav-bordered mb-3">
     <li class="nav-item">
         <a href="#home-b2" data-toggle="tab" aria-expanded="false" class="nav-link active">
@@ -18,8 +19,9 @@
         </a>
     </li>
 </ul>
+
     <%= simple_form_for(@publishing) do |f| %>
-<div class="tab-content">
+<div class="container tab-content background-style-index">
     <div class="tab-pane show active form-login" id="home-b2">
       <h4> Video Upload </h4>
       <%= f.input :video, as: :file %>
