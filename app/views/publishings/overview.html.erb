@@ -1,5 +1,5 @@
 <body class="background-image">
-<div class="container d-flex flex-wrap justify-content-between">
+<div class="container d-flex flex-wrap justify-content-between mt-5">
   <%= button_to 'Refresh video info!', update_publishings_path, class: "btn btn-success rounded-pill", method: :get %>
     <div class="search-wrap d-flex align-items-center float-right">
       <%= form_tag overview_path, class:"search", method: :get do %>
@@ -13,7 +13,7 @@
       <i class="fas fa-times clear"></i>
     </div>
 </div>
-    <div class="container background-style p-5 d-flex flex-wrap justify-content-around">
+    <div class="container background-style p-5 d-flex flex-wrap justify-content-around mt-5">
       <% @publishings.each do |publishing|%>
         <div class="card-trip m-3">
 
