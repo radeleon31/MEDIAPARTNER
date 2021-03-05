@@ -49,36 +49,39 @@ class PublishingsController < ApplicationController
   #     render :index
   #   end
   # end
+  def update_publishings # Boton
+    @data = FetchYoutubeAnalytics.call(current_user.youtube_sessions.last) # video_id: view , likes
+    @videos = FetchYoutubeVideos.call(current_user.youtube_sessions.last) # Published videos in YT
+      @videos.each do |video_hash|
+        publishing = Publishing.find_or_initialize_by(uid: video_hash[:id])
+        if publishing.id.nil? # Si es nil ===> tengo que crearlo
+          publishing.title = video_hash[:title]
+          publishing.description = video_hash[:description]
+          publishing.thumbnail = video_hash[:thumbnail]
+          publishing.status = "Published on Youtube"
+          publishing.user = current_user
+          # crear el channel
+          unless Channel.where(uid: video_hash[:channel_id]).any?
+            channel = Channel.new(uid: video_hash[:channel_id])
+            channel.user = current_user
+            channel.save
+          end
+        end
+        # Tanto SI existe como si NO existe, quiero actualizar los likes y viwss y guardarlo
+        publishing.likes = @data[publishing.uid][:likes]
+        publishing.views = @data[publishing.uid][:views]
+        publishing.save
+      end
+      flash[:notice] =  "Videos Up to date!"
+      redirect_to overview_path
+  end
 
   def overview
-    # Este Array es para no agotar quotas a la API
-      @videos = [{
-        title: "test",
-        description: "test",
-        thumbnail: "test",
-        id: "23",
-        channel_id: "23"
-      },
-      {
-        title: "test",
-        description: "test",
-        thumbnail: "test",
-        id: "23",
-        channel_id: "23"
-      },
-      {
-        title: "test",
-        description: "test",
-        thumbnail: "test",
-        id: "23",
-        channel_id: "23"
-      }
-      ]
-    # if YoutubeSession.last.nil?
-    #     redirect_to youtube_sessions_path
-    # else
-    #   @videos = FetchYoutubeVideos.call(YoutubeSession.last)
-    # end
+    if current_user.youtube_sessions.last.nil?
+        redirect_to youtube_sessions_path
+    else
+    @publishings = current_user.publishings
+    end
   end
 
   private
