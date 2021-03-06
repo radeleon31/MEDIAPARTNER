@@ -7,8 +7,9 @@
 }
 .searchIcon {
   position:absolute;
-  right:200px;
-  font-size: 3em;
+  right:110px;
+  top:20px;
+  font-size: 2em;
   background-color: transparent;
   z-index:2;
 }
@@ -46,4 +47,11 @@
 }
 #clear:hover {
   cursor: pointer;
+}
+
+@media  (max-width: 773px) {
+  .searchIcon {
+    position: relative;
+    left:15px;
+  }
 }
