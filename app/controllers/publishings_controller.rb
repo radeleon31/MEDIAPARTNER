@@ -59,17 +59,25 @@ class PublishingsController < ApplicationController
           publishing.description = video_hash[:description]
           publishing.thumbnail = video_hash[:thumbnail]
           publishing.status = "Published on Youtube"
+          publishing.published_at = video_hash[:published_at]
           publishing.user = current_user
           # crear el channel
           unless Channel.where(uid: video_hash[:channel_id]).any?
             channel = Channel.new(uid: video_hash[:channel_id])
+            channel.name = video_hash[:channel_name]
             channel.user = current_user
             channel.save
           end
         end
-        # Tanto SI existe como si NO existe, quiero actualizar los likes y viwss y guardarlo
+        # Tanto SI existe como si NO existe, quiero actualizar las 8 metricas y guardarlo
         publishing.likes = @data[publishing.uid][:likes]
         publishing.views = @data[publishing.uid][:views]
+        publishing.comments = @data[publishing.uid][:comments]
+        publishing.shares = @data[publishing.uid][:shares]
+        publishing.dislikes = @data[publishing.uid][:dislikes]
+        publishing.avg_watch_sec = @data[publishing.uid][:avg_watch_sec]
+        publishing.percent_watch = @data[publishing.uid][:percent_watch]
+        publishing.impressions = @data[publishing.uid][:impressions]
         publishing.save
       end
       flash[:notice] =  "Videos Up to date!"
