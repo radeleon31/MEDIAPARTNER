@@ -1,2 +1,49 @@
-<h1>TO be Done! Amazing Homepage</h1>
+<body class="background-image">
 
+  
+
+|<div class="container-fluid  d-flex flex-wrap align-center justify-content-between p-4">
+      <%= image_tag("logo.png",height:40, width:235) %>
+      <% if user_signed_in? %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"btn btn-primary rounded-pill btn-md"%>
+      <% else %>
+        <div>
+          <%= link_to 'Login', new_user_session_path, class:"btn btn-primary rounded-pill"%>
+          <%= link_to 'Sign Up', new_user_registration_path, class:"btn btn-primary rounded-pill" %>
+        </div>
+    <% end %>
+  </div>
+
+  <div class="container-fluid margin-container p-5 ">
+      <div class="row text-left justify-content-between p-0 m-0">
+        <div class="col-5 align-self-center p-0 m-0 text-home text-white ">
+          <h2>
+            A place where Brands, media companies, and creators can track all their digital content at once
+          </h2>
+          <p class="pt-3">
+          Analytycs tool used by thousand of influencers like you will allow for Monetization Management and 
+          content performance, monitoring over all platforms
+          </p>
+          <% if user_signed_in? %>
+            <%= link_to 'Lets Start!', overview_path, class:"btn btn-primary rounded-pill btn-md"%>
+          <% else %>
+            <%= link_to 'Lets Start!', new_user_registration_path, class:"btn btn-primary rounded-pill" %>  
+          <% end %>
+        </div>
+        <div class="col-7 text-right p-0 m-0">
+          <%= image_tag("image-home-3.png", height:460, width:520, class:"graphics-img") %>
+        </div> 
+      </div>
+    </div>
+
+    <%# <div class="container-fluid grad">
+    <div class="containter d-flex justify-content-center p-5">
+          <h2>We support every social media you can wish for</h2>
+      </div>
+      <div class="containter d-flex justify-content-center">
+          <%= image_tag("social-media.png", height:400, width:520, class:"graphics-img") %>
+      <%# </div>  %>
+    <%# </div> %>
+</body>
+
+ 
