@@ -28,12 +28,13 @@
     </div>
     <div class="tab-pane form-login" id="profile-b2">
       <h4> Details </h4>
-      <%= f.input :title %>
-      <%= f.input :description, as: :text %>
+      <%= f.input :title, label: "Video Title:" %>
+      <%= f.input :description, as: :text, label: "Video Description:" %>
     </div>
     <div class="tab-pane form-login" id="settings-b2">
       <h4> Visibility </h4>
-      <%= f.input :status %>
+      <%= f.input :scheduled_at, as: :date, html5: true, label: "Scheduled On:" %>
+      <%= f.input :scheduled_at, as: :time, label: "Time:" %>
       <%= f.submit %>
     </div>
      <%= link_to "Cancel", "#", class: "btn btn-danger" %>

@@ -1,20 +1,51 @@
+<div class="d-flex justify-content-between">
 <div id="my-castles-background">
-  <h1 id="my-castles-title-card"> My Posts </h1>
+  <h1 id=" my-castles-title-card"> Account Dashboard </h1>
+   <div class="col-md-4">
+                                <div class="card">
+                                    <h6 class="card-header">Channel Analytics</h6>
+                                    <div class="card-body">
+                                      <div>
+                                        <h6 class="card-title">Subscribers</h6>
+                                        <p class="card-text"><strong>13</strong></p>
+                                        <hr class="blue_line mt10 mb10"/>
+                                      </div>
+                                      <div>
+                                        <h6 class="card-title">Summary</h6>
+                                        <p class="card-text"><strong>views</strong></p>
+                                        <p class="card-text">number of views</p>
+                                         <p class="card-text"><strong>Watch Time</strong></p>
+                                        <p class="card-text">average of watch time</p>
+                                        <hr class="blue_line mt10 mb10"/>
+                                      </div>
+                                      <div>
+                                        <h6 class="card-title">Top Video</h6>
+                                        <p class="card-text"><strong>top video name</strong></p>
+                                        <hr class="blue_line mt10 mb10"/>
+                                      </div>
+                                        <a href="javascript: void(0);" class="btn btn-primary">Go To Channel Analytics</a>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div>
   <% counter = 0 %>
   <% @publishings.each do |publishing| %>
     <% counter += 1 %>
  <%= link_to publishing_path(publishing.id) do %>
  <div class="card-product-my justify-content-center">
-  <%= cl_video_tag publishing.video.key, height: 100, width: 100 %>
+  <% if publishing.uid %>
+    <img src="<%= publishing.thumbnail %>" alt="youtube-image" >
+  <% else %>
+     <%= cl_video_tag publishing.video.key, height: 100, width: 100 %>
+  <% end %>
   <div class="card-product-infos-my">
     <h2><%= publishing.title %></h2>
     <p><%= publishing.description %></p>
   </div>
   <div class="card-product-infos-my">
-    <h2>Publication date</h2>
+    <h2><%= publishing.published_at %></h2>
   </div>
   <div class="card-product-infos-my">
-    <h2>status</h2>
+    <h2><%= publishing.status %></h2>
   </div>
   </div>
   <div id= "my-castles-delete-button">
@@ -28,5 +59,5 @@
         <#% end %> -->
   <% end %>
 </div>
-
+</div>
 
