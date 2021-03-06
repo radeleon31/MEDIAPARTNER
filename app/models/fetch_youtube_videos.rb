@@ -18,7 +18,9 @@ class FetchYoutubeVideos
          description: video.snippet.description,
          thumbnail: video.snippet.thumbnails.default.url,
          id: video.id.video_id,
-         channel_id: video.snippet.channel_id
+         channel_id: video.snippet.channel_id,
+         channel_name:video.snippet.channel_title,
+         published_at:video.snippet.published_at
        }
     end
   end
