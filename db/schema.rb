@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_05_014542) do
+ActiveRecord::Schema.define(version: 2021_03_06_022251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 2021_03_05_014542) do
     t.integer "views"
     t.bigint "channels_id"
     t.string "thumbnail"
+    t.datetime "scheduled_at"
+    t.string "published_at"
     t.index ["channels_id"], name: "index_publishings_on_channels_id"
     t.index ["user_id"], name: "index_publishings_on_user_id"
   end
