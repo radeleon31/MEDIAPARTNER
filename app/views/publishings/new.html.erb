@@ -33,8 +33,7 @@
     </div>
     <div class="tab-pane form-login" id="settings-b2">
       <h4> Visibility </h4>
-      <%= f.input :scheduled_at, as: :date, html5: true, label: "Scheduled On:" %>
-      <%= f.input :scheduled_at, as: :time, label: "Time:" %>
+      <%= f.input :scheduled_at, as: :datetime, label: "Schedule Date and Time:" %>
       <%= f.submit %>
     </div>
      <%= link_to "Cancel", "#", class: "btn btn-danger" %>
