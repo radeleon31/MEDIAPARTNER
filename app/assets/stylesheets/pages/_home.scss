@@ -1,13 +1,72 @@
-// Specific CSS for your home-page
-.background-purple {
-  background-color: #793fec;
+body.background-image{
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), image-url("background-image-home.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index:1;
 }
 
-.vh-80 {
-  height: 90vh;
+div.background-graphic-one{
+  background-image: image-url("image-home.png");
+  background-size: cover;
+  background-position: center;
+  z-index:1;
+// background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("background-image-overview.jpg");
 }
 
-.background-purple-outer {
-  background-color: #b795ef;
+// .center {
+//   margin: 10px 0 50px 0;
+//   justify-content: space-evenly;
+//   position: absolute;
+//   top:30%;
+//   transform: translateY(-50%);
+//   left:50%;
+//   transform: translateX(-60%);
+// }
+
+// .container.custom-container {
+//  margin-right:20px;
+//  margin-left: 30px;
+// }
+// .container.custom-row {
+//   margin-right:20px;
+//   margin-left: 30px;
+//   width:100%;
+//  }
+
+.margin-container {
+
+margin-top:20px;
+margin-bottom:50px;
+
 }
 
+.grad {
+  background-color: #F7F7F7
+  // background-image: linear-gradient(#527AE3, rgb(209, 82, 205));
+}
+
+@media (max-width: 655px) {
+  .graphics-img {
+    height:200px;
+    width: 300px;
+  }
+  .text-home h2,{
+    font-size:20px;
+  }
+  .text-home p,{
+    font-size:10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .graphics-img {
+    height:150px;
+    width: 200px;
+  }
+  .text-home h2,{
+    font-size:15px;
+  }
+  .text-home p,{
+    font-size:6px;
+  }
+}
