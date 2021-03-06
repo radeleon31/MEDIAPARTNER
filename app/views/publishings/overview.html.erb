@@ -1,14 +1,14 @@
 <body class="background-image">
-<div class="container d-flex flex-wrap justify-content-between mt-3 margin-custom">
+<div class="container d-flex flex-wrap justify-content-between mt-3 margin-custom parent-positioning">
   <%# <%= button_to 'Refresh video info!', update_publishings_path, class: "btn btn-success rounded-pill", method: :get %>
-  <div>
+  <div class="top-animation">
     <%= button_to update_publishings_path, class:"btn btn-success rounded-circle", method: :get do %>
         <i class="fas fa-redo"></i>
     <% end %>
-    <span class="text-secondary">Last updated: <%=@publishings.first.updated_at.strftime('%Y-%m-%d %H:%M')  %></span>
   </div>
+  <span class="text-secondary parent-positioning msg-1">Last updated: <%=@publishings.first.updated_at.strftime('%Y-%m-%d %H:%M')  %></span>
 
-    <div class="search-wrap d-flex align-items-center ">
+    <div class="search-wrap d-flex align-items-right">
       <%= form_tag overview_path, class:"search", method: :get do %>
         <%= text_field_tag :query,
           params[:query],
@@ -17,14 +17,12 @@
         %>
       <% end %>
       <i class="fas fa-search searchIcon"></i>
-      <i class="fas fa-times clear"></i>
+      <i class="fas fa-times clear mt-3"></i>
     </div>
 </div>
 <div class="container background-style p-5 d-flex flex-wrap justify-content-around">
-  <h2 class="msg">Checkout your latest posts!</h2>
-  <div class="btn btn-success top-animation d-flex justify-content-center align-items-center">
-    <i class="fas fa-arrow-down" aria-hidden="true"></i>
-  </div>
+  <h2 class="msg-2">Checkout your latest posts!</h2>
+  
   <% @publishings.each do |publishing|%>
     <div class="card-trip m-3">
 
