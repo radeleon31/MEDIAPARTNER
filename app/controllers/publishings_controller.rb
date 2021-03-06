@@ -88,7 +88,11 @@ class PublishingsController < ApplicationController
     if current_user.youtube_sessions.last.nil?
         redirect_to youtube_sessions_path
     else
-    @publishings = current_user.publishings
+      if params[:query].present?
+        @publishings = current_user.publishings.search_by_all_publishing_metrics_and_properties(params[:query])
+      else
+        @publishings = current_user.publishings
+      end
     end
   end
 
