@@ -1,9 +1,9 @@
 <body class="background-image">
 
-  
+
 
 |<div class="container-fluid  d-flex flex-wrap align-center justify-content-between p-4">
-      <%= image_tag("logo.png",height:40, width:235) %>
+      <text fill="#ffff" stroke="#ffff" stroke-width="0.5" x="62.5" y="17.5" id="svg_2" font-size="24" font-family="Georgia" text-anchor="middle" xml:space="preserve" font-weight="bold" font-style="normal" calls><strong>Media</strong>Partner</text>
       <% if user_signed_in? %>
           <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"btn btn-primary rounded-pill btn-md"%>
       <% else %>
@@ -18,21 +18,20 @@
       <div class="row text-left justify-content-between p-0 m-0">
         <div class="col-5 align-self-center p-0 m-0 text-home text-white ">
           <h2>
-            A place where Brands, media companies, and creators can track all their digital content at once
+            A single tool to aquire audience, track platforms, reduce expenses and increase revenue.
           </h2>
           <p class="pt-3">
-          Analytycs tool used by thousand of influencers like you will allow for Monetization Management and 
-          content performance, monitoring over all platforms
+          Gain control of your digital foot print with <strong>Media</strong>Partner.
           </p>
           <% if user_signed_in? %>
             <%= link_to 'Lets Start!', overview_path, class:"btn btn-primary rounded-pill btn-md"%>
           <% else %>
-            <%= link_to 'Lets Start!', new_user_registration_path, class:"btn btn-primary rounded-pill" %>  
+            <%= link_to 'Lets Start!', new_user_registration_path, class:"btn btn-primary rounded-pill" %>
           <% end %>
         </div>
         <div class="col-7 text-right p-0 m-0">
-          <%= image_tag("image-home-3.png", height:460, width:520, class:"graphics-img") %>
-        </div> 
+          <%= image_tag("startup.svg", height:460, width:520, class:"graphics-img") %>
+        </div>
       </div>
     </div>
 
@@ -46,4 +45,4 @@
     <%# </div> %>
 </body>
 
- 
+
