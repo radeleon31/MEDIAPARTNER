@@ -34,6 +34,7 @@
     <div class="tab-pane form-login" id="settings-b2">
       <h4> Visibility </h4>
       <%= f.input :scheduled_at, as: :string, input_html: {class: "datepicker"} %>
+      <%= f.input :status, s: :text, input_html: { value: f.object.status.presence || 'Pending' } %>
       <%= f.submit %>
     </div>
      <%= link_to "Cancel", "#", class: "btn btn-danger" %>
