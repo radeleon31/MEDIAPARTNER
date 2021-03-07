@@ -42,7 +42,7 @@
  <% @publishings.each do |publishing| %>
  <%= link_to publishing_path(publishing.id), class:"text-hover" do %>
  <div class="card-product justify-content-center border border-dark ">
-  <% if publishing.uid %>
+  <% if publishing.youtube_video_id %>
     <img src="<%= publishing.thumbnail %>" alt="youtube-image" >
   <% else %>
      <%= cl_video_tag publishing.video.key, height: 100, width: 100 %>
