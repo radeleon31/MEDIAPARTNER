@@ -1,4 +1,4 @@
-<body class="background-image">
+<body >
 <div class="container " >
   <% if (@name_view) %> 
     <h1><%= @name_view %></h1>
@@ -11,9 +11,9 @@
 
        
 
-  <div class="card-group mt-2">
-    <div class="card">
-      <div class="card-body border border-primary rounded  bg-dark text-white">
+  <div class="card-group mt-2 border-radius">
+    <div class="card ">
+      <div class="card-body rounded-lg border border-primary  bg-dark text-white">
       <h5 id="cd1-valor" class="card-title  mb-0"><%= @likes_count %></h5> 
       <p class="card-text">Likes in <%= @publishings.count %> videos</p>
       <h5 id="cd1-porc"class="card-text"><small class="text-muted badge"><%= @likes_percen %> Average</small></h5>
@@ -42,18 +42,19 @@
     </div>
 
   </div>
-  <div class="card-group mt-2">
+  <%# <div class="card-group mt-2">
     <div class="card">
       <div class="card-body border border-primary rounded  text-blue ">
         <h5 class="card-title mb-0">Videos</h5>
         <p class="card-text mb-0"><small>Learn more about Videos</small></p>
         <%# <p class="card-text mb-0"><small class="text-muted badge badge-success">0</small></p> %>
-      </div>
+      <%# </div>
     </div>
-  </div>
-
-  <div class="table-responsive-md mt-2">
-  <table class="table table-striped table-dark">
+  </div> %> 
+  
+  <%= pie_chart Publishing.group(:title).sum(:likes) %>
+  <div class="table-responsive-md mt-2 sortable rounded-circle  ">
+  <table class="table table-striped table-dark sortabletitle ">
     <thead>
       <tr>
         <th scope="col">Video Name</th>
@@ -68,10 +69,10 @@
       <% @publishings.each do |video| %> 
       <tr>
         <td> <%= video.title %> </td>
-        <td><%= video.likes %> <br><p class="card-text badge text-decoration-none"><%= (video.likes * @publishings.count) / 100 %>%</p></td>
-        <td><%= video.dislikes %><br><p class="card-text badge text-decoration-none"><%= (video.dislikes * @publishings.count) / 100 %>%</small></p%></td>
-        <td><%= video.views %>2<br><p class="card-text badge text-decoration-none"><%= (video.views * @publishings.count) / 100 %>%</small></p></td>
-        <td><%= video.shares %><br><p class="card-text badge text-decoration-none"><%= (video.shares * @publishings.count) / 100 %>%</small></p></td>
+        <td><%= video.likes %><br><p class="card-text"><small class="text-muted badge badge-success"><%= (video.likes / @likes_count) * 100 %>%</small></p></td>
+        <td><%= video.dislikes %><br><p class="card-text"><small class="text-muted badge badge-success"><%= (video.dislikes / @dislikes_count) * 100 %>%</small></p></td>
+        <td><%= video.views %><br><p class="card-text"><small class="text-muted badge badge-success"><%= (video.views / @views_count) * 100 %>%</small></p></td>
+        <td><%= video.shares %><br><p class="card-text"><small class="text-muted badge badge-success"><%= (video.shares / @shares_count) * 100 %>%</small></p></td>
       </tr>
       <% end %>
     </tbody>

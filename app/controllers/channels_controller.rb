@@ -1,6 +1,20 @@
 class ChannelsController < ApplicationController
 
     def index
+      # ojo, debos cambiar esto por el current 
+      @user = User.last 
+      @publishings = Publishing.where(user_id: @user.id)
+      @avg_watch_sec_count = 0
+      @percent_watch_count = 0
+      @impressions_count = 0
+      @comments_count = 0
+      @publishings.each do |video|
+        @avg_watch_sec_count += video.avg_watch_sec
+        @percent_watch_count += video.percent_watch
+        @impressions_count += video.impressions
+        @comments_count += video.comments
+      end
+      @channels = Channel.all.order(created_at: :desc)
     end
     def show
 
@@ -9,23 +23,28 @@ class ChannelsController < ApplicationController
     def last_day
       
       # ojo, debos cambiar esto por el current 
-       @user = User.last 
-       @publishings = Publishing.where(user_id: @user.id)
-       
-       @publishings.each do |video|
-         video.likes + video.likes
-         @likes_count = video.likes
-         @likes_percen = video.likes / @publishings.count
-         video.dislikes + video.dislikes
-         @dislikes_count = video.dislikes
-         @dislikes_percen = video.dislikes  / @publishings.count
-         video.views + video.views
-         @views_count = video.views
-         @views_percen = video.views / @publishings.count
-         video.shares + video.shares
-         @shares_count = video.shares
-         @shares_percen = video.shares  / @publishings.count
-       end
+      @user = User.last 
+      @publishings = Publishing.where(user_id: @user.id).order(created_at: :desc)
+
+      @likes_count = 0
+      @dislikes_count = 0
+      @views_count = 0
+      @shares_count = 0
+      @publishings.each do |video|
+        @likes_count += video.likes
+        @dislikes_count += video.dislikes
+        @views_count += video.views
+        @shares_count += video.shares
+      end
+      @likes_percen = 0
+      @dislikes_percen = 0
+      @views_percen = 0
+      @shares_percen = 0
+      @likes_percen = (@likes_count / @publishings.count)
+      @dislikes_percen = (@dislikes_count / @publishings.count) 
+      @views_percen = (@views_count / @publishings.count) 
+      @shares_percen = (@shares_count / @publishings.count) 
+      
       @name_view = "Video Statistics"
     end
 
