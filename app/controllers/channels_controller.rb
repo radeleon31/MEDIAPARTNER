@@ -31,10 +31,12 @@ class ChannelsController < ApplicationController
       @views_count = 0
       @shares_count = 0
       @publishings.each do |video|
-        @likes_count += video.likes
-        @dislikes_count += video.dislikes
-        @views_count += video.views
-        @shares_count += video.shares
+        if (video.likes != nil)
+          @likes_count += video.likes
+          @dislikes_count += video.dislikes
+          @views_count += video.views
+          @shares_count += video.shares
+        end
       end
       @likes_percen = 0
       @dislikes_percen = 0
