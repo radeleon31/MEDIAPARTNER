@@ -52,16 +52,16 @@
     <p><%= publishing.description.first(15) %></p>
   </div>
   <div class="card-product-infos">
-    <h2>Publication date</h2>
+    <h2><%= publishing.published_at %></h2>
   </div>
   <div class="card-product-infos">
-    <h2>total view</h2>
+    <h2><%= publishing.views %></h2>
   </div>
    <div class="card-product-infos">
-    <h2>video average watch</h2>
+    <h2><%= publishing.avg_watch_sec %></h2>
   </div>
    <div class="card-product-infos">
-    <h2>status</h2>
+    <h2><%= publishing.status %></h2>
   </div>
   </div>
   <% end %>
@@ -72,7 +72,6 @@
 </body>
 
 
-Enviar mensaje a Rey Ray
 
 
 
