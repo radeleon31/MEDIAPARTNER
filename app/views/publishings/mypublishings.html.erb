@@ -32,7 +32,7 @@
     <% counter += 1 %>
  <%= link_to publishing_path(publishing.id) do %>
  <div class="card-product-my justify-content-center">
-  <% if publishing.uid %>
+  <% if publishing.youtube_video_id %>
     <img src="<%= publishing.thumbnail %>" alt="youtube-image" >
   <% else %>
      <%= cl_video_tag publishing.video.key, height: 100, width: 100 %>

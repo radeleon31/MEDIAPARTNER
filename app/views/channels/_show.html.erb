@@ -1,6 +1,6 @@
 <body class="background-image">
 <div class="container " >
-  <% if (@name_view) %> 
+  <% if (@name_view) %>
     <h1><%= @name_view %></h1>
   <% end %>
   <div class="btn-group" >
@@ -9,33 +9,33 @@
   </div>
 
 
-       
+
 
   <div class="card-group mt-2">
     <div class="card">
       <div class="card-body border border-primary rounded  bg-dark text-white">
-      <h5 id="cd1-valor" class="card-title  mb-0"><%= @likes_count %></h5> 
+      <h5 id="cd1-valor" class="card-title  mb-0"><%= @likes_count %></h5>
       <p class="card-text">Likes in <%= @publishings.count %> videos</p>
       <h5 id="cd1-porc"class="card-text"><small class="text-muted badge"><%= @likes_percen %> Average</small></h5>
       </div>
     </div>
     <div class="card">
       <div class="card-body border border-primary rounded  bg-dark text-white">
-      <h5 id="cd1-valor" class="card-title  mb-0"><%= @dislikes_count %></h5> 
+      <h5 id="cd1-valor" class="card-title  mb-0"><%= @dislikes_count %></h5>
       <p class="card-text">Dislikes in <%= @publishings.count %> videos</p>
       <h5 id="cd1-porc"class="card-text"><small class="text-muted badge"><%= @dislikes_percen %> Average</small></h5>
       </div>
     </div>
       <div class="card">
         <div class="card-body border border-primary rounded  bg-dark text-white">
-        <h5 id="cd1-valor" class="card-title  mb-0"><%= @views_count %></h5> 
+        <h5 id="cd1-valor" class="card-title  mb-0"><%= @views_count %></h5>
         <p class="card-text">Views in <%= @publishings.count %> videos</p>
         <h5 id="cd1-porc"class="card-text"><small class="text-muted badge"><%= @views_percen %> Average</small></h5>
       </div>
     </div>
       <div class="card">
         <div class="card-body border border-primary rounded  bg-dark text-white">
-        <h5 id="cd1-valor" class="card-title  mb-0"><%= @shares_count %></h5> 
+        <h5 id="cd1-valor" class="card-title  mb-0"><%= @shares_count %></h5>
         <p class="card-text">Shares in <%= @publishings.count %> videos</p>
         <h5 id="cd1-porc"class="card-text"><small class="text-muted badge"><%= @shares_percen %> Average</small></h5>
       </div>
@@ -65,7 +65,7 @@
     </thead>
     <tbody>
 
-      <% @publishings.each do |video| %> 
+      <% @publishings.each do |video| %>
       <tr>
         <td> <%= video.title %> </td>
         <td><%= video.likes %> <br><p class="card-text badge text-decoration-none"><%= (video.likes * @publishings.count) / 100 %>%</p></td>
