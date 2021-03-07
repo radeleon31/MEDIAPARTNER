@@ -50,10 +50,10 @@ class PublishingsController < ApplicationController
   #   end
   # end
   def update_publishings # Boton
-    @data = FetchYoutubeAnalytics.call(current_user.youtube_sessions.last) # video_id: view , likes
+    @data = FetchYoutubeAnalytics.call(current_user.youtube_sessions.last) # video_id: view , likes....
     @videos = FetchYoutubeVideos.call(current_user.youtube_sessions.last) # Published videos in YT
       @videos.each do |video_hash|
-        publishing = Publishing.find_or_initialize_by(uid: video_hash[:id])
+        publishing = Publishing.find_or_initialize_by(youtube_video_id: video_hash[:id])
         if publishing.id.nil? # Si es nil ===> tengo que crearlo
           publishing.title = video_hash[:title]
           publishing.description = video_hash[:description]
@@ -62,22 +62,22 @@ class PublishingsController < ApplicationController
           publishing.published_at = video_hash[:published_at]
           publishing.user = current_user
           # crear el channel
-          unless Channel.where(uid: video_hash[:channel_id]).any?
-            channel = Channel.new(uid: video_hash[:channel_id])
+          unless Channel.where(youtube_channel_id: video_hash[:channel_id]).any?
+            channel = Channel.new(youtube_channel_id: video_hash[:channel_id])
             channel.name = video_hash[:channel_name]
             channel.user = current_user
             channel.save
           end
         end
         # Tanto SI existe como si NO existe, quiero actualizar las 8 metricas y guardarlo
-        publishing.likes = @data[publishing.uid][:likes]
-        publishing.views = @data[publishing.uid][:views]
-        publishing.comments = @data[publishing.uid][:comments]
-        publishing.shares = @data[publishing.uid][:shares]
-        publishing.dislikes = @data[publishing.uid][:dislikes]
-        publishing.avg_watch_sec = @data[publishing.uid][:avg_watch_sec]
-        publishing.percent_watch = @data[publishing.uid][:percent_watch]
-        publishing.impressions = @data[publishing.uid][:impressions]
+        publishing.likes = @data[publishing.youtube_video_id][:likes]
+        publishing.views = @data[publishing.youtube_video_id][:views]
+        publishing.comments = @data[publishing.youtube_video_id][:comments]
+        publishing.shares = @data[publishing.youtube_video_id][:shares]
+        publishing.dislikes = @data[publishing.youtube_video_id][:dislikes]
+        publishing.avg_watch_sec = @data[publishing.youtube_video_id][:avg_watch_sec]
+        publishing.percent_watch = @data[publishing.youtube_video_id][:percent_watch]
+        publishing.impressions = @data[publishing.youtube_video_id][:impressions]
         publishing.save
       end
       flash[:notice] =  "Videos Up to date!"
@@ -103,6 +103,6 @@ class PublishingsController < ApplicationController
   end
 
   def publishing_params
-    params.require(:publishing).permit(:video, :title, :description, :status, :uid )
+    params.require(:publishing).permit(:video, :title, :description, :status, :youtube_video_id )
   end
 end
