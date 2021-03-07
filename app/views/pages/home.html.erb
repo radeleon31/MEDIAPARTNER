@@ -24,7 +24,7 @@
           Gain control of your digital foot print with <strong>Media</strong>Partner.
           </p>
           <% if user_signed_in? %>
-            <%= link_to 'Lets Start!', overview_path, class:"btn btn-primary rounded-pill btn-md"%>
+            <%= link_to 'Overview', overview_path, class:"btn btn-primary rounded-pill btn-md"%>
           <% else %>
             <%= link_to 'Lets Start!', new_user_registration_path, class:"btn btn-primary rounded-pill" %>
           <% end %>
@@ -44,5 +44,4 @@
       <%# </div>  %>
     <%# </div> %>
 </body>
-
 

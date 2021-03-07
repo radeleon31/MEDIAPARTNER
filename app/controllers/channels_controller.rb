@@ -7,12 +7,26 @@ class ChannelsController < ApplicationController
     end
 
     def last_day
-        @data = {fill_rate_value: 23, fill_rate_porcen: 23.88, 
-        Impressions_value: "215,000", Impressions_porcen: 27.48,
-        eCPM_value: 1.55, eCPM_porcen: 29.99,
-        est_rev_value: 330, est_rev_porcen: 6.17,
-      }
-      @name_view = "Last Day"
+      
+      # ojo, debos cambiar esto por el current 
+       @user = User.last 
+       @publishings = Publishing.where(user_id: @user.id)
+       
+       @publishings.each do |video|
+         video.likes + video.likes
+         @likes_count = video.likes
+         @likes_percen = video.likes / @publishings.count
+         video.dislikes + video.dislikes
+         @dislikes_count = video.dislikes
+         @dislikes_percen = video.dislikes  / @publishings.count
+         video.views + video.views
+         @views_count = video.views
+         @views_percen = video.views / @publishings.count
+         video.shares + video.shares
+         @shares_count = video.shares
+         @shares_percen = video.shares  / @publishings.count
+       end
+      @name_view = "Video Statistics"
     end
 
     def last_week
