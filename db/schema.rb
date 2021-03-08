@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_07_132348) do
+ActiveRecord::Schema.define(version: 2021_03_08_180211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2021_03_07_132348) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "youtube_channel_id"
     t.bigint "user_id", null: false
+    t.integer "subscibers"
     t.index ["user_id"], name: "index_channels_on_user_id"
   end
 
@@ -73,6 +74,7 @@ ActiveRecord::Schema.define(version: 2021_03_07_132348) do
     t.integer "avg_watch_sec"
     t.float "percent_watch"
     t.integer "impressions"
+    t.integer "revenue"
     t.index ["user_id"], name: "index_publishings_on_user_id"
   end
 

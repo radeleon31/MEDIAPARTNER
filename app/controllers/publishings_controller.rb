@@ -1,21 +1,16 @@
 class PublishingsController < ApplicationController
   before_action :set_publishing, only: [:show, :edit, :update, :destroy, :myvideo]
-
   def index
-    @publishings = Publishing.all.where(user: current_user)
+    @publishings = Publishing.all
   end
-
   def show
     # Aca seria solo set_publishing
   end
-
   def new
     @publishing = Publishing.new
   end
-
   def edit
   end
-
   def create
     @publishing = Publishing.new(publishing_params)
     @publishing.user = current_user
@@ -25,7 +20,6 @@ class PublishingsController < ApplicationController
       render :new
     end
   end
-
   def update
     if @publishing.update(publishing_params)
       redirect_to publishing_path(@publishing)
@@ -33,27 +27,21 @@ class PublishingsController < ApplicationController
       render :edit
     end
   end
-
   def mypublishings
     @publishings = Publishing.where(user: current_user)
   end
-
   def insight
-
   end
-
   # def destroy
   #   if @publishing.destroy
   #     redirect_to publishings_path(@publishing)
   #   else
-  #     render :mypublishings
+  #     render :index
   #   end
   # end
-
   def update_publishings # Boton
     @data = FetchYoutubeAnalytics.call(current_user.youtube_sessions.last) # video_id: view , likes....
     @videos = FetchYoutubeVideos.call(current_user.youtube_sessions.last) # Published videos in YT
-
       @videos.each do |video_hash|
         publishing = current_user.publishings.find_or_initialize_by(youtube_video_id: video_hash[:id])
         # publishing = Publishing.find_or_initialize_by(youtube_video_id: video_hash[:id])
@@ -69,6 +57,7 @@ class PublishingsController < ApplicationController
           unless Channel.where(youtube_channel_id: video_hash[:channel_id]).any? # A menos que sea un vide de un channel que ya existe, quiero crearlo
             channel = Channel.new(youtube_channel_id: video_hash[:channel_id])
             channel.name = video_hash[:channel_name]
+            channel.subscibers = rand(500...1000)
             channel.user = current_user
             channel.save
           end
@@ -83,13 +72,13 @@ class PublishingsController < ApplicationController
           publishing.avg_watch_sec = @data[publishing.youtube_video_id][:avg_watch_sec]
           publishing.percent_watch = @data[publishing.youtube_video_id][:percent_watch]
           publishing.impressions = @data[publishing.youtube_video_id][:impressions]
+          publishing.revenue = rand(1000...3000)
         end
         publishing.save # si la data vino vacia, lo guardo igual para poder tener al menos el video en Overview
       end
       flash[:notice] =  "Videos Up to date!"
       redirect_to overview_path
   end
-
   def overview
     if current_user.youtube_sessions.last.nil?
         redirect_to youtube_sessions_path
@@ -101,15 +90,29 @@ class PublishingsController < ApplicationController
       end
     end
   end
-
   private
-
   def set_publishing
     @publishing = Publishing.find(params[:id])
   end
-
   def publishing_params
     params.require(:publishing).permit(:video, :title, :description, :status, :youtube_video_id )
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
