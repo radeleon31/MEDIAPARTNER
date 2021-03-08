@@ -54,6 +54,11 @@
   margin: 5px;
   }
 
+  .title-card-index {
+    height: 60px;
+
+  }
+
   .text-hover:hover {
     text-decoration: none;
     color: grey;
@@ -85,7 +90,7 @@
   display: flex;
   align-items: center;
   border-radius: 15px;
-  width: 70%;
+  // width: 90%;
   padding: 10px;
   margin: 10px;
 }
@@ -193,7 +198,7 @@
 
 #my-castles-background {
   background: linear-gradient(rgba(255,255,255, .25), rgba(255,255,255, .15)), url("background-image-overview-v2.jpg");
-  width: 100%;
+  width: 60%;
   height: 800px;
 }
 
@@ -224,7 +229,7 @@
   float: right;
   position: relative;
   bottom: 60px;
-  right: 230px;
+  right: -10px;
 }
 
 #castle-banner {
@@ -236,4 +241,32 @@
 
 .margin-top-negative {
   margin-top: -75px;
+}
+
+.card-my-publishings {
+  width: 90%;
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 900px){
+  .card-my-publishings{
+  font-size: 12px;
+  width: 85%;
+ }
+}
+
+.mypublishings-card {
+  width: 40%;
+  padding-left: 20px;
+}
+
+.my-publishing-video-card {
+ // width: 60%;
+}
+
+@media screen and (max-width: 900px){
+  .my-publishing-video-card{
+  font-size: 12px;
+  width: 85%;
+ }
 }

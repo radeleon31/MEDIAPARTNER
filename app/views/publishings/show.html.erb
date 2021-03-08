@@ -1,8 +1,12 @@
-<div class="container container-fluid" id="castle-banner" > <%= cl_video_tag publishing.video.key, height: 300, width: 100 %>
-
+<div class="container container-fluid" id="castle-banner" >
+<% if @publishing.youtube_video_id %>
+    <img src="<%= @publishing.thumbnail %>" alt="youtube-image" >
+  <% else %>
+     <%= cl_video_tag @publishing.video.key, height: 100, width: 100 %>
+  <% end %>
 
   <div class="container margin-top-negative bg-white p-5 rounded">
-    <div class="container-fluid p-0" id="castle-banner" > <%= cl_video_tag publishing.video.key, height: 300, width: 100 %> </div>
+
     <div class="row mb-3">
       <div class="col-md-8">
         <div p-5>

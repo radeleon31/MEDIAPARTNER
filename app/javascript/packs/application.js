@@ -38,3 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   openSearchBarOnClick();
   showingMetrics();
 });
+
+import { initFlatpickr } from "../plugins/flatpickr";
+
+initFlatpickr();
