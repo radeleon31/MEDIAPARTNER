@@ -54,8 +54,8 @@
     </div>
       <div class="card">
       <div class="card-body border border-primary rounded bg-dark text-white">
-        <h5 class="card-title">999999</h5>
-        <p class="card-text">xxxxxxxxxx</p>
+        <h5 class="card-title"><%= @revenue_count %></h5>
+        <p class="card-text">Revenue</p>
         <%# <p class="card-text"><small class="text-muted badge badge-success">33.3%</small></p> %>
         <%= pie_chart Publishing.group(:title).sum(:comments), legend: false, width: "200px", height: "125px" %>
       </div>
@@ -77,7 +77,7 @@
             <th scope="col">Percent Watch Count</th>
             <th scope="col">Impressions</th>
             <th scope="col">Comments</th>
-            <th scope="col">xxxxxxxx</th>
+            <th scope="col">Revenue</th>
           </tr>
         </thead>
         <tbody>
@@ -86,6 +86,7 @@
            <% tot_watch = 0 %>
            <% tot_Impre = 0 %>
            <% tot_commen = 0 %>
+           <% tot_revenue = 0 %>
            <% channel.publishings.each do |publishing| %>
             <% if (publishing.avg_watch_sec != nil) %>
              <% tot_avg += publishing.avg_watch_sec %>
@@ -99,14 +100,17 @@
             <% if (publishing.comments != nil) %>
              <% tot_commen += publishing.comments %>
             <% end %>
+            <% if (publishing.revenue != nil) %>
+             <% tot_revenue += publishing.revenue %>
+            <% end %>
            <% end %>
           <tr>
             <td> <%= channel.name %> </td>
             <td><%= tot_avg %><br><p class="card-text"></p></td>
-            <td><%= 00 %><br><p class="card-text"></p></td>
-            <td><%= 00 %><br><p class="card-text"></p></td>
-            <td><%= 00 %><br><p class="card-text"></p></td>
-            <td>9999999<br><p class="card-text"></p></td>
+            <td><%= tot_watch %><br><p class="card-text"></p></td>
+            <td><%= tot_Impre %><br><p class="card-text"></p></td>
+            <td><%= tot_commen %><br><p class="card-text"></p></td>
+            <td><%= tot_revenue %><br><p class="card-text"></p></td>
             
           </tr>
           <% end %>

@@ -2,12 +2,13 @@ class ChannelsController < ApplicationController
 
     def index
       # ojo, debos cambiar esto por el current 
-      @user = User.last 
+      @user = current_user
       @publishings = Publishing.where(user_id: @user.id).order(created_at: :desc)
       @avg_watch_sec_count = 0
       @percent_watch_count = 0
       @impressions_count = 0
       @comments_count = 0
+      @revenue_count = 0
       @publishings.each do |video|
         if (video.avg_watch_sec != nil)
           @avg_watch_sec_count += video.avg_watch_sec
@@ -21,11 +22,14 @@ class ChannelsController < ApplicationController
         if (video.comments != nil)
           @comments_count += video.comments
         end
+        if (video.revenue != nil)
+          @revenue_count += video.revenue
+        end
       end
       # @channels = Channel.joins(:Publishing).where(Publishing: {id: params[:client_id]}).merge(Shop.joins(:products).where(products: {id: params[:product_id]}))
       # @channels = Channel.where (user_id: current_user.id).order(created_at: :desc)
       @channels = Channel.where(user: current_user).order(created_at: :desc)
-      @name_view = "Channel Statistics"
+      @name_view = "Perfomance"
     end
     def show
 
@@ -34,7 +38,7 @@ class ChannelsController < ApplicationController
     def last_day
       
       # ojo, debos cambiar esto por el current 
-      @user = User.last 
+      @user = current_user
       @publishings = Publishing.where(user_id: @user.id).order(created_at: :desc)
 
       @likes_count = 0
@@ -72,7 +76,7 @@ class ChannelsController < ApplicationController
         @shares_percen = (@shares_count / @publishings.count)
       end 
       
-      @name_view = "Video Statistics"
+      @name_view = "Insight"
     end
 
     def last_week
