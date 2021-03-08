@@ -68,6 +68,7 @@ class PublishingsController < ApplicationController
           unless Channel.where(youtube_channel_id: video_hash[:channel_id]).any? # A menos que sea un vide de un channel que ya existe, quiero crearlo
             channel = Channel.new(youtube_channel_id: video_hash[:channel_id])
             channel.name = video_hash[:channel_name]
+            channel.subscibers = rand(500...1000)
             channel.user = current_user
             channel.save
           end
@@ -82,6 +83,7 @@ class PublishingsController < ApplicationController
           publishing.avg_watch_sec = @data[publishing.youtube_video_id][:avg_watch_sec]
           publishing.percent_watch = @data[publishing.youtube_video_id][:percent_watch]
           publishing.impressions = @data[publishing.youtube_video_id][:impressions]
+          publishing.revenue = rand(1000...3000)
         end  
         publishing.save # si la data vino vacia, lo guardo igual para poder tener al menos el video en Overview
       end
