@@ -31,10 +31,12 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { openSearchBarOnClick } from '../components/search-bar';
+import { showingMetrics } from '../components/overview-metrics';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   openSearchBarOnClick();
+  showingMetrics();
 });
 
 import { initFlatpickr } from "../plugins/flatpickr";
