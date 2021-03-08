@@ -24,7 +24,10 @@
     <%# </p> %>
 
     <%= yield %>
+    <% unless controller_name == "pages" && action_name == "home" %>
+           <%= render 'shared/footer'%>
+    <% end%>
     
-    <%= render 'shared/footer'%>
+   
   </body>
 </html>
