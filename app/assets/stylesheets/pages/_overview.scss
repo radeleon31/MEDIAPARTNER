@@ -46,6 +46,10 @@ div.background-style{
   top: -90px;
 }
 
+[data-metric]{
+  cursor:pointer;
+}
+
 @keyframes bounce {
   0% {
     transform: scale(1);
