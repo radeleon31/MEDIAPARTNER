@@ -98,21 +98,3 @@ class PublishingsController < ApplicationController
     params.require(:publishing).permit(:video, :title, :description, :status, :youtube_video_id )
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
