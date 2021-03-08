@@ -22,7 +22,10 @@ class ChannelsController < ApplicationController
           @comments_count += video.comments
         end
       end
-      @channels = Channel.all.order(created_at: :desc)
+      # @channels = Channel.joins(:Publishing).where(Publishing: {id: params[:client_id]}).merge(Shop.joins(:products).where(products: {id: params[:product_id]}))
+      # @channels = Channel.where (user_id: current_user.id).order(created_at: :desc)
+      @channels = Channel.where(user: current_user).order(created_at: :desc)
+      @name_view = "Channel Statistics"
     end
     def show
 
