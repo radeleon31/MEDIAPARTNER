@@ -3,7 +3,7 @@ class ChannelsController < ApplicationController
     def index
       # ojo, debos cambiar esto por el current 
       @user = User.last 
-      @publishings = Publishing.where(user_id: @user.id)
+      @publishings = Publishing.where(user_id: @user.id).order(created_at: :desc)
       @avg_watch_sec_count = 0
       @percent_watch_count = 0
       @impressions_count = 0

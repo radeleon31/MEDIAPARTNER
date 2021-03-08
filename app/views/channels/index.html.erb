@@ -21,7 +21,8 @@
       <div class="card-body border border-primary rounded  bg-dark text-white">
         <h5 class="card-title"><%= @avg_watch_sec_count %></h5>
         <p class="card-text">Avg Watch Sec</p>
-        <p class="card-text"><small class="text-muted badge badge-success">00%</small></p>
+        <p class="card-text"><small class="text-muted badge badge-success">99.0%</small></p>
+        <%= pie_chart Publishing.group(:title).sum(:avg_watch_sec), legend: false, width: "200px", height: "125px" %>
       </div>
     </div>
     <div class="card">

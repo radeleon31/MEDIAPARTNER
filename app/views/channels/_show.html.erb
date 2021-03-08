@@ -17,7 +17,8 @@
       <h5 id="cd1-valor" class="card-title  mb-0"><%= @likes_count %></h5>
       <p class="card-text">Likes in <%= @publishings.count %> videos</p>
       <h5 id="cd1-porc"class="card-text"><small class="text-muted badge"><%= @likes_percen %> Average</small></h5>
-      <%= pie_chart Publishing.group(:title).sum(:likes) %>
+      <%= pie_chart Publishing.group(:title).sum(:likes), legend: false,id: "users-chart", width: "200px", height: "125px" %>
+
       </div>
     </div>
     <div class="card">
@@ -25,7 +26,7 @@
       <h5 id="cd1-valor" class="card-title  mb-0"><%= @dislikes_count %></h5>
       <p class="card-text">Dislikes in <%= @publishings.count %> videos</p>
       <h5 id="cd1-porc"class="card-text"><small class="text-muted badge"><%= @dislikes_percen %> Average</small></h5>
-      <%= pie_chart Publishing.group(:title).sum(:dislikes) %>
+      <%= pie_chart Publishing.group(:title).sum(:dislikes), legend: false, width: "200px", height: "125px" %>
       </div>
     </div>
       <div class="card">
@@ -33,7 +34,7 @@
         <h5 id="cd1-valor" class="card-title  mb-0"><%= @views_count %></h5>
         <p class="card-text">Views in <%= @publishings.count %> videos</p>
         <h5 id="cd1-porc"class="card-text"><small class="text-muted badge"><%= @views_percen %> Average</small></h5>
-        <%= pie_chart Publishing.group(:title).sum(:views) %>
+        <%= pie_chart Publishing.group(:title).sum(:views), legend: false, width: "200px", height: "125px" %>
       </div>
     </div>
       <div class="card">
@@ -41,7 +42,7 @@
         <h5 id="cd1-valor" class="card-title  mb-0"><%= @shares_count %></h5>
         <p class="card-text">Shares in <%= @publishings.count %> videos</p>
         <h5 id="cd1-porc"class="card-text"><small class="text-muted badge"><%= @shares_percen %> Average</small></h5>
-        <%= pie_chart Publishing.group(:title).sum(:shares) %>
+        <%= pie_chart Publishing.group(:title).sum(:shares), legend: false, width: "200px", height: "125px" %>
       </div>
     </div>
 
