@@ -106,11 +106,3 @@ class PublishingsController < ApplicationController
   end
 end
 
-
-
-
-
-
-
-
-
