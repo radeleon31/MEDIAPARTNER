@@ -33,10 +33,10 @@
               <%= link_to 'Publisher', publishings_path, class:"btn btn-flat subrayado"%>
             <li>
             <li>
-              <%= link_to 'Insight', last_day_channel_path(1), class:"btn btn-flat subrayado"%>
+              <%= link_to 'Insight', last_day_path, class:"btn btn-flat subrayado"%>
             <li>
             <li>
-              <%= link_to 'Performance', channels_path(1), class:"btn btn-flat subrayado"%>
+              <%= link_to 'Performance', channels_path, class:"btn btn-flat subrayado"%>
             <li>
             <li>
               <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"btn btn-flat subrayado"%>
@@ -47,7 +47,6 @@
               <% end %>
 
             <li>
-
 
 
           </ul>

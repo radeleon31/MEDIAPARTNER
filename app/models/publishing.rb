@@ -1,6 +1,7 @@
 class Publishing < ApplicationRecord
   has_one_attached :video
   belongs_to :user
+  belongs_to :channel
   validates  :title, :description, :status, presence: true
   include PgSearch::Model
   pg_search_scope :search_by_all_publishing_metrics_and_properties,
