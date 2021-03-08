@@ -11,7 +11,7 @@ require("channels")
 // agregado por JH
 require("chartkick")
 require("chart.js")
-
+//= require chartkick
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -36,7 +36,3 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   openSearchBarOnClick();
 });
-
-import { initFlatpickr } from "../plugins/flatpickr";
-
-initFlatpickr();
