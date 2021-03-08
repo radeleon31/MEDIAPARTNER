@@ -52,8 +52,10 @@ class PublishingsController < ApplicationController
   def update_publishings # Boton
     @data = FetchYoutubeAnalytics.call(current_user.youtube_sessions.last) # video_id: view , likes....
     @videos = FetchYoutubeVideos.call(current_user.youtube_sessions.last) # Published videos in YT
+    
       @videos.each do |video_hash|
-        publishing = Publishing.find_or_initialize_by(youtube_video_id: video_hash[:id])
+        publishing = current_user.publishings.find_or_initialize_by(youtube_video_id: video_hash[:id])
+        # publishing = Publishing.find_or_initialize_by(youtube_video_id: video_hash[:id])
         if publishing.id.nil? # Si es nil ===> tengo que crearlo
           publishing.title = video_hash[:title]
           publishing.description = video_hash[:description]

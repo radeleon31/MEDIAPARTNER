@@ -39,15 +39,15 @@
           <div class="card-trip-infos d-flex">
             <div class="d-flex">
               <i class="far fa-thumbs-up mr-1"></i>
-              <h2>Likes</h2>
+              <h2 data-metric= <%=publishing.likes.nil? ? 0 : publishing.likes %>>Likes</h2>
             </div>
             <div class="d-flex">
-                <i class="far fa-eye mr-1"></i></i>
-              <h2>Views</h2>
+                <i  class="far fa-eye mr-1"></i></i>
+              <h2 data-metric= <%=publishing.views.nil? ? 0 : publishing.views %>>Views</h2>
             </div>
             <div class="d-flex">
-                <i class="far fa-comment mr-1"></i>
-              <h2>Comments</h2>
+                <i  class="far fa-comment mr-1"></i>
+              <h2  data-metric= <%=publishing.comments.nil? ? 0 : publishing.comments %>>Comments</h2>
             </div>
           </div>
         </div>
@@ -57,4 +57,3 @@
 </div>
 </body>
 
-<%= console %>
