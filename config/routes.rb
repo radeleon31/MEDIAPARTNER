@@ -7,19 +7,13 @@ Rails.application.routes.draw do
   get 'insight', to: 'publishings#insight'
   get 'update_publishings', to:'publishings#update_publishings'
   resources :publishings
-  resources :channels, only: [:index, :show]do
-    get 'last_day', on: :member
-    get 'last_week', on: :member
-    get 'last_month', on: :member
-    get 'last_year', on: :member
-  end
-  # resources :channels,   do 
-  #   get "last_day, on: :member"
-  #   # get "last_week, on: :member"
-  #   # get "last_mont, on: :member"
-  #   # get "last_year, on: :member"
-  # end
-  #Authenticate to youtube chanel
+  resources :channels, only: [:index, :show]
+  get 'last_day', to: 'channels#last_day'
+  get 'last_week', to: 'channels#last_week'
+  get 'last_month', to: 'channels#last_month'
+  get 'last_year', to: 'channels#last_year'
+  
+
   get '/youtube_sessions', to: 'youtube_sessions#new'
   get '/youtube_sessions/callback', to: 'youtube_sessions#callback'
 end

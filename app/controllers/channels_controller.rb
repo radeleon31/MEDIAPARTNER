@@ -56,10 +56,18 @@ class ChannelsController < ApplicationController
       @dislikes_percen = 0
       @views_percen = 0
       @shares_percen = 0
-      @likes_percen = (@likes_count / @publishings.count)
-      @dislikes_percen = (@dislikes_count / @publishings.count) 
-      @views_percen = (@views_count / @publishings.count) 
-      @shares_percen = (@shares_count / @publishings.count) 
+      if (@likes_count != nil)
+        @likes_percen = (@likes_count / @publishings.count)
+      end
+      if (@dislikes_count != nil)
+        @dislikes_percen = (@dislikes_count / @publishings.count)
+      end
+      if (@views_count != nil) 
+        @views_percen = (@views_count / @publishings.count)
+      end
+      if (@shares_count != nil) 
+        @shares_percen = (@shares_count / @publishings.count)
+      end 
       
       @name_view = "Video Statistics"
     end
