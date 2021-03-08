@@ -40,3 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   showingMetrics();
   toggleNavbar();
 });
+
+import { initFlatpickr } from "../plugins/flatpickr";
+
+initFlatpickr();
