@@ -33,8 +33,14 @@ class ChannelsController < ApplicationController
       @publishings.each do |video|
         if (video.likes != nil)
           @likes_count += video.likes
+         end
+         if (video.dislikes != nil)
           @dislikes_count += video.dislikes
+         end
+         if (video.views != nil)
           @views_count += video.views
+         end
+        if (video.shares != nil)
           @shares_count += video.shares
         end
       end
