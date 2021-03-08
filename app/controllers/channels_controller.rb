@@ -9,10 +9,18 @@ class ChannelsController < ApplicationController
       @impressions_count = 0
       @comments_count = 0
       @publishings.each do |video|
-        @avg_watch_sec_count += video.avg_watch_sec
-        @percent_watch_count += video.percent_watch
-        @impressions_count += video.impressions
-        @comments_count += video.comments
+        if (video.avg_watch_sec != nil)
+          @avg_watch_sec_count += video.avg_watch_sec
+        end
+        if (video.percent_watch != nil)
+          @percent_watch_count += video.percent_watch
+        end
+        if (video.impressions != nil)
+          @impressions_count += video.impressions
+        end
+        if (video.comments != nil)
+          @comments_count += video.comments
+        end
       end
       @channels = Channel.all.order(created_at: :desc)
     end
