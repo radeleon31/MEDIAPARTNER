@@ -1,101 +1,70 @@
-<div class="background-image" >
-  <div class="container" >
-    <% if (@name_view) %>
-
-      <h2><%= @name_view %> </h2>
-    <% end %>
-
-    <%# <div class="notification">
-      <img src='https://www.pngitem.com/pimgs/m/366-3669568_transparent-youtube-subscribe-png-logo-youtube-channel-subscribe.png' class="avatar-large"
-      <div class="notification-content"> %>
-      <%# <p><small>        We analyze your videos connected to the API </small></p>
-      </div>
-    </div> %>
-  <%# <div class="btn-group"> %>
-
-  <%# <div class="card-product-infos">
-
-    <button type="button" class="btn btn-primary">YouTobe Analizer </button>
-    <%# <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="sr-only">Toggle Dropdown</span>
-    </button> %>
-    <%# <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Last Day</a>
-      <a class="dropdown-item" href="#">Last Week</a>
-      <a class="dropdown-item" href="#">Last Month</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Last Year</a>
-    </div>
-  </div> %>
-
+<div class="container" >
+  <% if (@name_view) %>
+    <h1><%= @name_view %></h1>
+  <% end %>
   <div class="container mt-2">
-  <div class="row align-items-start">
-
-    <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+    <div class="row align-items-start">
+      <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
         <h5 class="card-title text-center"><%= @avg_watch_sec_count %></h5>
         <p class="card-text text-center"><strong>Avg Watch Sec</strong></p>
-    </div>
-    <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+      </div>
+      <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
         <h5 class="card-title text-center"><%= @percent_watch_count %></h5>
         <p class="card-text text-center"><strong>Percent Watch Count</strong></p>
-    </div>
-
-    <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+      </div>
+      <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
         <h5 class="card-title text-center"><%= @impressions_count %></h5>
         <p class="card-text text-center "><strong>Impressions</strong></p>
+      </div>
+      <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+        <h5 class="card-title text-center"><%= @comments_count %></h5>
+        <p class="card-text text-center"><strong>Comments</strong></p>
+      </div>
     </div>
-    <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
-      <h5 class="card-title text-center"><%= @comments_count %></h5>
-      <p class="card-text text-center"><strong>Comments</strong></p>
-    </div>
-
-  </div>
-
- 
-       <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column mt-3">
+    <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column mt-3">
       <h5 class="card-title text-center"><%= @revenue_count %></h5>
       <p class="card-text text-center"><strong>Revenue Total</strong></p>
     </div>
-
+    <div class="col text-center border border-secondary rounded-buttom-custom rounded-top-custom mr-2 d-flex flex-column mt-3">
       <%= line_chart Publishing.group(:title).sum(:revenue), legend: false, width: "500px", height: "350px",
-      curve: false, xtitle: "Video", ytitle: "revenue", colors: ["#b00", "#999"] %>
+      curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "revenue", colors: ["#b00", "#999"] %>
+    </div>
 
-
-<table class="table bg-white table-hover table-centered mt-3">
-        <thead>
-          <tr>
-            <th scope="col">Channel Name</th>
-            <th scope="col">Avg Watch Sec</th>
-            <th scope="col">Percent Watch Count</th>
-            <th scope="col">Impression</th>
-            <th scope="col">Comments</th>
-            <th scope="col">Revenue</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @channels.each do |channel| %>
-           <% tot_avg = 0 %>
-           <% tot_watch = 0 %>
-           <% tot_Impre = 0 %>
-           <% tot_commen = 0 %>
-           <% tot_revenue = 0 %>
-           <% channel.publishings.each do |publishing| %>
+    <table class="table bg-white table-hover table-centered mt-3">
+      <thead>
+        <tr>
+          <th scope="col">Channel Name</th>
+          <th scope="col">Avg Watch Sec</th>
+          <th scope="col">Percent Watch Count</th>
+          <th scope="col">Impression</th>
+          <th scope="col">Comments</th>
+          <th scope="col">Revenue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @channels.each do |channel| %>
+          <% tot_avg = 0 %>
+          <% tot_watch = 0 %>
+          <% tot_Impre = 0 %>
+          <% tot_commen = 0 %>
+          <% tot_revenue = 0 %>
+          <% channel.publishings.each do |publishing| %>
             <% if (publishing.avg_watch_sec != nil) %>
-             <% tot_avg += publishing.avg_watch_sec %>
+              <% tot_avg += publishing.avg_watch_sec %>
             <% end %>
             <% if (publishing.percent_watch != nil) %>
-             <% tot_watch += publishing.percent_watch %>
+              <% tot_watch += publishing.percent_watch %>
             <% end %>
             <% if (publishing.impressions != nil) %>
-             <% tot_Impre += publishing.impressions %>
+              <% tot_Impre += publishing.impressions %>
             <% end %>
             <% if (publishing.comments != nil) %>
-             <% tot_commen += publishing.comments %>
+              <% tot_commen += publishing.comments %>
             <% end %>
             <% if (publishing.revenue != nil) %>
-             <% tot_revenue += publishing.revenue %>
+              <% tot_revenue += publishing.revenue %>
             <% end %>
-           <% end %>
+          <% end %>
           <tr>
             <td> <%= channel.name %> </td>
             <td><%= tot_avg %><br><p class=" text-center"></p></td>
@@ -103,16 +72,9 @@
             <td><%= tot_Impre %><br><p class=" text-center"></p></td>
             <td><%= tot_commen %><br><p class=" text-center"></p></td>
             <td><%= tot_revenue %><br><p class=" text-center"></p></td>
-
           </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-        </div>
-      </div>
-    </div>
-
-    </div>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
