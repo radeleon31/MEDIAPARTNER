@@ -1,4 +1,4 @@
-<body class="background-image">
+<body >
   <div class="container" >
     <% if (@name_view) %>
       <h1><%= @name_view %></h1>
@@ -62,14 +62,16 @@
     </div>  
   </div>
 
+<%= area_chart Publishing.group(:title).sum(:avg_watch_sec), legend: false, width: "800px", height: "500px" %>
+
   <div class="row m-3" >
     <div class="col-sm-8">
       <div class="card">
         <div class="card-body">
           <h2 class="card-title mb-0">Channel Detail</h2>
           <p class="card-text badge badge-primary">Youtube Analytics Information</p>
-      <div class="table-responsive-md mt-2 sortable  ">
-      <table class="table table-striped table-dark sortabletitle ">
+      <div class="table-responsive-md mt-2   ">
+      <table class="table table-responsive table-striped table-dark sortabletitle ">
         <thead>
           <tr>
             <th scope="col">Channel Name</th>
