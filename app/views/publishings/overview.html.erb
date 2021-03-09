@@ -19,15 +19,15 @@
     </div>
 </div>
 
-<div class="alert alert-info msg-hide msg d-flex flex-column justify-content-center align-middle p-2" role="alert">
-  <p class="m-0 ">Checkout new posts!</p>
-  <small>Updated: <%=@publishings.first.updated_at.strftime('%a %b %Y %H:%M') if @publishings.any?  %></small>
-</div>
 
 <%# <div class=" alert alert-info alert-dismissible ">
 </div> %>
   
 <div class="container background-style p-3 d-flex flex-wrap justify-content-around">
+  <div class="alert alert-info msg-hide msg d-flex flex-column justify-content-center align-middle p-2" role="alert">
+    <p class="m-0 ">Checkout new posts!</p>
+    <small>Updated: <%=@publishings.first.updated_at.strftime('%a %b %Y %H:%M') if @publishings.any?  %></small>
+  </div>
   
   <%if @publishings.any?%>
     <% @publishings.each do |publishing|%>
