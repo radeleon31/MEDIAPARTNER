@@ -11,6 +11,7 @@ class PublishingsController < ApplicationController
   end
   def edit
   end
+
   def create
     @publishing = Publishing.new(publishing_params)
     @publishing.user = current_user
@@ -20,6 +21,7 @@ class PublishingsController < ApplicationController
       render :new
     end
   end
+
   def update
     if @publishing.update(publishing_params)
       redirect_to publishing_path(@publishing)
@@ -79,6 +81,7 @@ class PublishingsController < ApplicationController
       flash[:notice] =  "Videos Up to date!"
       redirect_to overview_path
   end
+
   def overview
     if current_user.youtube_sessions.last.nil?
         redirect_to youtube_sessions_path
@@ -90,11 +93,16 @@ class PublishingsController < ApplicationController
       end
     end
   end
+
+
   private
+
   def set_publishing
     @publishing = Publishing.find(params[:id])
   end
+
   def publishing_params
-    params.require(:publishing).permit(:video, :title, :description, :status, :youtube_video_id )
+    params.require(:publishing).permit(:video, :title, :description, :status, :youtube_video_id, :scheduled_at)
   end
 end
+

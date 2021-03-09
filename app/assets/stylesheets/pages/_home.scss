@@ -1,12 +1,12 @@
 body.background-image{
-  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), image-url("background-image-home.jpg");
+  background-image: linear-gradient(to left top, #793fec, #8650ed, #9361ee, #9e70ef, #a980ef, #a37fe9, #9e7fe4, #997ede, #816ed1, #685ec4, #4d4fb8, #2941ab);
   background-size: cover;
   background-position: center;
   z-index:1;
 }
 
 div.background-graphic-one{
-  background-image: image-url("image-home.png");
+  background-image: linear-gradient(to left top, #793fec, #8650ed, #9361ee, #9e70ef, #a980ef, #a37fe9, #9e7fe4, #997ede, #816ed1, #685ec4, #4d4fb8, #2941ab);
   background-size: cover;
   background-position: center;
   z-index:1;
