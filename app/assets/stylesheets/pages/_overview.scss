@@ -1,13 +1,13 @@
 body.background-image{
   // background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), image-url("background-image-overview-v3.jpg");
-  background-image: linear-gradient(to right bottom, #a8eb12, #00bf72, #008793, #004d7a, #051937);
+  background-image: linear-gradient(to left top, #0867ec, #3460ee, #4e57ef, #644dee, #793fec);
   background-size: cover;
   background-position: center;
   z-index:1;
 }
 
 div.background-style{
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.1);
   border-radius: 32px;
   position: relative;
   margin-top:5px;
@@ -28,7 +28,7 @@ div.background-style{
   height: 2rem;
   // border-radius: 50%;
   position: absolute;
-  top:55px;
+  top:45px;
   left:48%;
   z-index:2;
 }
