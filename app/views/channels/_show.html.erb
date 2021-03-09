@@ -27,10 +27,6 @@
         </div>   
       </div>
     </div>
-    <div class="container mt-3">
-      <%= column_chart Publishing.group(:title).sum(:views), legend: false, width: "300px", height: "180px",
-      xtitle: "Video", ytitle: "Views", colors: ["#b00", "#999"] %>
-    </div>
 
     <table class="table bg-white table-hover table-centered mt-3">
       <thead>

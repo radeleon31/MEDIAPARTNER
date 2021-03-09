@@ -48,18 +48,18 @@
       <h5 class="card-title text-center"><%= @comments_count %></h5>
       <p class="card-text text-center"><strong>Comments</strong></p>
     </div>
-    <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
-      <h5 class="card-title text-center"><%= @revenue_count %></h5>
-      <p class="card-text text-center"><strong>Revenue</strong></p>
-    </div>
 
   </div>
 
-        <div class="container mt-3">
-   
-      <%= area_chart Publishing.group(:title).sum(:revenue), legend: false, width: "500px", height: "350px",
-      xtitle: "Video", ytitle: "revenue", colors: ["#b00", "#999"] %>
+ 
+       <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column mt-3">
+      <h5 class="card-title text-center"><%= @revenue_count %></h5>
+      <p class="card-text text-center"><strong>Revenue Total</strong></p>
     </div>
+
+      <%= line_chart Publishing.group(:title).sum(:revenue), legend: false, width: "500px", height: "350px",
+      curve: false, xtitle: "Video", ytitle: "revenue", colors: ["#b00", "#999"] %>
+
 
 <table class="table bg-white table-hover table-centered mt-3">
         <thead>
