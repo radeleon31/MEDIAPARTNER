@@ -1,4 +1,5 @@
-<body class="background-image-index">
+<div class="background-image-index">
+<div class= "container">
 <h1 id=" my-castles-title-card "> Account Dashboard </h1>
 <div class="row">
 <div class= "col-4 mypublishings-card rounded">
@@ -60,11 +61,12 @@
   <% end %>
 </div>
    <div class="col-3" >
-          <p><%= link_to  "Delete Post", publishing_path(publishing.id), method: :delete, class: "btn btn-danger" %></p>
+          <p><%= link_to  "Delete Post", publishing_path(publishing.id), method: :delete, class: "btn btn-danger rounded-pill" %></p>
   </div>
 </div>
   <% end %>
 
 </div>
 </div>
-</body>
+</div>
+</div>

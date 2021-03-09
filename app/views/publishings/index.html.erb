@@ -1,8 +1,8 @@
 <div class="background-image-index">
   <div class="container pushing-aside d-flex justify-content-between pt-2">
     <div class="btn-group">
-      <button type="button" class="btn btn-dark btn-rounded">Platform</button>
-      <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type="button" class="btn btn-primary">Platform</button>
+      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="sr-only">Toggle Dropdown</span>
       </button>
       <div class="dropdown-menu">
@@ -14,14 +14,14 @@
       </div>
     </div>
    <div>
-    <%= link_to "New Post", new_publishing_path, class:"btn btn-dark rounded-pill "%>
+    <%= link_to "New Post", new_publishing_path, class:"btn btn-primary rounded-pill "%>
    </div>
   </div>
 
 <div class=" d-flex flex-column container-fluid align-items-end">
 <div class="background-style-index style-extra">
   <div class="card-position">
- <div class="card-product title-card-index justify-content-center border border-dark ">
+ <div class="card-product title-card-index justify-content-center  ">
 
   <div>
     <h2>Video</h2>
@@ -48,7 +48,7 @@
   <div class="card-position">
  <% @publishings.each do |publishing| %>
  <%= link_to publishing_path(publishing.id), class:"text-hover" do %>
- <div class="card-product justify-content-center border border-dark ">
+ <div class="card-product justify-content-center  ">
   <% if publishing.youtube_video_id %>
     <img src="<%= publishing.thumbnail %>" alt="youtube-image" >
   <% else %>

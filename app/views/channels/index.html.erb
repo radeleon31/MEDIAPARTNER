@@ -1,12 +1,12 @@
-<body class="background-image" >
+<div class="background-image" >
   <div class="container" >
     <% if (@name_view) %>
 
-      <h2><%= @name_view %> </h2> 
+      <h2><%= @name_view %> </h2>
     <% end %>
 
     <div class="notification">
-      <img src='https://www.pngitem.com/pimgs/m/366-3669568_transparent-youtube-subscribe-png-logo-youtube-channel-subscribe.png' class="avatar-large" 
+      <img src='https://www.pngitem.com/pimgs/m/366-3669568_transparent-youtube-subscribe-png-logo-youtube-channel-subscribe.png' class="avatar-large"
       <%# <div class="notification-content"> %>
       <p><small>        We analyze your videos connected to the API </small></p>
       </div>
@@ -30,7 +30,7 @@
 
   <div class="container mt-2">
   <div class="row align-items-start">
-  
+
     <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
         <h5 class="card-title text-center"><%= @avg_watch_sec_count %></h5>
         <p class="card-text text-center"><strong>Avg Watch Sec</strong></p>
@@ -47,11 +47,11 @@
     <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
       <h5 class="card-title text-center"><%= @comments_count %></h5>
       <p class="card-text text-center"><strong>Comments</strong></p>
-    </div>   
+    </div>
     <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
       <h5 class="card-title text-center"><%= @revenue_count %></h5>
       <p class="card-text text-center"><strong>Revenue</strong></p>
-    </div>  
+    </div>
 
   </div>
 
@@ -107,7 +107,7 @@
             <td><%= tot_Impre %><br><p class=" text-center"></p></td>
             <td><%= tot_commen %><br><p class=" text-center"></p></td>
             <td><%= tot_revenue %><br><p class=" text-center"></p></td>
-            
+
           </tr>
           <% end %>
         </tbody>
@@ -116,7 +116,7 @@
         </div>
       </div>
     </div>
-    
+
     </div>
   </div>
 </div>
