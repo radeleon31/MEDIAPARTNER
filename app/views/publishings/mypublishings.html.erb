@@ -52,7 +52,7 @@
     <p><%= publishing.description.first(15) %></p>
   </div>
   <div class="card-product-infos-my">
-    <h2><%= publishing.published_at %></h2>
+    <h2><%= publishing.published_at.to_datetime.strftime('%a %b %Y %H:%M') %></h2>
   </div>
   <div class="card-product-infos-my">
     <h2><%= publishing.status %></h2>
