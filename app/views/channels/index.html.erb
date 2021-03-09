@@ -1,32 +1,10 @@
-<div class="background-image" >
+<body class="background-image">
+
   <div class="container" >
     <% if (@name_view) %>
-
-      <h2><%= @name_view %> </h2>
+      <h1><%= @name_view %></h1>
     <% end %>
 
-    <%# <div class="notification">
-      <img src='https://www.pngitem.com/pimgs/m/366-3669568_transparent-youtube-subscribe-png-logo-youtube-channel-subscribe.png' class="avatar-large"
-      <div class="notification-content"> %>
-      <%# <p><small>        We analyze your videos connected to the API </small></p>
-      </div>
-    </div> %>
-  <%# <div class="btn-group"> %>
-
-  <%# <div class="card-product-infos">
-
-    <button type="button" class="btn btn-primary">YouTobe Analizer </button>
-    <%# <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="sr-only">Toggle Dropdown</span>
-    </button> %>
-    <%# <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Last Day</a>
-      <a class="dropdown-item" href="#">Last Week</a>
-      <a class="dropdown-item" href="#">Last Month</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Last Year</a>
-    </div>
-  </div> %>
 
   <div class="container mt-2">
   <div class="row align-items-start">
@@ -49,19 +27,17 @@
       <p class="card-text text-center"><strong>Comments</strong></p>
     </div>
 
-  </div>
-
- 
+    </div>
        <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column mt-3">
       <h5 class="card-title text-center"><%= @revenue_count %></h5>
       <p class="card-text text-center"><strong>Revenue Total</strong></p>
     </div>
-
+    <div class="col text-center border border-secondary rounded-top-custom mr-2 d-flex flex-column mt-3">
       <%= line_chart Publishing.group(:title).sum(:revenue), legend: false, width: "500px", height: "350px",
-      curve: false, xtitle: "Video", ytitle: "revenue", colors: ["#b00", "#999"] %>
+      curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "revenue", colors: ["#b00", "#999"] %>
+    </div>
 
-
-<table class="table bg-white table-hover table-centered mt-3">
+    <table class="table bg-white table-hover table-centered mt-3">
         <thead>
           <tr>
             <th scope="col">Channel Name</th>
