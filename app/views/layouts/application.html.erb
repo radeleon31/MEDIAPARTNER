@@ -4,7 +4,7 @@
     <title>MEDIAPARTNER</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -15,7 +15,7 @@
 
   <body>
     <% unless controller_name == "pages" && action_name == "home" %>
-          <%= render 'shared/navbar'%> 
+          <%= render 'shared/navbar'%>
     <% end%>
 
     <%= render 'shared/flashes' %>
@@ -23,12 +23,15 @@
     <%# </p> %>
     <%# <p class="alert"><%= alert %>
     <%# </p> %>
+    <div id="page-container">
+      <div id="content-wrap">
+        <%= yield %>
+      </div>
+      <% unless controller_name == "pages" && action_name == "home" %>
+        <%= render 'shared/footer'%>
+      <% end%>
+    </div>
 
-    <%= yield %>
-    <% unless controller_name == "pages" && action_name == "home" %>
-           <%= render 'shared/footer'%>
-    <% end%>
-    
-   
+
   </body>
 </html>
