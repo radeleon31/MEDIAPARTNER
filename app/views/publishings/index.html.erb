@@ -1,40 +1,30 @@
 <div class="background-image-index">
-  <div class="container pushing-aside d-flex justify-content-between pt-2">
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary">Platform</button>
-      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="sr-only">Toggle Dropdown</span>
-      </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#"><i class="fab fa-youtube-square"></i> youtube</a>
-        <a class="dropdown-item" href="#"><i class="fab fa-facebook"></i> facebook</a>
-        <a class="dropdown-item" href="#"><i class="fab fa-tiktok"></i> Tiktok</a>
-        <a class="dropdown-item" href="#"><i class="fab fa-instagram"></i> Instagram</a>
-        <a class="dropdown-item" href="#"><i class="fab fa-snapchat"></i> Snapchat</a>
-      </div>
-    </div>
+  <div class="container pushing-aside d-flex justify-content-end pt-2">
    <div>
     <%= link_to "New Post", new_publishing_path, class:"btn btn-primary rounded-pill "%>
    </div>
   </div>
 
-<div class=" d-flex flex-column container-fluid align-items-end">
-  <div class="card d-block">
+<div class=" d-flex flex-column container-fluid align-items-end sticky-left">
+    <div class="card sticky-links">
     <div class="card-body">
       <div>
-    <i class="fab fa-youtube-square"></i>
+     <a href="#"><i class="fab fa-youtube-square"></i></a>
       </div>
       <div>
-    <i class="fab fa-facebook"></i>
+    <a href="#"><i class="fab fa-facebook"></i></a>
       </div>
       <div>
-    <i class="fab fa-tiktok"></i>
+    <a href="#"><i class="fab fa-tiktok"></i></a>
       </div>
       <div>
-    <i class="fab fa-instagram"></i>
+    <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
       <div>
-    <i class="fab fa-snapchat"></i>
+    <a href="#"><i class="fab fa-snapchat"></i></a>
+      </div>
+       <div>
+     <a href="#"><i class="fas fa-globe-asia"></i></a>
       </div>
     </div> <!-- end card-body-->
   </div>
@@ -78,7 +68,7 @@
     <p><%= publishing.description.first(15) %></p>
   </div>
   <div class="card-product-infos">
-    <h2><%= publishing.published_at %></h2>
+    <h2><%= publishing.published_at.to_datetime.strftime('%a %b %Y %H:%M') %></h2>
   </div>
   <div class="card-product-infos">
     <h2><%= publishing.views %></h2>
