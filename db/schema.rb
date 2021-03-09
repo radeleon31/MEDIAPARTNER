@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2021_03_09_140238) do
     t.bigint "user_id", null: false
     t.integer "likes"
     t.integer "views"
+    t.bigint "channels_id"
     t.string "thumbnail"
     t.datetime "scheduled_at"
     t.string "published_at"
@@ -77,6 +78,7 @@ ActiveRecord::Schema.define(version: 2021_03_09_140238) do
     t.integer "revenue"
     t.bigint "channel_id", null: false
     t.index ["channel_id"], name: "index_publishings_on_channel_id"
+    t.index ["channels_id"], name: "index_publishings_on_channels_id"
     t.index ["user_id"], name: "index_publishings_on_user_id"
   end
 
@@ -107,6 +109,7 @@ ActiveRecord::Schema.define(version: 2021_03_09_140238) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "channels", "users"
   add_foreign_key "publishings", "channels"
+  add_foreign_key "publishings", "channels", column: "channels_id"
   add_foreign_key "publishings", "users"
   add_foreign_key "youtube_sessions", "users"
 end
