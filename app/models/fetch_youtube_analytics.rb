@@ -5,8 +5,9 @@ require 'google/apis/youtube_analytics_v2'
 class FetchYoutubeAnalytics
   def self.call(session)
     result = Hash.new
-    @auth_client ||= Signet::OAuth2::Client.new(session.credentials)
-    analytics ||= Google::Apis::YoutubeAnalyticsV2::YouTubeAnalyticsService.new
+    p session.credentials
+    @auth_client = Signet::OAuth2::Client.new(session.credentials)
+    analytics = Google::Apis::YoutubeAnalyticsV2::YouTubeAnalyticsService.new
     analytics.query_report(
       options: { authorization: @auth_client},
       dimensions:"video",
