@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_08_180211) do
+ActiveRecord::Schema.define(version: 2021_03_09_140238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 2021_03_08_180211) do
     t.float "percent_watch"
     t.integer "impressions"
     t.integer "revenue"
+    t.bigint "channel_id", null: false
+    t.index ["channel_id"], name: "index_publishings_on_channel_id"
     t.index ["user_id"], name: "index_publishings_on_user_id"
   end
 
@@ -104,6 +106,7 @@ ActiveRecord::Schema.define(version: 2021_03_08_180211) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "channels", "users"
+  add_foreign_key "publishings", "channels"
   add_foreign_key "publishings", "users"
   add_foreign_key "youtube_sessions", "users"
 end
