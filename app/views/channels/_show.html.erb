@@ -5,45 +5,27 @@
     <% end %>
     <div class="btn-group" >
       <button type="button" class="btn btn-primary">Date Monetizer</button>
-
     </div>
-    <div class="card-group ">
-      <div class="card">
-        <div class="card-body border border-primary rounded  bg-dark text-white">
-        <h5 id="cd1-valor" class="card-title  mb-0"><%= @likes_count %></h5>
-        <p class="card-text">Likes in <%= @publishings.count %> videos</p>
-        <h5 id="cd1-porc"class="card-text"><small class="text-muted badge"><%= @likes_percen %> Average</small></h5>
-        <%= pie_chart Publishing.group(:title).sum(:likes), legend: false,id: "users-chart", width: "200px", height: "125px" %>
-
+    <div class="container mt-2">
+      <div class="row align-items-start">
+        <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+            <h5 class="card-title text-center"><%= @likes_count %></h5>
+            <p class="card-text text-center"><strong>Likes</strong></p>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-body border border-primary rounded  bg-dark text-white">
-        <h5 id="cd1-valor" class="card-title  mb-0"><%= @dislikes_count %></h5>
-        <p class="card-text">Dislikes in <%= @publishings.count %> videos</p>
-        <h5 id="cd1-porc"class="card-text"><small class="text-muted badge"><%= @dislikes_percen %> Average</small></h5>
-        <%= pie_chart Publishing.group(:title).sum(:dislikes), legend: false, width: "200px", height: "125px" %>
+        <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+            <h5 class="card-title text-center"><%= @dislikes_count %></h5>
+            <p class="card-text text-center"><strong>Dislikes</strong></p>
         </div>
-      </div>
-        <div class="card">
-          <div class="card-body border border-primary rounded  bg-dark text-white">
-          <h5 id="cd1-valor" class="card-title  mb-0"><%= @views_count %></h5>
-          <p class="card-text">Views in <%= @publishings.count %> videos</p>
-          <h5 id="cd1-porc"class="card-text"><small class="text-muted badge"><%= @views_percen %> Average</small></h5>
-          <%= pie_chart Publishing.group(:title).sum(:views), legend: false, width: "200px", height: "125px" %>
+        <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+          <h5 class="card-title text-center"><%= @views_count %></h5>
+          <p class="card-text text-center "><strong>Views</strong></p>
         </div>
+        <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+        <h5 class="card-title text-center"><%= @shares_count %></h5>
+        <p class="card-text text-center"><strong>Shares</strong></p>
+        </div>   
       </div>
-        <div class="card">
-          <div class="card-body border border-primary rounded  bg-dark text-white">
-          <h5 id="cd1-valor" class="card-title  mb-0"><%= @shares_count %></h5>
-          <p class="card-text">Shares in <%= @publishings.count %> videos</p>
-          <h5 id="cd1-porc"class="card-text"><small class="text-muted badge"><%= @shares_percen %> Average</small></h5>
-          <%= pie_chart Publishing.group(:title).sum(:shares), legend: false, width: "200px", height: "125px" %>
-        </div>
-      </div>
-
     </div>
-    
     <div class="table-responsive-md mt-2 sortable  ">
       <table class="table table-striped table-dark sortabletitle ">
         <thead>
