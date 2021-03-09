@@ -274,3 +274,11 @@
   width: 85%;
  }
 }
+
+.sticky-links {
+  border-radius: 15px;
+  box-shadow: 3px 3px 15px rgba(0,0,0,0.4);
+  position: fixed;
+  top: 200px;
+  left: 70px;
+}
