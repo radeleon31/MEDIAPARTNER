@@ -46,8 +46,8 @@ class PublishingsController < ApplicationController
     @videos = FetchYoutubeVideos.call(current_user.youtube_sessions.last) # Published videos in YT
   
       @videos.each do |video_hash|
-        # publishing = current_user.publishings.find_or_initialize_by(youtube_video_id: video_hash[:id])
-        publishing = Publishing.find_or_initialize_by(youtube_video_id: video_hash[:id])
+        publishing = current_user.publishings.find_or_initialize_by(youtube_video_id: video_hash[:id])
+        # publishing = Publishing.find_or_initialize_by(youtube_video_id: video_hash[:id])
         if publishing.id.nil? # Si es nil ===> tengo que crearlo
           publishing.title = video_hash[:title]
           publishing.description = video_hash[:description]
@@ -56,7 +56,8 @@ class PublishingsController < ApplicationController
           publishing.published_at = video_hash[:published_at]
           publishing.user = current_user
           # crear el channel
-          channel = Channel.find_or_initialize_by(youtube_channel_id: video_hash[:channel_id]) # A menos que sea un vide de un channel que ya existe, quiero crearlo
+          # channel = Channel.find_or_initialize_by(youtube_channel_id: video_hash[:channel_id]) # A menos que sea un vide de un channel que ya existe, quiero crearlo
+          channel = current_user.channels.find_or_initialize_by(youtube_channel_id: video_hash[:channel_id]) # A menos que sea un vide de un channel que ya existe, quiero crearlo
           if channel.id.nil? # Si es nil ===> tengo que crearlo
             channel.name = video_hash[:channel_name]
             channel.subscibers = rand(500...1000)
