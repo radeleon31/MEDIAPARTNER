@@ -54,18 +54,12 @@
     </div>
 
   </div>
-<%# <table class="table table-hover table-centered mb-0">
-    <thead>
-        <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Amount</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr> %>
 
+        <div class="container mt-3">
+   
+      <%= area_chart Publishing.group(:title).sum(:revenue), legend: false, width: "500px", height: "350px",
+      xtitle: "Video", ytitle: "revenue", colors: ["#b00", "#999"] %>
+    </div>
 
 <table class="table bg-white table-hover table-centered mt-3">
         <thead>
