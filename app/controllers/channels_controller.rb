@@ -63,6 +63,7 @@ class ChannelsController < ApplicationController
       @dislikes_percen = 0
       @views_percen = 0
       @shares_percen = 0
+      if (@publishings.count > 0)
       if (@likes_count != nil)
         @likes_percen = (@likes_count / @publishings.count)
       end
@@ -74,7 +75,9 @@ class ChannelsController < ApplicationController
       end
       if (@shares_count != nil) 
         @shares_percen = (@shares_count / @publishings.count)
-      end 
+      end
+    end
+     
       
       @name_view = "Insight"
     end

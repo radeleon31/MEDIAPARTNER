@@ -5,12 +5,12 @@
       <h2><%= @name_view %> </h2>
     <% end %>
 
-    <div class="notification">
+    <%# <div class="notification">
       <img src='https://www.pngitem.com/pimgs/m/366-3669568_transparent-youtube-subscribe-png-logo-youtube-channel-subscribe.png' class="avatar-large"
-      <%# <div class="notification-content"> %>
-      <p><small>        We analyze your videos connected to the API </small></p>
+      <div class="notification-content"> %>
+      <%# <p><small>        We analyze your videos connected to the API </small></p>
       </div>
-    </div>
+    </div> %>
   <%# <div class="btn-group"> %>
 
   <%# <div class="card-product-infos">
@@ -48,24 +48,20 @@
       <h5 class="card-title text-center"><%= @comments_count %></h5>
       <p class="card-text text-center"><strong>Comments</strong></p>
     </div>
-    <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
-      <h5 class="card-title text-center"><%= @revenue_count %></h5>
-      <p class="card-text text-center"><strong>Revenue</strong></p>
-    </div>
 
   </div>
 
+ 
+       <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column mt-3">
+      <h5 class="card-title text-center"><%= @revenue_count %></h5>
+      <p class="card-text text-center"><strong>Revenue Total</strong></p>
+    </div>
 
-  <div class="row m-4">
-    <div class="col-sm-10 ">
-      <div class="card row align-items-center">
-        <div class="card-body border border-secondary rounded-top-custom">
-         <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkp57frrHbZLpe8aew_IeIAaoj1aaGZmiYLg&usqp=CAU' class="avatar-large" />
-          <h5 class="card-title mb-0">Channel Detail</h5>
-          <p class="card-text badge badge-primary">Youtube Analytics Information</p>
-      <div class="table-responsive-md mt-2   ">
+      <%= line_chart Publishing.group(:title).sum(:revenue), legend: false, width: "500px", height: "350px",
+      curve: false, xtitle: "Video", ytitle: "revenue", colors: ["#b00", "#999"] %>
 
-      <table class="table table-responsive table-striped table-danger ">
+
+<table class="table bg-white table-hover table-centered mt-3">
         <thead>
           <tr>
             <th scope="col">Channel Name</th>
