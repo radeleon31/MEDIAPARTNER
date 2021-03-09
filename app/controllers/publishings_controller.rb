@@ -44,9 +44,10 @@ class PublishingsController < ApplicationController
   def update_publishings # Boton
     @data = FetchYoutubeAnalytics.call(current_user.youtube_sessions.last) # video_id: view , likes....
     @videos = FetchYoutubeVideos.call(current_user.youtube_sessions.last) # Published videos in YT
+  
       @videos.each do |video_hash|
-        publishing = current_user.publishings.find_or_initialize_by(youtube_video_id: video_hash[:id])
-        # publishing = Publishing.find_or_initialize_by(youtube_video_id: video_hash[:id])
+        # publishing = current_user.publishings.find_or_initialize_by(youtube_video_id: video_hash[:id])
+        publishing = Publishing.find_or_initialize_by(youtube_video_id: video_hash[:id])
         if publishing.id.nil? # Si es nil ===> tengo que crearlo
           publishing.title = video_hash[:title]
           publishing.description = video_hash[:description]
@@ -54,15 +55,16 @@ class PublishingsController < ApplicationController
           publishing.status = "Published on Youtube"
           publishing.published_at = video_hash[:published_at]
           publishing.user = current_user
-          publishing.save
+          
           # crear el channel
-          unless Channel.where(youtube_channel_id: video_hash[:channel_id]).any? # A menos que sea un vide de un channel que ya existe, quiero crearlo
-            channel = Channel.new(youtube_channel_id: video_hash[:channel_id])
+          channel = Channel.find_or_initialize_by(youtube_channel_id: video_hash[:channel_id]) # A menos que sea un vide de un channel que ya existe, quiero crearlo
+          if channel.id.nil? # Si es nil ===> tengo que crearlo
             channel.name = video_hash[:channel_name]
             channel.subscibers = rand(500...1000)
             channel.user = current_user
-            channel.save
+            channel.save!
           end
+          publishing.channel = channel
         end
         # Tanto SI existe como si NO existe, quiero actualizar las 8 metricas y guardarlo
         unless @data[publishing.youtube_video_id].nil?   # CHECK POR QUE A VECES NO TRAE LA DATA RECIENTE, de videos recien publicados (evito que se rompa la vista)
@@ -76,7 +78,8 @@ class PublishingsController < ApplicationController
           publishing.impressions = @data[publishing.youtube_video_id][:impressions]
           publishing.revenue = rand(1000...3000)
         end
-        publishing.save # si la data vino vacia, lo guardo igual para poder tener al menos el video en Overview
+        publishing.save! # si la data vino vacia, lo guardo igual para poder tener al menos el video en Overview
+        
       end
       flash[:notice] =  "Videos Up to date!"
       redirect_to overview_path

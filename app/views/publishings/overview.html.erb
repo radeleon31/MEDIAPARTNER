@@ -1,13 +1,11 @@
 <body class="background-image">
-<div class="container d-flex flex-wrap justify-content-between mt-3 margin-custom parent-positioning">
-  <%# <%= button_to 'Refresh video info!', update_publishings_path, class: "btn btn-success rounded-pill", method: :get %>
   <div class="top-animation">
     <%= button_to update_publishings_path, class:"btn btn-success rounded-circle", method: :get do %>
         <i class="fab fa-youtube"></i>
     <% end %>
   </div>
-  
-
+<div class="container d-flex flex-wrap justify-content-between mt-3 margin-custom parent-positioning">
+  <%# <%= button_to 'Refresh video info!', update_publishings_path, class: "btn btn-success rounded-pill", method: :get %>
     <div class="search-wrap d-flex align-items-right">
       <%= form_tag overview_path, class:"search", method: :get do %>
         <%= text_field_tag :query,
