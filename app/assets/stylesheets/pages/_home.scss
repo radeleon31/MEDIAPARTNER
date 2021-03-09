@@ -6,7 +6,7 @@ body.background-image{
 }
 
 div.background-graphic-one{
-  background-image: linear-gradient(to left top, #793fec, #8650ed, #9361ee, #9e70ef, #a980ef, #a37fe9, #9e7fe4, #997ede, #816ed1, #685ec4, #4d4fb8, #2941ab);
+  background-image: linear-gradient(to left top, #0867ec, #3460ee, #4e57ef, #644dee, #793fec);
   background-size: cover;
   background-position: center;
   z-index:1;
@@ -41,7 +41,7 @@ margin-bottom:50px;
 }
 
 .grad {
-  background-color: #F7F7F7
+  background-color: #F7F7F7;
   // background-image: linear-gradient(#527AE3, rgb(209, 82, 205));
 }
 
@@ -50,10 +50,10 @@ margin-bottom:50px;
     height:200px;
     width: 300px;
   }
-  .text-home h2,{
+  .text-home h2{
     font-size:20px;
   }
-  .text-home p,{
+  .text-home p{
     font-size:10px;
   }
 }
@@ -63,10 +63,10 @@ margin-bottom:50px;
     height:150px;
     width: 200px;
   }
-  .text-home h2,{
+  .text-home h2{
     font-size:15px;
   }
-  .text-home p,{
+  .text-home p{
     font-size:6px;
   }
 }

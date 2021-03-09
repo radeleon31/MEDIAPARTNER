@@ -2,7 +2,7 @@ const openSearchBarOnClick = () => {
   const searchIcon = document.querySelector('.searchIcon');
   const clearIcon = document.querySelector('.clear');
   if (searchIcon && clearIcon ) {
-    searchIcon.addEventListener('click', () => {
+    searchIcon.addEventListener('mouseover', () => {
       document.querySelector('.search').classList.add("visible");
       document.querySelector('.clear').classList.add("visible");
       document.querySelector('.search').focus();
