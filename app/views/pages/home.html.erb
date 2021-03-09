@@ -21,13 +21,17 @@
           Gain control of your digital foot print with <strong>Media</strong>Partner.
           </p>
           <% if user_signed_in? %>
-            <%= link_to 'Overview', overview_path, class:"btn btn-primary rounded-pill btn-md"%>
+            <div class="d-flex justify-content-left">
+              <%= link_to 'Overview', overview_path, class:"btn btn-primary rounded-pill btn-md"%>
+              <%= link_to 'Youtube account', youtube_sessions_path, class:"btn btn-success rounded-pill btn-md"%>
+            
+            </div>
           <% else %>
             <%= link_to 'Lets Start!', new_user_registration_path, class:"btn btn-primary rounded-pill" %>
           <% end %>
         </div>
         <div class="col-7 text-right p-0 m-0">
-          <%= image_tag("startup.svg", height:460, width:520, class:"graphics-img") %>
+          <%= image_tag("startup.svg", height:400, width:520, class:"graphics-img") %>
         </div>
       </div>
     </div>

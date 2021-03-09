@@ -55,7 +55,6 @@ class PublishingsController < ApplicationController
           publishing.status = "Published on Youtube"
           publishing.published_at = video_hash[:published_at]
           publishing.user = current_user
-          
           # crear el channel
           channel = Channel.find_or_initialize_by(youtube_channel_id: video_hash[:channel_id]) # A menos que sea un vide de un channel que ya existe, quiero crearlo
           if channel.id.nil? # Si es nil ===> tengo que crearlo
