@@ -3,10 +3,10 @@
   <%# <%= button_to 'Refresh video info!', update_publishings_path, class: "btn btn-success rounded-pill", method: :get %>
   <div class="top-animation">
     <%= button_to update_publishings_path, class:"btn btn-success rounded-circle", method: :get do %>
-        <i class="fas fa-redo"></i>
+        <i class="fab fa-youtube"></i>
     <% end %>
   </div>
-  <span class="text-secondary parent-positioning msg-1">Last updated: <%=@publishings.first.updated_at.strftime('%Y-%m-%d %H:%M') if @publishings.any?  %></span>
+  
 
     <div class="search-wrap d-flex align-items-right">
       <%= form_tag overview_path, class:"search", method: :get do %>
@@ -20,8 +20,13 @@
       <i class="fas fa-times clear mt-3"></i>
     </div>
 </div>
+
+<div class="msg-hide msg d-flex flex-column justify-content-center align-middle p-2">
+  <p class="m-0 text-white">Checkout new posts!</p>
+  <small class="text-white ">Updated: <%=@publishings.first.updated_at.strftime('%a %b %Y %H:%M') if @publishings.any?  %></small>
+</div>
+  
 <div class="container background-style p-5 d-flex flex-wrap justify-content-around">
-  <h2 class="msg-2">Checkout your latest posts!</h2>
   
   <%if @publishings.any?%>
     <% @publishings.each do |publishing|%>
@@ -32,11 +37,11 @@
           allowfullscreen></iframe>
           <div class="card-trip-infos">
             <div>
-              <h2><%=publishing.title.first(10)%></h2>
-              <p><%=publishing.description.first(10)%></p>
+              <h2><%=publishing.title.first(50)%></h2>
+              <p><%=publishing.description.first(35)%>...</p>
             </div>
           </div>
-          <div class="card-trip-infos d-flex">
+          <div class="card-trip-infos metrics-info d-flex">
             <div class="d-flex">
               <i class="far fa-thumbs-up mr-1"></i>
               <h2 data-metric= <%=publishing.likes.nil? ? 0 : publishing.likes %>>Likes</h2>

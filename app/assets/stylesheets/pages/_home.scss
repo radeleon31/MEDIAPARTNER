@@ -1,5 +1,7 @@
 body.background-image{
-  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), image-url("background-image-home.jpg");
+  // background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), image-url("background-image-home.jpg");
+  background-image: linear-gradient(to right bottom, #5fc5fb, #4dcef7, #47d5ef, #51dce4, #65e1d7, #52ddd8, #38dad9, #00d6db, #00c5f1, #00b1ff, #0096ff, #5f73fb);
+  
   background-size: cover;
   background-position: center;
   z-index:1;
@@ -41,7 +43,7 @@ margin-bottom:50px;
 }
 
 .grad {
-  background-color: #F7F7F7
+  background-color: #F7F7F7;
   // background-image: linear-gradient(#527AE3, rgb(209, 82, 205));
 }
 
@@ -50,10 +52,10 @@ margin-bottom:50px;
     height:200px;
     width: 300px;
   }
-  .text-home h2,{
+  .text-home h2{
     font-size:20px;
   }
-  .text-home p,{
+  .text-home p{
     font-size:10px;
   }
 }
@@ -63,10 +65,10 @@ margin-bottom:50px;
     height:150px;
     width: 200px;
   }
-  .text-home h2,{
+  .text-home h2{
     font-size:15px;
   }
-  .text-home p,{
+  .text-home p{
     font-size:6px;
   }
 }
