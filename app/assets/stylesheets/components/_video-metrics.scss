@@ -1,7 +1,11 @@
 .custom-width{
-  max-width:680px;
-  
+  max-width:680px; 
 }
+
+.custom-width-performance{
+  max-width:680px; 
+}
+
 
 .rounded-container{
 border-radius: 10px;
@@ -15,6 +19,10 @@ border-radius: 10px;
 .slight-shadow{
   box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
 }
+.carousel {
+  margin: 0 auto;
+}
+
 
 table { 
     margin-left: auto;
