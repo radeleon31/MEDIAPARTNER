@@ -8,3 +8,18 @@
 .fa-check-circle{
   color: #1EDD88;
 }
+
+
+@media screen and (max-width: 860px) {
+  .rounded-top-custom{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  
+    .rounded-top-custom{
+      font-size: 8px;
+    }
+
+}
