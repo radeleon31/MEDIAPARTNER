@@ -1,80 +1,80 @@
 
 <div class="background-image-index">
-<div class="container" >
-  <% if (@name_view) %>
-    <h1 class="text-center mt-4"><%= @name_view %></h1>
-  <% end %>
-  <div class="container mt-4 custom-width">
-    <div class="row align-items-start">
-      <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
-          <h5 class="card-title text-left mb-1">$<%= @revenue_count %></h5>
-          <p class="card-text text-left mb-0"><strong>Revenue Total</strong></p>
-          <small> <i class="fas fa-check-circle"></i> Updated...</small>
+  <div class="container" >
+    <% if (@name_view) %>
+      <h1 class="text-center mt-4"><%= @name_view %></h1>
+    <% end %>
+    <div class="container mt-4 custom-width">
+      <div class="row align-items-start">
+        <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+            <h5 class="card-title text-left mb-1">$<%= @revenue_count %></h5>
+            <p class="card-text text-left mb-0"><strong>Revenue Total</strong></p>
+            <small> <i class="fas fa-check-circle"></i> Updated...</small>
+        </div>
+        <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+            <h5 class="card-title text-left mb-1"><%= @avg_watch_sec_count %></h5>
+            <p class="card-text text-left mb-0"><strong>Avg Watch Sec</strong></p>
+            <small> <i class="fas fa-check-circle"></i> Updated...</small>
+        </div>
+        <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+            <h5 class="card-title text-left mb-1">%<%= @percent_watch_count %></h5>
+            <p class="card-text text-left mb-0"><strong>Watch Count</strong></p>
+            <small> <i class="fas fa-check-circle"></i> Updated...</small>
+        </div>
+        <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+            <h5 class="card-title text-left mb-1"><%= @impressions_count %></h5>
+            <p class="card-text text-left mb-0"><strong>Impressions</strong></p>
+            <small> <i class="fas fa-check-circle"></i> Updated...</small>
+        </div>
+        <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+            <h5 class="card-title text-left mb-1"><%= @comments_count %></h5>
+            <p class="card-text text-left mb-0"><strong>Comments</strong></p>
+            <small> <i class="fas fa-check-circle"></i> Updated...</small>
+        </div>
       </div>
-      <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
-          <h5 class="card-title text-left mb-1"><%= @avg_watch_sec_count %></h5>
-          <p class="card-text text-left mb-0"><strong>Avg Watch Sec</strong></p>
-          <small> <i class="fas fa-check-circle"></i> Updated...</small>
-      </div>
-      <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
-          <h5 class="card-title text-left mb-1">%<%= @percent_watch_count %></h5>
-          <p class="card-text text-left mb-0"><strong>Watch Count</strong></p>
-          <small> <i class="fas fa-check-circle"></i> Updated...</small>
-      </div>
-      <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
-          <h5 class="card-title text-left mb-1"><%= @impressions_count %></h5>
-          <p class="card-text text-left mb-0"><strong>Impressions</strong></p>
-          <small> <i class="fas fa-check-circle"></i> Updated...</small>
-      </div>
-      <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
-          <h5 class="card-title text-left mb-1"><%= @comments_count %></h5>
-          <p class="card-text text-left mb-0"><strong>Comments</strong></p>
-          <small> <i class="fas fa-check-circle"></i> Updated...</small>
-      </div>
-    </div>
-  </div>  
+    </div>  
 
-
-    <div class="col text-center border border-secondary rounded-buttom-custom rounded-top-custom mr-2 d-flex flex-column mt-3">
-      
+    
+      <% @channels.each do |channel| %>  
       <% data = [
+        {
+          name: "Video 1", 
+          data: [["2020-06", 10], ["2020-08", 16], ["2020-10", 80], ["2020-12", 10], ["2021-01", 16], ["2021-02", 28]]
+        },
           {
-    name: "Video 1", 
-    data: [["2020-06", 10], ["2020-08", 16], ["2020-10", 28], ["2020-12", 10], ["2021-01", 16], ["2021-02", 28]]
-  },
-    {
-    name: "Video 2", 
-    data: [["2020-06", 10], ["2020-08", 16], ["2020-10", 28], ["2020-12", 10], ["2021-01", 16], ["2021-02", 28]]
-  },
-    {
-    name: "Video 3", 
-    data: [["2020-06", 10], ["2020-08", 16], ["2020-10", 28], ["2020-12", 10], ["2021-01", 16], ["2021-02", 28]]
-  },
-    {
-    name: "Video 4", 
-    data: [["2020-06", 10], ["2020-08", 16], ["2020-10", 28], ["2020-12", 40], ["2021-01", 36], ["2021-02", 28]]
-  },
-  {
-    name: "Video 1", 
-    data: [["2020-06", 10], ["2020-08", 16], ["2020-10", 28], ["2020-12", 20], ["2021-01", 61], ["2021-02", 28]]
-  },
-  {
-    name: "Video 5", 
-    data: [["2020-06", 24], ["2020-08", 22], ["2020-10", 19], ["2020-12", 70], ["2021-01", 26], ["2021-02", 28]]
-  },
-  {
-    name: "Video 6", 
-    data: [["2020-06", 20], ["2020-08", 23], ["2021-02", 29], ["2020-12", 9], ["2021-01", 66
-    ], ["2021-02", 28]]
-  }
-] %>
-<%= line_chart data, stacked: true %> 
-<%= bar_chart data, stacked: true %> 
-      <%= line_chart data, legend: true, width: "800px", height: "500px",
-      curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#b00", "#999"] %>
-      
-      <%= line_chart Publishing.group(:id).sum(:revenue), legend: true, width: "500px", height: "350px",
-      curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#b00", "#999"] %>
+          name: "Video 2", 
+          data: [["2020-06", 20], ["2020-08", 35], ["2020-10", 0], ["2020-12", 10], ["2021-01", 16], ["2021-02", 28]]
+        },
+          {
+          name: "Video 3", 
+          data: [["2020-06", 500], ["2020-08", 73], ["2020-10", 505], ["2020-12", 10], ["2021-01", 16], ["2021-02", 28]]
+        },
+          {
+          name: "Video 4", 
+          data: [["2020-06", 300], ["2020-08", 88], ["2020-10", 432], ["2020-12", 40], ["2021-01", 36], ["2021-02", 28]]
+        },
+        {
+          name: "Video 1", 
+          data: [["2020-06", 60], ["2020-08", 900], ["2020-10", 284], ["2020-12", 20], ["2021-01", 61], ["2021-02", 28]]
+        },
+        {
+          name: "Video 5", 
+          data: [["2020-06", 24], ["2020-08", 188], ["2020-10", 19], ["2020-12", 70], ["2021-01", 26], ["2021-02", 28]]
+        },
+        {
+          name: "Video 6", 
+          data: [["2020-06", 20], ["2020-08", 23], ["2021-02", 29], ["2020-12", 9], ["2021-01", 66
+          ], ["2021-02", 28]]
+        }
+      ] %>
+      <div class="col text-center border border-secondary rounded-buttom-custom rounded-top-custom mr-2 d-flex flex-column mt-3">       
+            <%= line_chart data, legend: true, width: "500px", height: "300px",
+            title:"Revenue Top 6 Videos by Channel  ", curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue" %>
+      </div>
+      <div class="col text-center border border-secondary rounded-buttom-custom rounded-top-custom mr-2 d-flex flex-column mt-3">      
+            <%= line_chart Publishing.group(:id).sum(:revenue), legend: true, width: "500px", height: "300px",
+            curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#b00", "#999"] %>
+      <% end %>
     </div>
 
     <table class="table bg-white table-hover table-centered mt-3">
@@ -124,6 +124,5 @@
       </tbody>
     </table>
   </div>
-</div>
 </div>
 
