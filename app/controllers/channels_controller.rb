@@ -26,6 +26,7 @@ class ChannelsController < ApplicationController
           @revenue_count += video.revenue
         end
       end
+      @percent_watch_count = @percent_watch_count / @publishings.count
       # @channels = Channel.joins(:Publishing).where(Publishing: {id: params[:client_id]}).merge(Shop.joins(:products).where(products: {id: params[:product_id]}))
       # @channels = Channel.where (user_id: current_user.id).order(created_at: :desc)
       @channels = Channel.where(user: current_user).order(created_at: :desc)
