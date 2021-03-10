@@ -1,27 +1,27 @@
 
     <% if (@name_view) %>
-      <h1 class="text-left ml-5 mt-4">Video <%= @name_view %></h1>
+      <h1 class="text-left ml-5 mt-4 display-4 custom-font-size">Video <%= @name_view %></h1>
     <% end %>
  <div class=" d-flex flex-column container-fluid align-items-end sticky-left">
     <div class="card sticky-links">
     <div class="card-body">
       <div>
-     <a href="#"><i class="fab fa-youtube-square sm"></i></a>
+     <a href="#"><i class="fab fa-youtube-square fa-2x"></i></a>
       </div>
       <div>
-    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
       </div>
       <div>
-    <a href="#"><i class="fab fa-tiktok"></i></a>
+    <a href="#"><i class="fab fa-tiktok fa-2x"></i></a>
       </div>
       <div>
-    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
       </div>
       <div>
-    <a href="#"><i class="fab fa-snapchat"></i></a>
+    <a href="#"><i class="fab fa-snapchat fa-2x"></i></a>
       </div>
        <div>
-     <a href="#" rel="tooltip" title="Tooltip message..."><i class="fas fa-globe-asia"></i></a>
+     <a href="#" rel="tooltip" title="Tooltip message..."><i class="fas fa-globe-asia fa-2x"></i></a>
       </div>
     </div> <!-- end card-body-->
   </div>
@@ -29,22 +29,22 @@
 
     <div class="container mt-4 custom-width">
       <div class="row align-items-start">
-        <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+        <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
             <h5 class="card-title text-left mb-1"><%= @likes_count %></h5>
             <p class="card-text text-left mb-0"><strong>Likes</strong></p>
             <small> <i class="fas fa-check-circle"></i> Updated...</small>
         </div>
-        <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+        <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
             <h5 class="card-title text-left mb-1"><%= @dislikes_count %></h5>
             <p class="card-text text-left mb-0 "><strong>Dislikes</strong></p>
             <small> <i class="fas fa-check-circle"></i> Updated...</small>
         </div>
-        <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+        <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
           <h5 class="card-title text-left mb-1"><%= @views_count %></h5>
           <p class="card-text text-left mb-0 "><strong>Views</strong></p>
           <small> <i class="fas fa-check-circle"></i> Updated...</small>
         </div>
-        <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+        <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
         <h5 class="card-title text-left mb-1 "><%= @shares_count %></h5>
         <p class="card-text text-left mb-0 "><strong>Shares</strong></p>
         <small> <i class="fas fa-check-circle"></i> Updated...</small>
@@ -52,7 +52,7 @@
       </div>
     </div>
 
-  <div class="container w-50 bg-white mt-3 mb-5 rounded-container">
+  <div class="container w-50 bg-white mt-3 mb-5 rounded-container slight-shadow">
     <div class=" d-flex align-items-right justify-content-end p-3">
       <%= form_tag overview_path, class:"search-2", method: :get do %>
         <%= text_field_tag :query,
@@ -68,8 +68,8 @@
     <table class="table table-hover table-centered  pb-3 px-0 custom-smaller-table ">
       <thead >
         <tr>
-          <th scope="col text-center">Video Name</th>
-          <th scope="col text-center">Likes</th>
+          <th scope="col text-center font-weight-light">Video Name</th>
+          <th scope="col text-center font-weight-light">Likes</th>
           <th scope="col text-center">Dislikes</th>
           <th scope="col text-center">Views</th>
           <th scope="col text-center">Shares</th>

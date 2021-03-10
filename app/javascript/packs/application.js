@@ -32,14 +32,14 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { openSearchBarOnClick } from '../components/search-bar';
-import { showingMetrics } from '../components/overview-metrics';
+// import { showingMetrics } from '../components/overview-metrics';
 import { toggleNavbar } from '../components/navbar';
 import { checkMsgOnHover } from '../components/checkoutMsg';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   openSearchBarOnClick();
-  showingMetrics();
+  // showingMetrics();
   toggleNavbar();
   checkMsgOnHover();
 });

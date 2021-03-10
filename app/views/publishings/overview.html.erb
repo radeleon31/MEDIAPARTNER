@@ -1,7 +1,7 @@
 <body class="background-image">
   <div class="top-animation">
     <%= button_to update_publishings_path, class:"btn btn-warning rounded-circle", method: :get do %>
-        <i class="fab fa-youtube"></i>
+        <i class="fas fa-redo"></i>
     <% end %>
   </div>
 <div class="container d-flex flex-wrap justify-content-between mt-3 margin-custom parent-positioning">
@@ -14,8 +14,8 @@
           placeholder: "Views | Comments | Likes | Title | Description"
         %>
       <% end %>
-      <i class="fas fa-search searchIcon"></i>
-      <i class="fas fa-times clear mt-3"></i>
+      <i class="fas fa-search searchIcon text-warning"></i>
+      <i class="fas fa-times clear mt-3 text-warning"></i>
     </div>
 </div>
 
@@ -45,15 +45,15 @@
             <div class="card-trip-infos metrics-info d-flex">
               <div class="d-flex">
                 <i class="far fa-thumbs-up mr-1"></i>
-                <h2 data-metric= <%=publishing.likes.nil? ? 0 : publishing.likes %>>Likes</h2>
+                <h2 data-metric= <%=publishing.likes.nil? ? 0 : publishing.likes %>> <%=publishing.likes.nil? ? 0 : publishing.likes %></h2>
               </div>
               <div class="d-flex">
                   <i  class="far fa-eye mr-1"></i></i>
-                <h2 data-metric= <%=publishing.views.nil? ? 0 : publishing.views %>>Views</h2>
+                <h2 data-metric= <%=publishing.views.nil? ? 0 : publishing.views %>> <%=publishing.views.nil? ? 0 : publishing.views %> </h2>
               </div>
               <div class="d-flex">
                   <i  class="far fa-comment mr-1"></i>
-                <h2  data-metric= <%=publishing.comments.nil? ? 0 : publishing.comments %>>Comments</h2>
+                <h2  data-metric= <%=publishing.comments.nil? ? 0 : publishing.comments %>> <%=publishing.views.nil? ? 0 : publishing.views %> </h2>
               </div>
             </div>
           </div>

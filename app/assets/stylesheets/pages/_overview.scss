@@ -7,7 +7,7 @@
 // }
 
 div.background-style{
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(140, 20, 252, 0.05);
   border-radius: 32px;
   position: relative;
   margin-top:5px;
@@ -22,7 +22,7 @@ div.background-style{
 }
 
 .top-animation{
-  animation: bounce 2s ease-in-out infinite;
+  // animation: bounce 2s ease-in-out infinite;
   font-size: 1.25rem;
   width: 2rem;
   height: 2rem;
@@ -71,14 +71,14 @@ div.background-style{
   cursor:pointer;
 }
 
-@keyframes bounce {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
+// @keyframes bounce {
+//   0% {
+//     transform: scale(1);
+//   }
+//   50% {
+//     transform: scale(1.5);
+//   }
+//   100% {
+//     transform: scale(1);
+//   }
+// }
