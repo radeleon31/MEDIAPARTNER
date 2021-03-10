@@ -21,22 +21,22 @@
 </ul>
 
     <%= simple_form_for(@publishing) do |f| %>
-<div class="container tab-content background-style-index">
-    <div class="tab-pane show active form-login" id="home-b2">
+<div class="container tab-content ">
+    <div class="tab-pane show active form-login rounded-form " id="home-b2">
       <h4> Video Upload </h4>
-      <%= f.input :video, as: :file %>
+      <%= f.input :video, as: :file, label: false, input_html: {class: "upload-input" } %>
     </div>
-    <div class="tab-pane form-login" id="profile-b2">
+    <div class="tab-pane form-login rounded-form " id="profile-b2">
       <h4> Details </h4>
       <%= f.input :title, label: "Video Title:" %>
       <%= f.input :description, as: :text, label: "Video Description:" %>
     </div>
-    <div class="tab-pane form-login" id="settings-b2">
+    <div class="tab-pane form-login  rounded-form " id="settings-b2">
       <h4> Visibility </h4>
       <%= f.input :scheduled_at, as: :string, input_html: {class: "datepicker"} %>
       <%= f.input :status, s: :text, input_html: { value: f.object.status.presence || 'Pending' } %>
-      <%= f.submit %>
+      <%= f.submit class:"btn btn-warning rounded-pill" %>
     </div>
-     <%= link_to "Cancel", "#", class: "btn btn-danger" %>
+     <%= link_to "Cancel", "#", class: "btn btn-danger rounded-pill" %>
 </div>
 <% end %>
