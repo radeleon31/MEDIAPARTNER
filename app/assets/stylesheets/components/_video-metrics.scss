@@ -1,27 +1,18 @@
 .custom-width{
-  max-width:700px;
+  max-width:680px;
 }
 
-.custom-smaller-table{
-  max-width:900px;
-}
 .rounded-container{
 border-radius: 10px;
 }
-table
-{ 
+
+table { 
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
 }
 
-// .table th, .table td {
-//   vertical-align: middle !important;
- 
-// }
-// .table th{
-//   text-align: center;
-// }
+
 .text-center{
   text-align: center !important;
  
@@ -42,3 +33,39 @@ table
 // tbody tr:last-child {
 //  padding-bottom: 50px;
 // }
+
+@media screen and (max-width: 860px) {
+  .custom-width{
+    max-width:390px;
+  }
+  table { 
+    font-size: 12px;
+    padding: 17px;
+}
+.avatar-large {
+  width: 36px;
+  border-radius: 50%;
+}
+.table th, .table td {
+  padding: 0.55rem;
+}
+
+}
+
+@media screen and (max-width: 700px) {
+  .custom-width{
+    max-width:300px;
+  }
+  table { 
+    font-size: 8px;
+    padding: 10px;
+}
+.avatar-large {
+  width: 26px;
+  border-radius: 50%;
+}
+.table th, .table td {
+  padding: 0.45rem;
+}
+
+}
