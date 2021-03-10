@@ -1,7 +1,7 @@
 class PublishingsController < ApplicationController
   before_action :set_publishing, only: [:show, :edit, :update, :destroy, :myvideo]
   def index
-    @publishings = Publishing.all
+    @publishings = current_user.publishings
   end
   def show
     # Aca seria solo set_publishing
