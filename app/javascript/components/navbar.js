@@ -8,4 +8,9 @@ const toggleNavbar = () => {
     });
   }
 }
+
+$(function(){
+  $("a[rel='tooltip']").tooltip();
+})
+
 export { toggleNavbar };
