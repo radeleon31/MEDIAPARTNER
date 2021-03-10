@@ -1,35 +1,38 @@
 
-<%# <div class="background-image-index"> %>
+<div class="background-image-index">
 <div class="container" >
   <% if (@name_view) %>
-    <h1><%= @name_view %></h1>
+    <h1 class="text-center mt-4"><%= @name_view %></h1>
   <% end %>
-  <div class="container mt-2">
+  <div class="container mt-4 custom-width">
     <div class="row align-items-start">
       <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
-        <h5 class="card-title text-center"><%= @avg_watch_sec_count %></h5>
-        <p class="card-text text-center"><strong>Avg Watch Sec</strong></p>
+          <h5 class="card-title text-left mb-1">$<%= @revenue_count %></h5>
+          <p class="card-text text-left mb-0"><strong>Revenue Total</strong></p>
+          <small> <i class="fas fa-check-circle"></i> Updated...</small>
       </div>
       <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
-        <h5 class="card-title text-center"><%= @percent_watch_count %></h5>
-        <p class="card-text text-center"><strong>Percent Watch Count</strong></p>
+          <h5 class="card-title text-left mb-1"><%= @avg_watch_sec_count %></h5>
+          <p class="card-text text-left mb-0"><strong>Avg Watch Sec</strong></p>
+          <small> <i class="fas fa-check-circle"></i> Updated...</small>
       </div>
       <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
-        <h5 class="card-title text-center"><%= @impressions_count %></h5>
-        <p class="card-text text-center "><strong>Impressions</strong></p>
+          <h5 class="card-title text-left mb-1">%<%= @percent_watch_count %></h5>
+          <p class="card-text text-left mb-0"><strong>Watch Count</strong></p>
+          <small> <i class="fas fa-check-circle"></i> Updated...</small>
       </div>
       <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
-        <h5 class="card-title text-center"><%= @comments_count %></h5>
-        <p class="card-text text-center"><strong>Comments</strong></p>
+          <h5 class="card-title text-left mb-1"><%= @impressions_count %></h5>
+          <p class="card-text text-left mb-0"><strong>Impressions</strong></p>
+          <small> <i class="fas fa-check-circle"></i> Updated...</small>
+      </div>
+      <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
+          <h5 class="card-title text-left mb-1"><%= @comments_count %></h5>
+          <p class="card-text text-left mb-0"><strong>Comments</strong></p>
+          <small> <i class="fas fa-check-circle"></i> Updated...</small>
       </div>
     </div>
-    <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column mt-3">
-      <h5 class="card-title text-center"><%= @revenue_count %></h5>
-      <p class="card-text text-center"><strong>Revenue Total</strong></p>
-    </div>
-
-
-
+  </div>  
 
 
     <div class="col text-center border border-secondary rounded-buttom-custom rounded-top-custom mr-2 d-flex flex-column mt-3">
@@ -61,7 +64,8 @@
   },
   {
     name: "Video 6", 
-    data: [["2020-06", 20], ["2020-08", 23], ["2021-02", 29], ["2020-12", 9], ["2021-01", 66], ["2021-02", 28]]
+    data: [["2020-06", 20], ["2020-08", 23], ["2021-02", 29], ["2020-12", 9], ["2021-01", 66
+    ], ["2021-02", 28]]
   }
 ] %>
 <%= line_chart data, stacked: true %> 
@@ -121,5 +125,5 @@
     </table>
   </div>
 </div>
-<%# </div> %>
+</div>
 
