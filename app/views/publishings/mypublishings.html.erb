@@ -34,36 +34,38 @@
                                 </div> <!-- end card-->
                             </div>
                        </div>
-  <div class="col-8" >
-  <% counter = 0 %>
-  <% @publishings.each do |publishing| %>
-    <% counter += 1 %>
-  <div class="row d-flex my-publishing-video-card">
-<div class="col-9">
- <%= link_to publishing_path(publishing.id) do %>
- <div class="card-product-my d-flex justify-content-center">
-  <% if publishing.youtube_video_id %>
-    <img src="<%= publishing.thumbnail %>" alt="youtube-image" >
-  <% else %>
-     <%= cl_video_tag publishing.video.key, height: 100, width: 100 %>
-  <% end %>
-  <div class="card-product-infos-my">
-    <h2><%= publishing.title.first(15) %></h2>
-    <p><%= publishing.description.first(15) %></p>
+<div class="col-8" >
+    <% counter = 0 %>
+    <% @publishings.each do |publishing| %>
+      <% counter += 1 %>
+    <div class="row d-flex my-publishing-video-card">
+  <div class="col-9">
+   <%= link_to publishing_path(publishing.id) do %>
+   <div class="card-product-my d-flex justify-content-center">
+    <% if publishing.youtube_video_id %>
+      <img src="<%= publishing.thumbnail %>" alt="youtube-image" >
+    <% else %>
+       <%= cl_video_tag publishing.video.key, height: 100, width: 100 %>
+    <% end %>
+    <div class="card-product-infos-my">
+      <h2><%= publishing.title.first(15) %></h2>
+      <p><%= publishing.description.first(15) %></p>
+    </div>
+    <div class="card-product-infos-my">
+      <h2><%= publishing.published_at %></h2>
+    </div>
+    <div class="card-product-infos-my">
+      <h2><%= publishing.status %></h2>
+    </div>
+    </div>
+    <% end %>
   </div>
-  <div class="card-product-infos-my">
-    <h2><%= publishing.published_at.to_datetime.strftime('%a %b %Y %H:%M') %></h2>
+     <div class="col-3" >
+      <% if publishing.video.attached? %>
+            <p><%= link_to  "Delete Post", publishing_path(publishing.id), method: :delete, class: "btn btn-danger rounded-pill" %></p>
+      <% end %>
+    </div>
   </div>
-  <div class="card-product-infos-my">
-    <h2><%= publishing.status %></h2>
-  </div>
-  </div>
-  <% end %>
-</div>
-   <div class="col-3" >
-          <p><%= link_to  "Delete Post", publishing_path(publishing.id), method: :delete, class: "btn btn-danger rounded-pill" %></p>
-  </div>
-</div>
   <% end %>
 
 </div>
