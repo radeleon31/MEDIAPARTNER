@@ -1,5 +1,5 @@
 
-<div class="background-image-index">
+<%# <div class="background-image-index"> %>
 <div class="container" >
   <% if (@name_view) %>
     <h1><%= @name_view %></h1>
@@ -27,9 +27,50 @@
       <h5 class="card-title text-center"><%= @revenue_count %></h5>
       <p class="card-text text-center"><strong>Revenue Total</strong></p>
     </div>
+
+
+
+
+
     <div class="col text-center border border-secondary rounded-buttom-custom rounded-top-custom mr-2 d-flex flex-column mt-3">
-      <%= line_chart Publishing.group(:title).sum(:revenue), legend: false, width: "500px", height: "350px",
-      curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "revenue", colors: ["#b00", "#999"] %>
+      
+      <% data = [
+          {
+    name: "Video 1", 
+    data: [["2020-06", 10], ["2020-08", 16], ["2020-10", 28], ["2020-12", 10], ["2021-01", 16], ["2021-02", 28]]
+  },
+    {
+    name: "Video 2", 
+    data: [["2020-06", 10], ["2020-08", 16], ["2020-10", 28], ["2020-12", 10], ["2021-01", 16], ["2021-02", 28]]
+  },
+    {
+    name: "Video 3", 
+    data: [["2020-06", 10], ["2020-08", 16], ["2020-10", 28], ["2020-12", 10], ["2021-01", 16], ["2021-02", 28]]
+  },
+    {
+    name: "Video 4", 
+    data: [["2020-06", 10], ["2020-08", 16], ["2020-10", 28], ["2020-12", 40], ["2021-01", 36], ["2021-02", 28]]
+  },
+  {
+    name: "Video 1", 
+    data: [["2020-06", 10], ["2020-08", 16], ["2020-10", 28], ["2020-12", 20], ["2021-01", 61], ["2021-02", 28]]
+  },
+  {
+    name: "Video 5", 
+    data: [["2020-06", 24], ["2020-08", 22], ["2020-10", 19], ["2020-12", 70], ["2021-01", 26], ["2021-02", 28]]
+  },
+  {
+    name: "Video 6", 
+    data: [["2020-06", 20], ["2020-08", 23], ["2021-02", 29], ["2020-12", 9], ["2021-01", 66], ["2021-02", 28]]
+  }
+] %>
+<%= line_chart data, stacked: true %> 
+<%= bar_chart data, stacked: true %> 
+      <%= line_chart data, legend: true, width: "800px", height: "500px",
+      curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#b00", "#999"] %>
+      
+      <%= line_chart Publishing.group(:id).sum(:revenue), legend: true, width: "500px", height: "350px",
+      curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#b00", "#999"] %>
     </div>
 
     <table class="table bg-white table-hover table-centered mt-3">
@@ -80,5 +121,5 @@
     </table>
   </div>
 </div>
-</div>
+<%# </div> %>
 

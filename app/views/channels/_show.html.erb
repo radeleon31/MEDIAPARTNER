@@ -1,21 +1,32 @@
-<div class="background-image-index">
 
-  <div class="container" >
     <% if (@name_view) %>
-      <h1 class="text-center mt-4">Video <%= @name_view %></h1>
+      <h1 class="text-left ml-5 mt-4">Video <%= @name_view %></h1>
     <% end %>
-    <div class="btn-group" >
-      <button type="button" class="btn-primary rounded-pill">Date Monetizer</button>
-    </div>
-    <div class="container mt-2">
-    <div class="top-animation-2">
-    <%= button_to update_publishings_path, class:"btn btn-success rounded-circle", method: :get do %>
-        <i class="fab fa-youtube"></i>
-    <% end %>
+ <div class=" d-flex flex-column container-fluid align-items-end sticky-left">
+    <div class="card sticky-links">
+    <div class="card-body">
+      <div>
+     <a href="#"><i class="fab fa-youtube-square sm"></i></a>
+      </div>
+      <div>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+      </div>
+      <div>
+    <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <div>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div>
+    <a href="#"><i class="fab fa-snapchat"></i></a>
+      </div>
+       <div>
+     <a href="#" rel="tooltip" title="Tooltip message..."><i class="fas fa-globe-asia"></i></a>
+      </div>
+    </div> <!-- end card-body-->
   </div>
-    <%# <div class="btn-group" >
-      <button type="button" class="btn btn-primary rounded-pill">Date Monetizer</button>
-    </div> %>
+
+
     <div class="container mt-4 custom-width">
       <div class="row align-items-start">
         <div class="col border border-secondary rounded-top-custom mr-2 d-flex flex-column">
@@ -41,16 +52,16 @@
       </div>
     </div>
 
-<div class="container bg-white mt-5 mb-5 rounded-container">
-  <div class=" d-flex align-items-right justify-content-end p-3">
-        <%= form_tag overview_path, class:"search-2", method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control rounded-pill",
-            placeholder: "Views | Comments | Likes | Title | Description"
-          %>
-        <% end %>
-      </div>
+  <div class="container w-50 bg-white mt-3 mb-5 rounded-container">
+    <div class=" d-flex align-items-right justify-content-end p-3">
+      <%= form_tag overview_path, class:"search-2", method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control rounded-pill",
+          placeholder: "Views | Comments | Likes | Title | Description"
+        %>
+      <% end %>
+    </div>
 
 
 
@@ -69,14 +80,12 @@
         <tr>
           <td> <img  class="avatar-large"  src="<%= video.thumbnail %>" alt="youtube-image" > <%= video.title.first(20) %> </td>
           <td><%= video.likes %><br><p class="card-text text-center align-middle"></p></td>
-          <td><%= video.dislikes %><br><p class="card-text text-center align-middle""></p></td>
-          <td><%= video.views %><br><p class="card-text text-center align-middle""></p></td>
-          <td><%= video.shares %><br><p class="card-text text-center align-middle""></p></td>
+          <td><%= video.dislikes %><br><p class="card-text text-center align-middle"></p></td>
+          <td><%= video.views %><br><p class="card-text text-center align-middle"></p></td>
+          <td><%= video.shares %><br><p class="card-text text-center align-middle"></p></td>
         </tr>
         <% end %>
       </tbody>
     </table>
     <div><p class="text-white">updated</p></div>
-  </div>
-
 
