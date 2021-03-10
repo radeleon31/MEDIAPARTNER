@@ -68,7 +68,7 @@
 
   .card-position {
     position: relative;
-    left: -50px;
+    left: -70px;
   }
 
 .card-product-main {
@@ -123,12 +123,14 @@
   margin: 0px;
   width: 120px;
   padding-left: 20px;
+  color: black;
 }
 
 .card-product-infos-my p {
   font-size: 12px;
   font-weight: bold;
   padding-left: 20px;
+  color: black;
 }
 
 
@@ -142,6 +144,7 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  color: black;
 }
 
 .castle-card {
@@ -280,5 +283,13 @@
   box-shadow: 3px 3px 15px rgba(140, 20, 252, .2);
   position: fixed;
   top: 200px;
-  left: 70px;
+  left: 90px;
+}
+
+.card-channel {
+  width: 70%;
+}
+
+.individual-cards {
+  width: 120%;
 }

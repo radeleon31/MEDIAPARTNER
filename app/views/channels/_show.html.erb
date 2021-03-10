@@ -6,29 +6,29 @@
     <div class="card sticky-links">
     <div class="card-body">
       <div>
-     <a href="#"><i class="fab fa-youtube-square fa-2x"></i></a>
+     <a href="#" rel="tooltip" title="Youtube"><i class="fab fa-youtube-square fa-2x"></i></a>
       </div>
       <div>
-    <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+    <a href="#" rel="tooltip" title="Facebook"><i class="fab fa-facebook fa-2x"></i></a>
       </div>
       <div>
-    <a href="#"><i class="fab fa-tiktok fa-2x"></i></a>
+    <a href="#" rel="tooltip" title="Snapchat"><i class="fab fa-tiktok fa-2x"></i></a>
       </div>
       <div>
-    <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+    <a href="#" rel="tooltip" title="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
       </div>
       <div>
-    <a href="#"><i class="fab fa-snapchat fa-2x"></i></a>
+    <a href="#" rel="tooltip" title="Tiktok"><i class="fab fa-snapchat fa-2x"></i></a>
       </div>
        <div>
-     <a href="#" rel="tooltip" title="Tooltip message..."><i class="fas fa-globe-asia fa-2x"></i></a>
+     <a href="#" rel="tooltip" title="All Platforms"><i class="fas fa-globe-asia fa-2x"></i></a>
       </div>
     </div> <!-- end card-body-->
   </div>
 
 
     <div class="container mt-4 custom-width">
-      <div class="row align-items-start">
+      <div class="row align-items-start individual-cards">
         <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
             <h5 class="card-title text-left mb-1"><%= @likes_count %></h5>
             <p class="card-text text-left mb-0"><strong>Likes</strong></p>
@@ -52,7 +52,7 @@
       </div>
     </div>
 
-  <div class="container w-50 bg-white mt-3 mb-5 rounded-container slight-shadow">
+  <div class="container bg-white mt-3 mb-5 rounded-container slight-shadow card-channel">
     <div class=" d-flex align-items-right justify-content-end p-3">
       <%= form_tag overview_path, class:"search-2", method: :get do %>
         <%= text_field_tag :query,
@@ -75,11 +75,11 @@
       <tbody>
         <% @publishings.each do |video| %>
         <tr>
-          <td> <img  class="avatar-large"  src="<%= video.thumbnail %>" alt="youtube-image" > <%= video.title.first(20) %> </td>
-          <td><%= video.likes %><br><p class="card-text text-center align-middle"></p></td>
-          <td><%= video.dislikes %><br><p class="card-text text-center align-middle"></p></td>
-          <td><%= video.views %><br><p class="card-text text-center align-middle"></p></td>
-          <td><%= video.shares %><br><p class="card-text text-center align-middle"></p></td>
+          <td> <img class="img-thumbnail" src="<%= video.thumbnail %>" alt="youtube-image" > <%= video.title.first(20) %> </td>
+          <td class="card-text text-center align-middle"><%= video.likes %><br></td>
+          <td class="card-text text-center align-middle"><%= video.dislikes %><br></td>
+          <td class="card-text text-center align-middle"><%= video.views %><br></td>
+          <td class="card-text text-center align-middle"><%= video.shares %><br></td>
         </tr>
         <% end %>
       </tbody>
