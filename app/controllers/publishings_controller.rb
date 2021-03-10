@@ -70,17 +70,17 @@ class PublishingsController < ApplicationController
           publishing.channel = channel
         end
         # Tanto SI existe como si NO existe, quiero actualizar las 8 metricas y guardarlo
-        # unless @data[publishing.youtube_video_id].nil?   # CHECK POR QUE A VECES NO TRAE LA DATA RECIENTE, de videos recien publicados (evito que se rompa la vista)
-          publishing.likes = @data[publishing.youtube_video_id][:likes]
-          publishing.views = @data[publishing.youtube_video_id][:views]
-          publishing.comments = @data[publishing.youtube_video_id][:comments]
-          publishing.shares = @data[publishing.youtube_video_id][:shares]
-          publishing.dislikes = @data[publishing.youtube_video_id][:dislikes]
-          publishing.avg_watch_sec = @data[publishing.youtube_video_id][:avg_watch_sec]
-          publishing.percent_watch = @data[publishing.youtube_video_id][:percent_watch]
-          publishing.impressions = @data[publishing.youtube_video_id][:impressions]
+        unless @data[video_hash[:id]].nil?   # CHECK POR QUE A VECES NO TRAE LA DATA RECIENTE, de videos recien publicados (evito que se rompa la vista)
+          publishing.likes = @data[video_hash[:id]][:likes]
+          publishing.views = @data[video_hash[:id]][:views]
+          publishing.comments = @data[video_hash[:id]][:comments]
+          publishing.shares = @data[video_hash[:id]][:shares]
+          publishing.dislikes = @data[video_hash[:id]][:dislikes]
+          publishing.avg_watch_sec = @data[video_hash[:id]][:avg_watch_sec]
+          publishing.percent_watch = @data[video_hash[:id]][:percent_watch]
+          publishing.impressions = @data[video_hash[:id]][:impressions]
           publishing.revenue = rand(1000...3000)
-        # end
+        end
         publishing.save! # si la data vino vacia, lo guardo igual para poder tener al menos el video en Overview
 
       end
