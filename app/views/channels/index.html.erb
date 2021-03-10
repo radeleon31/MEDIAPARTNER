@@ -67,14 +67,16 @@
           ], ["2021-02", 28]]
         }
       ] %>
-      <div class="col text-center border border-secondary rounded-buttom-custom rounded-top-custom mr-2 d-flex flex-column mt-3">       
+      <div class="row">
+      <div class="col-6 text-center border border-primary rounded-buttom-custom rounded-top-custom  d-flex flex-column mt-3">       
             <%= line_chart data, legend: true, width: "500px", height: "300px",
             title:"Revenue Top 6 Videos by Channel  ", curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue" %>
       </div>
-      <div class="col text-center border border-secondary rounded-buttom-custom rounded-top-custom mr-2 d-flex flex-column mt-3">      
-            <%= line_chart Publishing.group(:id).sum(:revenue), legend: true, width: "500px", height: "300px",
-            curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#b00", "#999"] %>
+      <div class="col-6 text-center border border-primary rounded-buttom-custom rounded-top-custom  d-flex flex-column mt-3">      
+            <%= line_chart Publishing.group(:title).sum(:revenue), legend: true, width: "500px", height: "300px",
+            title:"Revenue Totals by  Video ",curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#b00", "#999"] %>
       <% end %>
+    </div>
     </div>
 
     <table class="table bg-white table-hover table-centered mt-3">
