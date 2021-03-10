@@ -76,10 +76,10 @@
         <% @publishings.each do |video| %>
         <tr>
           <td> <img class="img-thumbnail" src="<%= video.thumbnail %>" alt="youtube-image" > <%= video.title.first(20) %> </td>
-          <td><%= video.likes %><br><p class="card-text text-center align-middle"></p></td>
-          <td><%= video.dislikes %><br><p class="card-text text-center align-middle"></p></td>
-          <td><%= video.views %><br><p class="card-text text-center align-middle"></p></td>
-          <td><%= video.shares %><br><p class="card-text text-center align-middle"></p></td>
+          <td class="card-text text-center align-middle"><%= video.likes %><br></td>
+          <td class="card-text text-center align-middle"><%= video.dislikes %><br></td>
+          <td class="card-text text-center align-middle"><%= video.views %><br></td>
+          <td class="card-text text-center align-middle"><%= video.shares %><br></td>
         </tr>
         <% end %>
       </tbody>
