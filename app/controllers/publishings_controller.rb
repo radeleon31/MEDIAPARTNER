@@ -70,7 +70,7 @@ class PublishingsController < ApplicationController
           publishing.channel = channel
         end
         # Tanto SI existe como si NO existe, quiero actualizar las 8 metricas y guardarlo
-        unless @data[publishing.youtube_video_id].nil?   # CHECK POR QUE A VECES NO TRAE LA DATA RECIENTE, de videos recien publicados (evito que se rompa la vista)
+        # unless @data[publishing.youtube_video_id].nil?   # CHECK POR QUE A VECES NO TRAE LA DATA RECIENTE, de videos recien publicados (evito que se rompa la vista)
           publishing.likes = @data[publishing.youtube_video_id][:likes]
           publishing.views = @data[publishing.youtube_video_id][:views]
           publishing.comments = @data[publishing.youtube_video_id][:comments]
@@ -80,7 +80,7 @@ class PublishingsController < ApplicationController
           publishing.percent_watch = @data[publishing.youtube_video_id][:percent_watch]
           publishing.impressions = @data[publishing.youtube_video_id][:impressions]
           publishing.revenue = rand(1000...3000)
-        end
+        # end
         publishing.save! # si la data vino vacia, lo guardo igual para poder tener al menos el video en Overview
 
       end
