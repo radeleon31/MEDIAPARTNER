@@ -15,6 +15,7 @@ class PublishingsController < ApplicationController
   def create
     @publishing = Publishing.new(publishing_params)
     @publishing.user = current_user
+    @publishing.channel = current_user.channels.first
     if @publishing.save
       redirect_to publishings_path(@publishing)
     else
@@ -34,17 +35,19 @@ class PublishingsController < ApplicationController
   end
   def insight
   end
-  # def destroy
-  #   if @publishing.destroy
-  #     redirect_to publishings_path(@publishing)
-  #   else
-  #     render :index
-  #   end
-  # end
+
+  def destroy
+    if @publishing.destroy
+      redirect_to publishings_path(@publishing)
+    else
+      render :index
+    end
+  end
+
   def update_publishings # Boton
     @data = FetchYoutubeAnalytics.call(current_user.youtube_sessions.last) # video_id: view , likes....
     @videos = FetchYoutubeVideos.call(current_user.youtube_sessions.last) # Published videos in YT
-  
+
       @videos.each do |video_hash|
         publishing = current_user.publishings.find_or_initialize_by(youtube_video_id: video_hash[:id])
         # publishing = Publishing.find_or_initialize_by(youtube_video_id: video_hash[:id])
@@ -79,7 +82,7 @@ class PublishingsController < ApplicationController
           publishing.revenue = rand(1000...3000)
         end
         publishing.save! # si la data vino vacia, lo guardo igual para poder tener al menos el video en Overview
-        
+
       end
       flash[:notice] =  "Videos Up to date!"
       redirect_to overview_path

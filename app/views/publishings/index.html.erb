@@ -24,7 +24,7 @@
     <a href="#"><i class="fab fa-snapchat"></i></a>
       </div>
        <div>
-     <a href="#"><i class="fas fa-globe-asia"></i></a>
+     <a href="#" rel="tooltip" title="Tooltip message..."><i class="fas fa-globe-asia"></i></a>
       </div>
     </div> <!-- end card-body-->
   </div>
@@ -68,7 +68,7 @@
     <p><%= publishing.description.first(15) %></p>
   </div>
   <div class="card-product-infos">
-    <h2><%= publishing.published_at.to_datetime.strftime('%a %b %Y %H:%M') %></h2>
+    <h2><%= publishing.published_at %></h2>
   </div>
   <div class="card-product-infos">
     <h2><%= publishing.views %></h2>
