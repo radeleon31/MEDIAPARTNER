@@ -12,22 +12,22 @@
     <div class="card sticky-links">
     <div class="card-body">
       <div>
-     <a href="#" rel="tooltip" title="Youtube"><i class="fab fa-youtube-square fa-3x"></i></a>
+     <a href="#" rel="tooltip" title="Youtube"><i class="fab fa-youtube-square fa-2x"></i></a>
       </div>
       <div>
-    <a href="#" rel="tooltip" title="Facebook"><i class="fab fa-facebook fa-3x"></i></a>
+    <a href="#" rel="tooltip" title="Facebook"><i class="fab fa-facebook fa-2x"></i></a>
       </div>
       <div>
-    <a href="#" rel="tooltip" title="Snapchat"><i class="fab fa-snapchat fa-3x"></i></a>
+    <a href="#" rel="tooltip" title="Snapchat"><i class="fab fa-snapchat fa-2x"></i></a>
       </div>
       <div>
-    <a href="#" rel="tooltip" title="Instagram"><i class="fab fa-instagram fa-3x"></i></a>
+    <a href="#" rel="tooltip" title="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
       </div>
       <div>
-    <a href="#" rel="tooltip" title="Tiktok"><i class="fab fa-tiktok fa-3x"></i></a>
+    <a href="#" rel="tooltip" title="Tiktok"><i class="fab fa-tiktok fa-2x"></i></a>
       </div>
        <div>
-     <a href="#" rel="tooltip" title="All Platforms"><i class="fas fa-globe-asia fa-3x"></i></a>
+     <a href="#" rel="tooltip" title="All Platforms"><i class="fas fa-globe-asia fa-2x"></i></a>
       </div>
     </div> <!-- end card-body-->
   </div>
@@ -71,7 +71,7 @@
     <p><%= publishing.description.first(15) %></p>
   </div>
   <div class="card-product-infos">
-    <h2><%= publishing.published_at %></h2>
+    <h2><%= publishing.published_at.to_datetime.strftime('%a %b %Y %H:%M') %></h2>
   </div>
   <div class="card-product-infos">
     <h2><%= publishing.views %></h2>

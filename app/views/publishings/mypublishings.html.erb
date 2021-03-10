@@ -41,7 +41,7 @@
     <div class="row d-flex my-publishing-video-card">
   <div class="col-9">
    <%= link_to publishing_path(publishing.id) do %>
-   <div class="card-product-my d-flex justify-content-center">
+   <div class="card-product-my d-flex justify-content-center slight-shadow">
     <% if publishing.youtube_video_id %>
       <img src="<%= publishing.thumbnail %>" alt="youtube-image" >
     <% else %>
@@ -52,7 +52,7 @@
       <p><%= publishing.description.first(15) %></p>
     </div>
     <div class="card-product-infos-my">
-      <h2><%= publishing.published_at %></h2>
+      <h2><%= publishing.published_at.to_datetime.strftime('%a %b %Y %H:%M') %></h2>
     </div>
     <div class="card-product-infos-my">
       <h2><%= publishing.status %></h2>
