@@ -1,11 +1,12 @@
 .nav-fixed-black {
   // background-color: rgba(0,0,0,0.4);
-  background-color: black;
+  background-color: rgba(0,0,0,0.90);
+  box-shadow: 0 1px 6px 0 rgba(32,33,36,.9) !important;
 
 }
 .shadow{
   position:relative;
-  box-shadow: 0 2px 4px 5px rgba(0,0,0,.8) !important;
+  
 }
 
 // .shadow:before,
@@ -50,7 +51,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.7rem;
 }
 
 .nav-toggle {
@@ -113,11 +114,6 @@ nav {
   font-weight: bold;
 }
 
-.btn-primary{
-  background:black !important;
-  }
-
-
 
   .subrayado:hover {
     color: white;
@@ -153,7 +149,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 0.9rem;
   }
 
   .nav-header {

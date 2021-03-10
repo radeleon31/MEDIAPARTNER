@@ -1,9 +1,19 @@
 .custom-width{
   max-width:680px;
+  
 }
 
 .rounded-container{
 border-radius: 10px;
+
+}
+
+.custom-font-size{
+  font-size: 42px;
+}
+
+.slight-shadow{
+  box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
 }
 
 table { 
@@ -50,6 +60,10 @@ table {
   padding: 0.55rem;
 }
 
+.custom-font-size{
+  font-size: 36px;
+}
+
 }
 
 @media screen and (max-width: 700px) {
@@ -66,6 +80,9 @@ table {
 }
 .table th, .table td {
   padding: 0.45rem;
+}
+.custom-font-size{
+  font-size: 30px;
 }
 
 }
