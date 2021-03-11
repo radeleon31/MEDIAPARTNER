@@ -3,13 +3,7 @@ class ChannelsController < ApplicationController
     def index
       # ojo, debos cambiar esto por el current 
       @user = current_user
-
-      if params[:query].present?
-        @publishings = current_user.publishings.search_by_all_publishing_channels_and_properties(params[:query])
-      else
-        @publishings = Publishing.where(user_id: @user.id).order(created_at: :desc)
-      end
-
+      @publishings = Publishing.where(user_id: @user.id).order(created_at: :desc)
       @avg_watch_sec_count = 0
       @percent_watch_count = 0
       @impressions_count = 0
@@ -33,6 +27,8 @@ class ChannelsController < ApplicationController
         end
       end
       @percent_watch_count = @percent_watch_count / @publishings.count
+      # @channels = Channel.joins(:Publishing).where(Publishing: {id: params[:client_id]}).merge(Shop.joins(:products).where(products: {id: params[:product_id]}))
+      # @channels = Channel.where (user_id: current_user.id).order(created_at: :desc)
       @channels = Channel.where(user: current_user).order(created_at: :desc)
       @name_view = "Perfomance"
     end
