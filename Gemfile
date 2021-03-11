@@ -26,7 +26,6 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-tooltip-rails'
-gem 'active_storage_drag_and_drop'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
