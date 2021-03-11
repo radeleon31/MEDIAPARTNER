@@ -85,7 +85,7 @@
   <% end %>
   </div>
   <div class="card-product-infos text-center">
-    <h2><%= publishing.views %></h2>
+    <h2><%= number_with_delimiter(publishing.views, :delimiter => ',') %></h2>
   </div>
    <div class="card-product-infos text-center">
     <h2><%= publishing.avg_watch_sec %></h2>

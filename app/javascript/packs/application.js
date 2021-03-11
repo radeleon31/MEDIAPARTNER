@@ -13,6 +13,8 @@ require("chartkick")
 require("chart.js")
 //= require chartkick
 //= require bootstrap/bootstrap-tooltip
+//= require active_storage_drag_and_drop
+
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -37,6 +39,9 @@ import { openSearchBarOnClick } from '../components/search-bar';
 import { toggleNavbar } from '../components/navbar';
 import { checkMsgOnHover } from '../components/checkoutMsg';
 
+import ActiveStorageDragAndDrop from 'active_storage_drag_and_drop'
+
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   openSearchBarOnClick();
@@ -44,6 +49,8 @@ document.addEventListener('turbolinks:load', () => {
   toggleNavbar();
   // checkMsgOnHover();
   initFlatpickr();
+
+  ActiveStorageDragAndDrop.start()
 });
 
 

@@ -17,7 +17,7 @@
   align-items: center;
 }
 .footer-links a {
-  color: white;
+  color: hsl(206, 83%, 62%);
   // opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
@@ -25,7 +25,6 @@
 }
 .footer-links a:hover {
   opacity: 5;
-  color: #FD7031;
 }
 
 .footer-inner {
@@ -46,10 +45,4 @@
   padding-bottom: 100px;    /* Footer height */
 }
 
-.other-icon-footer {
-  color: white!important;
-}
 
-.other-icon-footer:hover {
-  color: #FD7031!important;
-}
