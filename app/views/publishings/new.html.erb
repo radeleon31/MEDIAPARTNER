@@ -1,18 +1,18 @@
 
 <ul class="nav nav-tabs nav-justified nav-bordered mb-3">
-    <li class="nav-item">
+    <li class="nav-item mt-3 border border-secondary rounded">
         <a href="#home-b2" data-toggle="tab" aria-expanded="false" class="nav-link active">
             <i class="mdi mdi-home-variant d-md-none d-block"></i>
             <span class="d-none d-md-block"> 1. Video Upload </span>
         </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item mt-3 border border-secondary rounded">
         <a href="#profile-b2" data-toggle="tab" aria-expanded="true" class="nav-link">
             <i class="mdi mdi-account-circle d-md-none d-block"></i>
             <span class="d-none d-md-block">2. Assets </span>
         </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item mt-3 border border-secondary rounded">
         <a href="#settings-b2" data-toggle="tab" aria-expanded="false" class="nav-link">
             <i class="mdi mdi-settings-outline d-md-none d-block"></i>
             <span class="d-none d-md-block">3. Scheduling</span>
@@ -24,7 +24,7 @@
 <div class="container tab-content ">
     <div class="tab-pane show active form-login rounded-form " id="home-b2">
       <h4> Video Upload </h4>
-      <%= f.input :video, as: :file, label: false, input_html: {class: "upload-input" } %>
+     <%= f.input :video, as: :file, label: false, input_html: {class: "upload-input" } %>
     </div>
     <div class="tab-pane form-login rounded-form " id="profile-b2">
       <h4> Details </h4>
@@ -35,7 +35,7 @@
       <h4> Visibility </h4>
       <%= f.input :scheduled_at, as: :string, input_html: {class: "datepicker"} %>
       <%= f.input :status, s: :text, input_html: { value: f.object.status.presence || 'Pending' } %>
-      <%= f.submit class:"btn btn-warning rounded-pill" %>
+      <%= f.submit class:"btn btn-warning rounded-pill btn-block" %>
     </div>
      <%= link_to "Cancel", "#", class: "btn btn-danger rounded-pill" %>
 </div>
