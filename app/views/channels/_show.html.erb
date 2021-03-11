@@ -81,7 +81,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @publishings.each do |video| %>
+        <% @publishings.where(status:"Published on Youtube").each do |video| %>
         <tr>
           <td> <img class="img-thumbnail" src="<%= video.thumbnail %>" alt="youtube-image" > <%= video.title.first(20) %> </td>
           <td class="card-text text-center align-middle"><%= video.likes %><br></td>
