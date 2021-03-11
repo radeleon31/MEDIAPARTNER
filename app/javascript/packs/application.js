@@ -41,7 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   openSearchBarOnClick();
   // showingMetrics();
   toggleNavbar();
-  checkMsgOnHover();
+  // checkMsgOnHover();
 });
 
 import { initFlatpickr } from "../plugins/flatpickr";
