@@ -9,6 +9,7 @@ class FetchYoutubeVideos
     @auth_client ||= Signet::OAuth2::Client.new(session.credentials)
     service.list_searches(
       'snippet',
+      max_results:50,
       for_mine: true,
       type: 'video',
       options: { authorization: @auth_client}
