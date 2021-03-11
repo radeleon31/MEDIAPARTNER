@@ -47,28 +47,27 @@
         },
           {
           name: "Video 2", 
-          data: [["2020-06", 20], ["2020-08", 35], ["2020-10", 0], ["2020-12", 10], ["2021-01", 16], ["2021-02", 28]]
+          data: [["2020-06", 20], ["2020-08", 35], ["2020-10", 0], ["2020-12", 10], ["2021-01", 16], ["2021-02", 828]]
         },
           {
           name: "Video 3", 
-          data: [["2020-06", 500], ["2020-08", 73], ["2020-10", 505], ["2020-12", 10], ["2021-01", 16], ["2021-02", 28]]
+          data: [["2020-06", 500], ["2020-08", 73], ["2020-10", 505], ["2020-12", 10], ["2021-01", 16], ["2021-02", 278]]
         },
           {
           name: "Video 4", 
-          data: [["2020-06", 300], ["2020-08", 88], ["2020-10", 432], ["2020-12", 40], ["2021-01", 36], ["2021-02", 28]]
+          data: [["2020-06", 300], ["2020-08", 88], ["2020-10", 432], ["2020-12", 400], ["2021-01", 36], ["2021-02", 628]]
         },
         {
           name: "Video 1", 
-          data: [["2020-06", 60], ["2020-08", 900], ["2020-10", 284], ["2020-12", 20], ["2021-01", 61], ["2021-02", 28]]
+          data: [["2020-06", 60], ["2020-08", 900], ["2020-10", 284], ["2020-12", 200], ["2021-01", 500], ["2021-02", 788]]
         },
         {
           name: "Video 5", 
-          data: [["2020-06", 24], ["2020-08", 188], ["2020-10", 19], ["2020-12", 70], ["2021-01", 26], ["2021-02", 28]]
+          data: [["2020-06", 24], ["2020-08", 188], ["2020-10", 19], ["2020-12", 700], ["2021-01", 800], ["2021-02", 280]]
         },
         {
           name: "Video 6", 
-          data: [["2020-06", 20], ["2020-08", 23], ["2021-02", 29], ["2020-12", 9], ["2021-01", 66
-          ], ["2021-02", 28]]
+          data: [["2020-06", 20], ["2020-08", 23], ["2021-02", 29], ["2020-12", 9], ["2021-01", 660], ["2021-02", 28]]
         }
       ] %>
 
@@ -81,7 +80,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="d-block w-100 text-center slight-shadow rounded-buttom-custom rounded-top-custom">       
-            <%= line_chart data, legend: true, height: "300px",
+            <%= line_chart data, legend: true, height: "350px", width: "720px", 
             title:"Revenue Top 6 Videos by Channel  ", curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue" %>
           </div>
         </div>
@@ -93,8 +92,8 @@
         </div> %>
         <div class="carousel-item">
           <div class="d-block w-100 text-center slight-shadow rounded-buttom-custom rounded-top-custom">      
-            <%= bar_chart Publishing.group(:title).sum(:revenue), legend: true, height: "300px",
-            title:"Revenue Totals by  Video ",curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#b00", "#999"] %>
+            <%= bar_chart Publishing.group(:title).sum(:revenue), legend: true, height: "350px", width: "720px",
+            xmin: "10", title:"Revenue Totals by  Video ",curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#0000FF", "#999"] %>
             <% end %>
           </div>
         </div>
