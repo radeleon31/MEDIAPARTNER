@@ -8,7 +8,10 @@ body.background-image{
 
 div.background-image-home{
   // background-image: linear-gradient(to left top, #793fec, #8650ed, #9361ee, #9e70ef, #a980ef, #a37fe9, #9e7fe4, #997ede, #816ed1, #685ec4, #4d4fb8, #2941ab);
-  background-image: linear-gradient(to right bottom, #2b9afc, #00abfd, #00bafa, #24c8f4, #54d4ee, #43cfee, #2dcbef, #00c6ef, #00adf9, #0090ff, #006efb, #2840e5);
+  // background-image: linear-gradient(to right bottom, #2b9afc, #00abfd, #00bafa, #24c8f4, #54d4ee, #43cfee, #2dcbef, #00c6ef, #00adf9, #0090ff, #006efb, #2840e5);
+  // background-image: linear-gradient(to right top, #f205f5, #ff00b7, #ff007f, #ff4752, #fd7031);
+  // background-image: linear-gradient(to right top, #ffffff, #efe3ff, #e6c4ff, #e6a2ff, #eb79ff, #f460e9, #fb41d1, #ff00b7, #ff0190, #ff316c, #ff544c, #fd7031);
+  background-image: linear-gradient(to right top, #ffffff, #ddd5ff, #baabff, #9681ff, #6e57fa, #9744e5, #b22dce, #c500b6, #ec0092, #ff126e, #ff494d, #fd7031);
   background-size: cover;
   background-position: center;
   z-index:1;
