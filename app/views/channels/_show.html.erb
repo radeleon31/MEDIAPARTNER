@@ -38,23 +38,35 @@
     <div class="container mt-4 w-50 justifi-content-center">
       <div class="row align-items-start individual-cards">
         <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
-            <h5 class="card-title text-left mb-1"><%= number_with_delimiter(@likes_count, :delimiter => ',') %></h5>
+          <div class="d-flex align-items-center">
+              <h5 class="card-title text-left mb-1"><%= number_with_delimiter(@likes_count, :delimiter => ',') %></h5>
+              <i class="fas fa-caret-<%=@arrows[rand(0..1)]%> fa-2x mt-0 ml-4"></i> 
+          </div> 
             <p class="card-text text-left mb-0"><strong>Likes</strong></p>
             <small> <i class="fas fa-check-circle"></i> Updated</small>
         </div>
         <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
+          <div class="d-flex align-items-center">
             <h5 class="card-title text-left mb-1"><%= number_with_delimiter(@dislikes_count , :delimiter => ',') %></h5>
+            <i class="fas fa-caret-<%=@arrows[rand(0..1)]%> fa-2x mt-0 ml-4"></i> 
+            </div> 
             <p class="card-text text-left mb-0 "><strong>Dislikes</strong></p>
             <small> <i class="fas fa-check-circle"></i> Updated</small>
         </div>
         <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
-          <h5 class="card-title text-left mb-1"><%= number_with_delimiter(@views_count , :delimiter => ',') %></h5>
-          <p class="card-text text-left mb-0 "><strong>Views</strong></p>
+          <div class="d-flex align-items-center">
+            <h5 class="card-title text-left mb-1"><%= number_with_delimiter(@views_count , :delimiter => ',') %></h5>
+            <i class="fas fa-caret-<%=@arrows[rand(0..1)]%> fa-2x mt-0 ml-4"></i> 
+            </div> 
+            <p class="card-text text-left mb-0 "><strong>Views</strong></p>
           <small> <i class="fas fa-check-circle"></i> Updated</small>
         </div>
         <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
-        <h5 class="card-title text-left mb-1 "><%= number_with_delimiter(@shares_count , :delimiter => ',') %></h5>
-        <p class="card-text text-left mb-0 "><strong>Shares</strong></p>
+          <div class="d-flex align-items-center">
+            <h5 class="card-title text-left mb-1 "><%= number_with_delimiter(@shares_count , :delimiter => ',') %></h5>
+            <i class="fas fa-caret-<%=@arrows[rand(0..1)]%> fa-2x mt-0 ml-4"></i> 
+            </div>
+            <p class="card-text text-left mb-0 "><strong>Shares</strong></p>
         <small> <i class="fas fa-check-circle"></i> Updated</small>
         </div>
       </div>
