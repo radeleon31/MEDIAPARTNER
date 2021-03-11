@@ -7,7 +7,7 @@ class ChannelsController < ApplicationController
       if params[:query].present?
         @publishings = current_user.publishings.search_by_all_publishing_channels_and_properties(params[:query])
       else
-        @publishings = Publishing.where(user_id: @user.id).order(created_at: :desc)
+        @publishings = Publishing.where(user_id: @user.id ).order(created_at: :desc)
       end
 
       @avg_watch_sec_count = 0
@@ -44,7 +44,7 @@ class ChannelsController < ApplicationController
       
       # ojo, debos cambiar esto por el current 
       @user = current_user
-      @publishings = Publishing.where(user_id: @user.id).order(created_at: :desc)
+      @publishings = Publishing.where(user_id: @user.id ).order(created_at: :desc)
 
       @likes_count = 0
       @dislikes_count = 0

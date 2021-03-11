@@ -39,7 +39,7 @@
     </div>  
 
     
-      <% @channels.each do |channel| %>  
+      <%# @channels.each do |channel| %>  
       <% data = [
         {
           name: "Video 1", 
@@ -71,7 +71,7 @@
           ], ["2021-02", 28]]
         }
       ] %>
-
+    <%# end %>
       <div id="carouselExampleIndicators" class="carousel slide my-4 w-75" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -95,7 +95,7 @@
           <div class="d-block w-100 text-center slight-shadow rounded-buttom-custom rounded-top-custom">      
             <%= bar_chart Publishing.group(:title).sum(:revenue), legend: true, height: "300px",
             title:"Revenue Totals by  Video ",curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#b00", "#999"] %>
-            <% end %>
+        
           </div>
         </div>
       </div>
@@ -162,11 +162,11 @@
             <% end %>
             <tr>
               <td> <%= channel.name %> </td>
-              <td><%= tot_avg %><br><p class=" text-center"></p></td>
-              <td><%= tot_watch.round(2) %><br><p class=" text-center"></p></td>
-              <td><%= tot_Impre %><br><p class=" text-center"></p></td>
-              <td><%= tot_commen %><br><p class=" text-center"></p></td>
-              <td><%= tot_revenue %><br><p class=" text-center"></p></td>
+              <td class="card-text text-center align-middle"><%= tot_avg %><br></p></td>
+              <td class="card-text text-center align-middle"><%= @percent_watch_count.round(2) %>%<br></p></td>
+              <td class="card-text text-center align-middle"><%= tot_Impre %><br></p></td>
+              <td class="card-text text-center align-middle"><%= tot_commen %><br></p></td>
+              <td class="card-text text-center align-middle">$<%= tot_revenue %><br></p></td>
             </tr>
           <% end %>
         </tbody>
