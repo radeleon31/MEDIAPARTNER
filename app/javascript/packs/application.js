@@ -30,6 +30,7 @@ require("chart.js")
 // External imports
 import "bootstrap";
 
+import { initFlatpickr } from "../plugins/flatpickr";
 // Internal imports, e.g:
 import { openSearchBarOnClick } from '../components/search-bar';
 // import { showingMetrics } from '../components/overview-metrics';
@@ -42,8 +43,8 @@ document.addEventListener('turbolinks:load', () => {
   // showingMetrics();
   toggleNavbar();
   // checkMsgOnHover();
+  initFlatpickr();
 });
 
-import { initFlatpickr } from "../plugins/flatpickr";
 
-initFlatpickr();
+
