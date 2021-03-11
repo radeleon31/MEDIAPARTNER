@@ -30,9 +30,23 @@ class PublishingsController < ApplicationController
       render :edit
     end
   end
+
   def mypublishings
     @publishings = Publishing.where(user: current_user)
+    @revenue_count = 0
+    channels = Channel.where(user: current_user)
+    @subscibers_count = 0
+    channels.each do |channel|
+      @subscibers_count += channel.subscibers
+      publishings = channel.publishings
+      publishings.each do |publishing|
+        if publishing.revenue != nil
+        @revenue_count += publishing.revenue
+        end
+      end
+    end
   end
+
   def insight
   end
 
@@ -43,7 +57,7 @@ class PublishingsController < ApplicationController
       render :index
     end
   end
-  
+
   def update_publishings # Boton
     @data = FetchYoutubeAnalytics.call(current_user.youtube_sessions.last) # video_id: view , likes....
     @videos = FetchYoutubeVideos.call(current_user.youtube_sessions.last) # Published videos in YT
