@@ -89,12 +89,6 @@
           <div class="d-block w-100 text-center slight-shadow rounded-buttom-custom rounded-top-custom">      
             <%= line_chart Publishing.group(:title).sum(:revenue), legend: true, height: "300px",
             title:"Revenue Totals by  Video ",curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#b00", "#999"] %>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="d-block w-100 text-center slight-shadow rounded-buttom-custom rounded-top-custom">      
-            <%= bar_chart Publishing.group(:title).sum(:revenue), legend: true, height: "300px",
-            title:"Revenue Totals by  Video ",curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#b00", "#999"] %>
             <% end %>
           </div>
         </div>
@@ -112,19 +106,12 @@
 
 
         
+
+        
+
+    
+
     <div class="container w-75 bg-white mt-3 mb-5 rounded-container slight-shadow">
-
-    <div class=" d-flex align-items-right justify-content-end p-3">
-      <%= form_tag overview_path, class:"search-2", method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control rounded-pill",
-          placeholder: "Views | Comments | Likes | Title | Description"
-        %>
-      <% end %>
-    </div>
-
-
       <table class="table table-hover table-centered  pb-3 px-0">
         <thead>
           <tr>
