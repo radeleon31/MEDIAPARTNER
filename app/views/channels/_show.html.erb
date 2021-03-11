@@ -2,7 +2,7 @@
 <% content_for :meta_title, "#{@channel.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <%# <% content_for :meta_description, @channel.name %> 
 <%# <% content_for :meta_image, cl_image_path(@offer.photo.path) %> 
-
+<%  @arrows = ["up", "down"] %>
 
 
 
@@ -38,22 +38,22 @@
     <div class="container mt-4 w-50 justifi-content-center">
       <div class="row align-items-start individual-cards">
         <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
-            <h5 class="card-title text-left mb-1"><%= @likes_count %></h5>
+            <h5 class="card-title text-left mb-1"><%= number_with_delimiter(@likes_count, :delimiter => ',') %></h5>
             <p class="card-text text-left mb-0"><strong>Likes</strong></p>
             <small> <i class="fas fa-check-circle"></i> Updated</small>
         </div>
         <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
-            <h5 class="card-title text-left mb-1"><%= @dislikes_count %></h5>
+            <h5 class="card-title text-left mb-1"><%= number_with_delimiter(@dislikes_count , :delimiter => ',') %></h5>
             <p class="card-text text-left mb-0 "><strong>Dislikes</strong></p>
             <small> <i class="fas fa-check-circle"></i> Updated</small>
         </div>
         <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
-          <h5 class="card-title text-left mb-1"><%= @views_count %></h5>
+          <h5 class="card-title text-left mb-1"><%= number_with_delimiter(@views_count , :delimiter => ',') %></h5>
           <p class="card-text text-left mb-0 "><strong>Views</strong></p>
           <small> <i class="fas fa-check-circle"></i> Updated</small>
         </div>
         <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
-        <h5 class="card-title text-left mb-1 "><%= @shares_count %></h5>
+        <h5 class="card-title text-left mb-1 "><%= number_with_delimiter(@shares_count , :delimiter => ',') %></h5>
         <p class="card-text text-left mb-0 "><strong>Shares</strong></p>
         <small> <i class="fas fa-check-circle"></i> Updated</small>
         </div>
@@ -83,11 +83,32 @@
       <tbody>
         <% @publishings.where(status:"Published on Youtube").each do |video| %>
         <tr>
-          <td> <img class="img-thumbnail" src="<%= video.thumbnail %>" alt="youtube-image" > <%= video.title.first(20) %> </td>
-          <td class="card-text text-center align-middle"><%= video.likes %><br></td>
-          <td class="card-text text-center align-middle"><%= video.dislikes %><br></td>
-          <td class="card-text text-center align-middle"><%= video.views %><br></td>
-          <td class="card-text text-center align-middle"><%= video.shares %><br></td>
+          
+          <td> <img class="img-thumbnail" src="<%= video.thumbnail %>" alt="youtube-image" > <%= video.title.first(20)%><br> </td>
+          <td class="card-text text-center align-middle">
+            <div class="d-flex align-items-center"><br>
+              <%= number_with_delimiter(video.likes, :delimiter => ',') %>
+              <i class="fas fa-caret-<%=@arrows[rand(0..1)]%> fa-2x mt-4 ml-1"></i> 
+            </div>   
+          </td>
+          <td class="card-text text-center align-middle"><br>
+            <div class="d-flex align-items-center">
+              <%= number_with_delimiter(video.dislikes, :delimiter => ',') %>
+              <i class="fas fa-caret-<%=@arrows[rand(0..1)]%> fa-2x mt-1 ml-1"></i>
+            </div>
+          </td>
+         <td class="card-text text-center align-middle">
+            <div class="d-flex align-items-center"><br>
+              <%= number_with_delimiter(video.views, :delimiter => ',') %>
+              <i class="fas fa-caret-<%=@arrows[rand(0..1)]%> fa-2x mt-4 ml-1"></i>
+            </div>   
+          </td>
+          <td class="card-text text-center align-middle">
+            <div class="d-flex align-items-center"><br>
+              <%= number_with_delimiter(video.shares, :delimiter => ',') %>
+              <i class="fas fa-caret-<%=@arrows[rand(0..1)]%> fa-2x mt-4 ml-1"></i>
+            </div>   
+          </td>
         </tr>
         <% end %>
       </tbody>
