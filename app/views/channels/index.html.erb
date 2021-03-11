@@ -85,12 +85,12 @@
             title:"Revenue Top 6 Videos by Channel  ", curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue" %>
           </div>
         </div>
-        <div class="carousel-item">
+        <%# <div class="carousel-item">
           <div class="d-block w-100 text-center slight-shadow rounded-buttom-custom rounded-top-custom">      
             <%= line_chart Publishing.group(:title).sum(:revenue), legend: true, height: "300px",
             title:"Revenue Totals by  Video ",curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#b00", "#999"] %>
-          </div>
-        </div>
+          <%# </div>
+        </div> %>
         <div class="carousel-item">
           <div class="d-block w-100 text-center slight-shadow rounded-buttom-custom rounded-top-custom">      
             <%= bar_chart Publishing.group(:title).sum(:revenue), legend: true, height: "300px",
