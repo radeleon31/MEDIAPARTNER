@@ -1,12 +1,15 @@
 <%# <div class="background-image-index"> %>
-  <div class="container pushing-aside d-flex justify-content-between pt-2">
-    <div>
-    <h2>Publications</h2>
+    <div class="container">
+    
+    <h1 class="text-center  mt-4 h1 custom-font-size"> Check pending and published posts</h1>
+    <h2 class="text-center  display-4 custom-font-size-sub"> You currently have <strong> <%= @publishings.where(status:"Published on Youtube").count%> </strong> published posts and <strong><%= @publishings.where(status:"Pending").count%> </strong>pending posts to published </h2>
+    <div class="container pushing-aside d-flex justify-content-end pt-2">
+    
+      <%= link_to "New Post", new_publishing_path, class:"btn btn-warning rounded-pill "%>
+    
+    </div>
    </div>
-   <div>
-    <%= link_to "New Post", new_publishing_path, class:"btn btn-warning rounded-pill "%>
-   </div>
-  </div>
+   
 
 <div class=" d-flex flex-column container-fluid align-items-end sticky-left">
     <div class="card sticky-links">

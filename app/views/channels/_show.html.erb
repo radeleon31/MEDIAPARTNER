@@ -1,6 +1,7 @@
 
     <% if (@name_view) %>
-      <h1 class="text-left ml-5 mt-4 display-4 custom-font-size">Video <%= @name_view %></h1>
+      <h1 class="text-center ml-5 mt-4 custom-font-size h1" >Video <%= @name_view %>s</h1>
+      <h2 class="text-center ml-5 mb-5  display-4 custom-font-size-sub"> Checkout your platform main statistics </h2>
     <% end %>
  <div class=" d-flex flex-column container-fluid align-items-end sticky-left">
     <div class="card sticky-links">
@@ -27,27 +28,27 @@
   </div>
 
 
-    <div class="container mt-4 custom-width">
+    <div class="container mt-4 w-50 justifi-content-center">
       <div class="row align-items-start individual-cards">
         <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
             <h5 class="card-title text-left mb-1"><%= @likes_count %></h5>
             <p class="card-text text-left mb-0"><strong>Likes</strong></p>
-            <small> <i class="fas fa-check-circle"></i> Updated...</small>
+            <small> <i class="fas fa-check-circle"></i> Updated</small>
         </div>
         <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
             <h5 class="card-title text-left mb-1"><%= @dislikes_count %></h5>
             <p class="card-text text-left mb-0 "><strong>Dislikes</strong></p>
-            <small> <i class="fas fa-check-circle"></i> Updated...</small>
+            <small> <i class="fas fa-check-circle"></i> Updated</small>
         </div>
         <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
           <h5 class="card-title text-left mb-1"><%= @views_count %></h5>
           <p class="card-text text-left mb-0 "><strong>Views</strong></p>
-          <small> <i class="fas fa-check-circle"></i> Updated...</small>
+          <small> <i class="fas fa-check-circle"></i> Updated</small>
         </div>
         <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
         <h5 class="card-title text-left mb-1 "><%= @shares_count %></h5>
         <p class="card-text text-left mb-0 "><strong>Shares</strong></p>
-        <small> <i class="fas fa-check-circle"></i> Updated...</small>
+        <small> <i class="fas fa-check-circle"></i> Updated</small>
         </div>
       </div>
     </div>

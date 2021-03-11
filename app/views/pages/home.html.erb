@@ -1,8 +1,11 @@
 <div class="background-image-home">
+
+
 |<div class="container-fluid  d-flex flex-wrap align-center justify-content-between p-4">
-      <h2 id="svg_2" ><strong>Media</strong>Partner</h2>
+  <div><%= image_tag "logo-3.png" %></div>
+      <%# <h2 id="svg_2" ><strong>Media</strong>Partner</h2> %>
       <% if user_signed_in? %>
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"btn btn-primary rounded-pill btn-md"%>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"btn btn-primary rounded-pill btn-md m-0"%>
       <% else %>
         <div>
           <%= link_to 'Login', new_user_session_path, class:"btn btn-primary rounded-pill"%>
