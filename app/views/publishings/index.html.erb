@@ -74,7 +74,11 @@
     <p><%= publishing.description.first(15) %></p>
   </div>
   <div class="card-product-infos">
+  <% if publishing.youtube_video_id %>
     <h2><%= publishing.published_at.to_datetime.strftime('%a %b %Y %H:%M') %></h2>
+  <%else %>
+      <h2><%= publishing.scheduled_at.strftime('%a %b %Y %H:%M') %></h2>
+  <% end %>
   </div>
   <div class="card-product-infos">
     <h2><%= publishing.views %></h2>
