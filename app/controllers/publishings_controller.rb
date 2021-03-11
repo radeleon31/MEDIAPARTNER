@@ -34,6 +34,8 @@ class PublishingsController < ApplicationController
   def mypublishings
     @publishings = Publishing.where(user: current_user)
     @revenue_count = 0
+    @views_count = 0
+    @shares_count = 0
     channels = Channel.where(user: current_user)
     @subscibers_count = 0
     channels.each do |channel|
@@ -43,6 +45,12 @@ class PublishingsController < ApplicationController
         if publishing.revenue != nil
         @revenue_count += publishing.revenue
         end
+        if publishing.views != nil
+         @views_count += publishing.views
+       end
+       if publishing.shares != nil
+         @shares_count += publishing.shares
+       end
       end
     end
   end

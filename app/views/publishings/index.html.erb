@@ -40,7 +40,7 @@
   </div>
 <div class="background-style-index style-extra">
   <div class="card-position">
- <div class="card-product title-card-index justify-content-center  ">
+ <div class="card-product title-card-index justify-content-center text-center">
 
   <div>
     <h2>Video</h2>
@@ -77,11 +77,11 @@
     <h2><%= publishing.title.first(15) %></h2>
     <p><%= publishing.description.first(15) %></p>
   </div>
-  <div class="card-product-infos">
+  <div class="card-product-infos text-center">
   <% if publishing.youtube_video_id %>
-    <h2><%= publishing.published_at.to_datetime.strftime('%a %b %Y %H:%M') %></h2>
+    <h2><%= publishing.published_at.to_datetime.strftime('%b %d, %Y') %></h2>
   <%else %>
-      <h2><%= publishing.scheduled_at.strftime('%a %b %Y %H:%M') %></h2>
+      <h2><%= publishing.scheduled_at.strftime('%b %d, %Y') %></h2>
   <% end %>
   </div>
   <div class="card-product-infos text-center">
@@ -90,7 +90,7 @@
    <div class="card-product-infos text-center">
     <h2><%= publishing.avg_watch_sec %></h2>
   </div>
-   <div class="card-product-infos">
+   <div class="card-product-infos text-center">
     <h2><%= publishing.status %></h2>
   </div>
   </div>
