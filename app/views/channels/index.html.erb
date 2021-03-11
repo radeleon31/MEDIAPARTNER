@@ -1,3 +1,4 @@
+<%  @arrows = ["up", "down"] %>
 
 <div class="container" >
   <% if (@name_view) %>
@@ -7,32 +8,47 @@
 </div>
 
 
-<div class="container mt-4 custom-width-performance">
+<div class="container custom-width-performance mt-4 ">
   <div class="row align-items-start">
     <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
+      <div class="d-flex align-items-center">
         <h5 class="card-title text-left mb-1">$<%= number_with_delimiter(@revenue_count, :delimiter => ',') %></h5>
+        <i class="fas fa-caret-<%=@arrows[rand(0..1)]%> fa-2x mt-0 ml-4"></i>
+      </div>
         <p class="card-text text-left mb-0"><strong>Tot Revenue</strong></p>
-        <small> <i class="fas fa-check-circle"></i> Updated...</small>
+        <small> <i class="fas fa-check-circle"></i> Updated</small>
     </div>
     <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
+      <div class="d-flex align-items-center">
         <h5 class="card-title text-left mb-1"><%= number_with_delimiter( @avg_watch_sec_count.round(2), :delimiter => ',') %></h5>
+        <i class="fas fa-caret-<%=@arrows[rand(0..1)]%> fa-2x mt-0 ml-4"></i>
+      </div>
         <p class="card-text text-left mb-0"><strong>Avg Watch</strong></p>
-        <small> <i class="fas fa-check-circle"></i> Updated...</small>
+        <small> <i class="fas fa-check-circle"></i> Updated</small>
     </div>
     <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
+      <div class="d-flex align-items-center">
         <h5 class="card-title text-left mb-1"><%= number_with_delimiter( @percent_watch_count.round(2), :delimiter => ',') %>%</h5>
+        <i class="fas fa-caret-<%=@arrows[rand(0..1)]%> fa-2x mt-0 ml-4"></i>
+      </div>
         <p class="card-text text-left mb-0"><strong>Watch Count</strong></p>
-        <small> <i class="fas fa-check-circle"></i> Updated...</small>
+        <small> <i class="fas fa-check-circle"></i> Updated</small>
     </div>
     <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
+      <div class="d-flex align-items-center">
         <h5 class="card-title text-left mb-1"><%= number_with_delimiter( @impressions_count, :delimiter => ',') %></h5>
+        <i class="fas fa-caret-<%=@arrows[rand(0..1)]%> fa-2x mt-0 ml-4"></i>
+      </div>
         <p class="card-text text-left mb-0"><strong>Impressions</strong></p>
-        <small> <i class="fas fa-check-circle"></i> Updated...</small>
+        <small> <i class="fas fa-check-circle"></i> Updated</small>
     </div>
     <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
+      <div class="d-flex align-items-center">
         <h5 class="card-title text-left mb-1"><%= number_with_delimiter( @comments_count, :delimiter => ',') %></h5>
+        <i class="fas fa-caret-<%=@arrows[rand(0..1)]%> fa-2x mt-0 ml-4"></i>
+      </div>
         <p class="card-text text-left mb-0"><strong>Comments</strong></p>
-        <small> <i class="fas fa-check-circle"></i> Updated...</small>
+        <small> <i class="fas fa-check-circle"></i> Updated</small>
     </div>
   </div>
 </div>
