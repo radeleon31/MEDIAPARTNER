@@ -1,9 +1,12 @@
 <body class="background-image">
-  <div class="top-animation">
-    <%= button_to update_publishings_path, class:"btn btn-warning rounded-circle", method: :get do %>
-        <i class="fas fa-redo"></i>
-    <% end %>
-  </div>
+
+
+ <div class="container">
+ 
+  <h1 class="text-left  mt-4 h1 custom-font-size"> 👋🏻 Welcome <%= current_user.first_name%>!</h1>
+  <h2 class="text-left  display-4 custom-font-size-sub"> You currently have <%= @publishings.count%> post on YouTube <i class=" mb-2 fab fa-youtube  rounded-pill fa-sm text-success"></i></h2>
+ 
+ </div> 
 <div class="container d-flex flex-wrap justify-content-between mt-3 margin-custom parent-positioning">
   <%# <%= button_to 'Refresh video info!', update_publishings_path, class: "btn btn-success rounded-pill", method: :get %>
     <div class="search-wrap d-flex align-items-right">
@@ -14,8 +17,13 @@
           placeholder: "Views | Comments | Likes | Title | Description"
         %>
       <% end %>
-      <i class="fas fa-search searchIcon text-warning"></i>
       <i class="fas fa-times clear mt-3 text-warning"></i>
+      <i class="fas fa-search searchIcon text-warning"></i>
+    </div>
+    <div rel="tooltip" title="All Platforms">
+        <%= button_to update_publishings_path, class:"btn btn-warning rounded-circle", method: :get do %>
+            <i class="fas fa-redo"></i>
+        <% end %>
     </div>
 </div>
 
