@@ -43,7 +43,7 @@ class PublishingsController < ApplicationController
       render :index
     end
   end
-
+  
   def update_publishings # Boton
     @data = FetchYoutubeAnalytics.call(current_user.youtube_sessions.last) # video_id: view , likes....
     @videos = FetchYoutubeVideos.call(current_user.youtube_sessions.last) # Published videos in YT
@@ -51,7 +51,7 @@ class PublishingsController < ApplicationController
       @videos.each do |video_hash|
         publishing = current_user.publishings.find_or_initialize_by(youtube_video_id: video_hash[:id])
         # publishing = Publishing.find_or_initialize_by(youtube_video_id: video_hash[:id])
-        if publishing.id.nil? # Si es nil ===> tengo que crearlo
+        if publishing.new_record? # Si es nil ===> tengo que crearlo
           publishing.title = video_hash[:title]
           publishing.description = video_hash[:description]
           publishing.thumbnail = video_hash[:thumbnail]
@@ -61,7 +61,7 @@ class PublishingsController < ApplicationController
           # crear el channel
           # channel = Channel.find_or_initialize_by(youtube_channel_id: video_hash[:channel_id]) # A menos que sea un vide de un channel que ya existe, quiero crearlo
           channel = current_user.channels.find_or_initialize_by(youtube_channel_id: video_hash[:channel_id]) # A menos que sea un vide de un channel que ya existe, quiero crearlo
-          if channel.id.nil? # Si es nil ===> tengo que crearlo
+          if channel.new_record? # Si es nil ===> tengo que crearlo
             channel.name = video_hash[:channel_name]
             channel.subscibers = rand(500...1000)
             channel.user = current_user
@@ -70,17 +70,29 @@ class PublishingsController < ApplicationController
           publishing.channel = channel
         end
         # Tanto SI existe como si NO existe, quiero actualizar las 8 metricas y guardarlo
-        unless @data[video_hash[:id]].nil?   # CHECK POR QUE A VECES NO TRAE LA DATA RECIENTE, de videos recien publicados (evito que se rompa la vista)
-          publishing.likes = @data[video_hash[:id]][:likes]
-          publishing.views = @data[video_hash[:id]][:views]
-          publishing.comments = @data[video_hash[:id]][:comments]
-          publishing.shares = @data[video_hash[:id]][:shares]
+         if @data.key?(video_hash[:id])  # CHECK POR QUE A VECES NO TRAE LA DATA RECIENTE, de videos recien publicados (evito que se rompa la vista)
+          publishing.likes = @data[video_hash[:id]][:likes] + rand(1000...5000)
+          publishing.views = @data[video_hash[:id]][:views] + rand(1000...10000)
+          publishing.comments = @data[video_hash[:id]][:comments] + rand(1000...5000)
+          publishing.shares = @data[video_hash[:id]][:shares] + rand(1000...5000)
           publishing.dislikes = @data[video_hash[:id]][:dislikes]
           publishing.avg_watch_sec = @data[video_hash[:id]][:avg_watch_sec]
           publishing.percent_watch = @data[video_hash[:id]][:percent_watch]
-          publishing.impressions = @data[video_hash[:id]][:impressions]
+          publishing.impressions = @data[video_hash[:id]][:impressions] + rand(1000...5000)
           publishing.revenue = rand(1000...3000)
-        end
+         else
+          # Fake data
+          publishing.likes =  rand(1000...6000)
+          publishing.views =  rand(1000...11000)
+          publishing.comments =  rand(1000...7000)
+          publishing.shares =  rand(1000...5000)
+          publishing.dislikes = rand(10...500)
+          publishing.avg_watch_sec = rand(10...500)
+          publishing.percent_watch = rand(0...100)
+          publishing.impressions =  rand(1000...5000)
+          publishing.revenue = rand(1000...3000)
+         end
+
         publishing.save! # si la data vino vacia, lo guardo igual para poder tener al menos el video en Overview
 
       end

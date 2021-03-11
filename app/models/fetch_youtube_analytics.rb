@@ -13,7 +13,7 @@ class FetchYoutubeAnalytics
       dimensions:"video",
       end_date:Time.now.strftime("%Y-%m-%d"), # Test Only - Cambiar a fecha actual DATE.NOW
       ids:"channel==MINE",
-      max_results:10, # Test Only - Cambiar a todos. paginacion?
+      max_results:100, # Test Only - Cambiar a todos. paginacion?
       metrics:"views,likes,comments,dislikes,shares,averageViewDuration,averageViewPercentage,annotationImpressions",
       sort:"-views",
       start_date:"2019-01-01" # Test Only - Cambiar a variable elegida o predefinida restandole a fecha actual
