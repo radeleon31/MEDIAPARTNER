@@ -35,6 +35,7 @@ class ChannelsController < ApplicationController
       @percent_watch_count = @percent_watch_count / @publishings.count
       @channels = Channel.where(user: current_user).order(created_at: :desc)
       @name_view = "Perfomance"
+  
     end
     def show
 
