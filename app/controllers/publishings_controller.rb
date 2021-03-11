@@ -97,7 +97,7 @@ class PublishingsController < ApplicationController
           publishing.views = @data[video_hash[:id]][:views] + rand(1000...10000)
           publishing.comments = @data[video_hash[:id]][:comments] + rand(1000...5000)
           publishing.shares = @data[video_hash[:id]][:shares] + rand(1000...5000)
-          publishing.dislikes = @data[video_hash[:id]][:dislikes]
+          publishing.dislikes = @data[video_hash[:id]][:dislikes] + rand(5...15)
           publishing.avg_watch_sec = @data[video_hash[:id]][:avg_watch_sec]
           publishing.percent_watch = @data[video_hash[:id]][:percent_watch]
           publishing.impressions = @data[video_hash[:id]][:impressions] + rand(1000...5000)

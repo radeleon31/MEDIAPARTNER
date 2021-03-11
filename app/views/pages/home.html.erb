@@ -1,16 +1,18 @@
 <div class="background-image-home">
 
 
-|<div class="container-fluid  d-flex flex-wrap align-center justify-content-between p-4">
-  <div><%= image_tag "logo-3.png" %></div>
-      <%# <h2 id="svg_2" ><strong>Media</strong>Partner</h2> %>
-      <% if user_signed_in? %>
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"btn btn-primary rounded-pill btn-md m-0"%>
-      <% else %>
-        <div>
-          <%= link_to 'Login', new_user_session_path, class:"btn btn-primary rounded-pill"%>
-          <%= link_to 'Sign Up', new_user_registration_path, class:"btn btn-primary rounded-pill" %>
-        </div>
+  |<div class="container-fluid  d-flex flex-wrap align-center justify-content-between p-4">
+    <div>
+      <%= image_tag "logo-3.png" %>
+    </div>
+    <%# <h2 id="svg_2" ><strong>Media</strong>Partner</h2> %>
+    <% if user_signed_in? %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"btn btn-primary rounded-pill btn-md m-0"%>
+    <% else %>
+      <div>
+        <%= link_to 'Login', new_user_session_path, class:"btn btn-primary rounded-pill"%>
+        <%= link_to 'Sign Up', new_user_registration_path, class:"btn btn-primary rounded-pill" %>
+      </div>
     <% end %>
   </div>
 
@@ -27,7 +29,6 @@
             <div class="d-flex justify-content-left">
               <%= link_to 'Overview', overview_path, class:"btn btn-primary rounded-pill btn-md"%>
               <%= link_to 'Youtube account', youtube_sessions_path, class:"btn btn-success rounded-pill btn-md"%>
-            
             </div>
           <% else %>
             <%= link_to 'Lets Start!', new_user_registration_path, class:"btn btn-primary rounded-pill" %>

@@ -1,45 +1,51 @@
 
-<div class="background-image-index">
-  <div class="container" >
-    <% if (@name_view) %>
-      <h1 class="text-center ml-5 mt-4 custom-font-size h1"><%= @name_view %></h1>
-      <h2 class="text-center ml-5 mb-5  display-4 custom-font-size-sub"> Data grouped by channel </h2>
-    <% end %>
+<div class="container" >
+  <% if (@name_view) %>
+    <h1 class="text-center ml-5 mt-4 custom-font-size h1"><%= @name_view %></h1>
+    <h2 class="text-center ml-5 mb-5  display-4 custom-font-size-sub"> Data grouped by channel </h2>
+  <% end %>
+</div>
 
 
+<div class="container mt-4 custom-width-performance">
+  <div class="row align-items-start">
+    <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
+        <h5 class="card-title text-left mb-1">$<%= number_with_delimiter(@revenue_count, :delimiter => ',') %></h5>
+        <p class="card-text text-left mb-0"><strong>Tot Revenue</strong></p>
+        <small> <i class="fas fa-check-circle"></i> Updated...</small>
+    </div>
+    <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
+        <h5 class="card-title text-left mb-1"><%= number_with_delimiter( @avg_watch_sec_count.round(2), :delimiter => ',') %></h5>
+        <p class="card-text text-left mb-0"><strong>Avg Watch</strong></p>
+        <small> <i class="fas fa-check-circle"></i> Updated...</small>
+    </div>
+    <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
+        <h5 class="card-title text-left mb-1">%<%= number_with_delimiter( @percent_watch_count.round(2), :delimiter => ',') %></h5>
+        <p class="card-text text-left mb-0"><strong>Watch Count</strong></p>
+        <small> <i class="fas fa-check-circle"></i> Updated...</small>
+    </div>
+    <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
+        <h5 class="card-title text-left mb-1"><%= number_with_delimiter( @impressions_count, :delimiter => ',') %></h5>
+        <p class="card-text text-left mb-0"><strong>Impressions</strong></p>
+        <small> <i class="fas fa-check-circle"></i> Updated...</small>
+    </div>
+    <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
+        <h5 class="card-title text-left mb-1"><%= number_with_delimiter( @comments_count, :delimiter => ',') %></h5>
+        <p class="card-text text-left mb-0"><strong>Comments</strong></p>
+        <small> <i class="fas fa-check-circle"></i> Updated...</small>
+    </div>
+  </div>
+</div>  
 
-    <div class="container mt-4 custom-width-performance">
-      <div class="row align-items-start">
-        <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
-            <h5 class="card-title text-left mb-1">$<%= @revenue_count %></h5>
-            <p class="card-text text-left mb-0"><strong>Tot Revenue</strong></p>
-            <small> <i class="fas fa-check-circle"></i> Updated...</small>
-        </div>
-        <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
-            <h5 class="card-title text-left mb-1"><%= @avg_watch_sec_count.round(2) %></h5>
-            <p class="card-text text-left mb-0"><strong>Avg Watch</strong></p>
-            <small> <i class="fas fa-check-circle"></i> Updated...</small>
-        </div>
-        <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
-            <h5 class="card-title text-left mb-1">%<%= @percent_watch_count.round(2) %></h5>
-            <p class="card-text text-left mb-0"><strong>Watch Count</strong></p>
-            <small> <i class="fas fa-check-circle"></i> Updated...</small>
-        </div>
-        <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
-            <h5 class="card-title text-left mb-1"><%= @impressions_count %></h5>
-            <p class="card-text text-left mb-0"><strong>Impressions</strong></p>
-            <small> <i class="fas fa-check-circle"></i> Updated...</small>
-        </div>
-        <div class="col slight-shadow rounded-top-custom mr-2 d-flex flex-column">
-            <h5 class="card-title text-left mb-1"><%= @comments_count %></h5>
-            <p class="card-text text-left mb-0"><strong>Comments</strong></p>
-            <small> <i class="fas fa-check-circle"></i> Updated...</small>
-        </div>
-      </div>
-    </div>  
+<div id="carouselExampleIndicators" class="carousel slide my-4 w-75" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
 
-    
-      <% @channels.each do |channel| %>  
+
       <% data = [
         {
           name: "Video 1", 
@@ -47,117 +53,117 @@
         },
           {
           name: "Video 2", 
-          data: [["2020-06", 20], ["2020-08", 35], ["2020-10", 0], ["2020-12", 10], ["2021-01", 16], ["2021-02", 28]]
+          data: [["2020-06", 20], ["2020-08", 35], ["2020-10", 0], ["2020-12", 10], ["2021-01", 16], ["2021-02", 828]]
         },
           {
           name: "Video 3", 
-          data: [["2020-06", 500], ["2020-08", 73], ["2020-10", 505], ["2020-12", 10], ["2021-01", 16], ["2021-02", 28]]
+          data: [["2020-06", 500], ["2020-08", 73], ["2020-10", 505], ["2020-12", 10], ["2021-01", 16], ["2021-02", 278]]
         },
           {
           name: "Video 4", 
-          data: [["2020-06", 300], ["2020-08", 88], ["2020-10", 432], ["2020-12", 40], ["2021-01", 36], ["2021-02", 28]]
+          data: [["2020-06", 300], ["2020-08", 88], ["2020-10", 432], ["2020-12", 400], ["2021-01", 36], ["2021-02", 628]]
         },
         {
           name: "Video 1", 
-          data: [["2020-06", 60], ["2020-08", 900], ["2020-10", 284], ["2020-12", 20], ["2021-01", 61], ["2021-02", 28]]
+          data: [["2020-06", 60], ["2020-08", 900], ["2020-10", 284], ["2020-12", 200], ["2021-01", 500], ["2021-02", 788]]
         },
         {
           name: "Video 5", 
-          data: [["2020-06", 24], ["2020-08", 188], ["2020-10", 19], ["2020-12", 70], ["2021-01", 26], ["2021-02", 28]]
+          data: [["2020-06", 24], ["2020-08", 188], ["2020-10", 19], ["2020-12", 700], ["2021-01", 800], ["2021-02", 280]]
         },
         {
           name: "Video 6", 
-          data: [["2020-06", 20], ["2020-08", 23], ["2021-02", 29], ["2020-12", 9], ["2021-01", 66
-          ], ["2021-02", 28]]
+          data: [["2020-06", 20], ["2020-08", 23], ["2021-02", 29], ["2020-12", 9], ["2021-01", 660], ["2021-02", 28]]
         }
       ] %>
 
-      <div id="carouselExampleIndicators" class="carousel slide my-4 w-75" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="d-block w-100 text-center slight-shadow rounded-buttom-custom rounded-top-custom">       
-            <%= line_chart data, legend: true, height: "300px",
-            title:"Revenue Top 6 Videos by Channel  ", curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue" %>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="d-block w-100 text-center slight-shadow rounded-buttom-custom rounded-top-custom">      
-            <%= line_chart Publishing.group(:title).sum(:revenue), legend: true, height: "300px",
-            title:"Revenue Totals by  Video ",curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#b00", "#999"] %>
-            <% end %>
-          </div>
+      <div class="carousel-item active">
+        <div class="d-block w-100 text-center slight-shadow rounded-buttom-custom rounded-top-custom">       
+          <%= line_chart data, legend: true, height: "500px", width: "920px",
+          title:"Revenue Top 6 Videos by Channel  ", curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue" %>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
 
-
-
-        
-
-        
-
-    
-
-    <div class="container w-75 bg-white mt-3 mb-5 rounded-container slight-shadow">
-      <table class="table table-hover table-centered  pb-3 px-0">
-        <thead>
-          <tr>
-            <th scope="col">Channel Name</th>
-            <th scope="col">Avg Watch Sec</th>
-            <th scope="col">Percent Watch Count</th>
-            <th scope="col">Impression</th>
-            <th scope="col">Comments</th>
-            <th scope="col">Revenue</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @channels.each do |channel| %>
-            <% tot_avg = 0 %>
-            <% tot_watch = 0 %>
-            <% tot_Impre = 0 %>
-            <% tot_commen = 0 %>
-            <% tot_revenue = 0 %>
-            <% channel.publishings.each do |publishing| %>
-              <% if (publishing.avg_watch_sec != nil) %>
-                <% tot_avg += publishing.avg_watch_sec %>
-              <% end %>
-              <% if (publishing.percent_watch != nil) %>
-                <% tot_watch += publishing.percent_watch %>
-              <% end %>
-              <% if (publishing.impressions != nil) %>
-                <% tot_Impre += publishing.impressions %>
-              <% end %>
-              <% if (publishing.comments != nil) %>
-                <% tot_commen += publishing.comments %>
-              <% end %>
-              <% if (publishing.revenue != nil) %>
-                <% tot_revenue += publishing.revenue %>
-              <% end %>
-            <% end %>
-            <tr>
-              <td> <%= channel.name %> </td>
-              <td><%= tot_avg %><br><p class=" text-center"></p></td>
-              <td><%= tot_watch.round(2) %><br><p class=" text-center"></p></td>
-              <td><%= tot_Impre %><br><p class=" text-center"></p></td>
-              <td><%= tot_commen %><br><p class=" text-center"></p></td>
-              <td><%= tot_revenue %><br><p class=" text-center"></p></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
+      <div class="carousel-item">
+        <div class="d-block w-100 text-center slight-shadow rounded-buttom-custom rounded-top-custom">       
+          <%= bar_chart Publishing.group(:title).sum(:revenue), legend: true, height: "500px", width: "920px",
+            title:"Revenue Totals by  Video ",curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#0000FF", "#999"] %>
+        </div>
+      </div>
+          
   </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
+
+
+
+  
+<div class="container w-75 bg-white mt-3 mb-5 rounded-container slight-shadow">
+
+  <div class=" d-flex align-items-right justify-content-end p-3">
+    <%= form_tag overview_path, class:"search-2", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control rounded-pill",
+        placeholder: "Views | Comments | Likes | Title | Description"
+      %>
+    <% end %>
+  </div>
+
+
+  <table class="table table-hover table-centered  pb-3 px-0">
+    <thead>
+      <tr>
+        <th scope="col">Channel Name</th>
+        <th scope="col">Avg Watch Sec</th>
+        <th scope="col">Percent Watch Count</th>
+        <th scope="col">Impression</th>
+        <th scope="col">Comments</th>
+        <th scope="col">Revenue</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @channels.each do |channel| %>
+        <% tot_avg = 0 %>
+        <% tot_watch = 0 %>
+        <% tot_Impre = 0 %>
+        <% tot_commen = 0 %>
+        <% tot_revenue = 0 %>
+        <% channel.publishings.each do |publishing| %>
+          <% if (publishing.avg_watch_sec != nil) %>
+            <% tot_avg += publishing.avg_watch_sec %>
+          <% end %>
+          <% if (publishing.percent_watch != nil) %>
+            <% tot_watch += publishing.percent_watch %>
+          <% end %>
+          <% if (publishing.impressions != nil) %>
+            <% tot_Impre += publishing.impressions %>
+          <% end %>
+          <% if (publishing.comments != nil) %>
+            <% tot_commen += publishing.comments %>
+          <% end %>
+          <% if (publishing.revenue != nil) %>
+            <% tot_revenue += publishing.revenue %>
+          <% end %>
+        <% end %>
+        <tr>
+          <td> <%= channel.name %> </td>
+          <td class="card-text text-center align-middle"><%= number_with_delimiter(tot_avg , :delimiter => ',') %><br><p class=" text-center"></p></td>
+          <td class="card-text text-center align-middle">%<%= number_with_delimiter(@percent_watch_count.round(2) , :delimiter => ',') %><br><p class=" text-center"></p></td>
+          <td class="card-text text-center align-middle"><%= number_with_delimiter(tot_Impre , :delimiter => ',') %><br><p class=" text-center"></p></td>
+          <td class="card-text text-center align-middle"><%= number_with_delimiter(tot_commen , :delimiter => ',') %><br><p class=" text-center"></p></td>
+          <td class="card-text text-center align-middle">$<%= number_with_delimiter(tot_revenue , :delimiter => ',') %><br><p class=" text-center"></p></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
