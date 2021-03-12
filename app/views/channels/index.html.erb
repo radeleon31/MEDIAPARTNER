@@ -94,15 +94,19 @@
       ] %>
 
       <div class="carousel-item active">
-        <div class="d-block w-100 text-center slight-shadow rounded-buttom-custom rounded-top-custom">
-          <%= line_chart data, legend: true, height: "500px", width: "920px",
+        <div class="d-block w-100 text-center slight-shadow rounded-buttom-custom rounded-top-custom">       
+          <%= line_chart data, legend: true, height: "500px", width: "920px", label: false, messages: {empty: "No data"}, label: false,
+
           title:"Revenue Top 6 Videos by Channel  ", curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue" %>
         </div>
       </div>
 
       <div class="carousel-item">
-        <div class="d-block w-100 text-center slight-shadow rounded-buttom-custom rounded-top-custom">
-          <%= bar_chart Publishing.group(:title).sum(:revenue), legend: true, height: "500px", width: "920px",
+
+        <div class="d-block w-100 text-center slight-shadow rounded-buttom-custom rounded-top-custom">       
+          <% videos_top = Publishing.limit(6) %>
+          <%= bar_chart videos_top.group(:title).sum(:revenue), legend: true, height: "500px", width: "920px", 
+
             title:"Revenue Totals by  Video ",curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#0000FF", "#999"] %>
         </div>
       </div>
@@ -117,8 +121,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-
 
 
 <div class="container w-75 bg-white mt-3 mb-5 rounded-container slight-shadow">
@@ -137,12 +139,14 @@
   <table class="table table-hover table-centered  pb-3 px-0">
     <thead>
       <tr>
+
         <th scope="col">Channel Name</th>
+        <th scope="col">Revenue</th>
         <th scope="col">Avg Watch Sec</th>
         <th scope="col">Percent Watch Count</th>
         <th scope="col">Impression</th>
         <th scope="col">Comments</th>
-        <th scope="col">Revenue</th>
+
       </tr>
     </thead>
     <tbody>
@@ -171,11 +175,11 @@
         <% end %>
         <tr>
           <td> <%= channel.name %> </td>
+           <td class="card-text text-center align-middle">$<%= number_with_delimiter(tot_revenue , :delimiter => ',') %><br><p class=" text-center"></p></td>
           <td class="card-text text-center align-middle"><%= number_with_delimiter(tot_avg , :delimiter => ',') %><br><p class=" text-center"></p></td>
           <td class="card-text text-center align-middle"><%= number_with_delimiter(@percent_watch_count.round(2) , :delimiter => ',') %>%<br><p class=" text-center"></p></td>
           <td class="card-text text-center align-middle"><%= number_with_delimiter(tot_Impre , :delimiter => ',') %><br><p class=" text-center"></p></td>
           <td class="card-text text-center align-middle"><%= number_with_delimiter(tot_commen , :delimiter => ',') %><br><p class=" text-center"></p></td>
-          <td class="card-text text-center align-middle">$<%= number_with_delimiter(tot_revenue , :delimiter => ',') %><br><p class=" text-center"></p></td>
         </tr>
       <% end %>
     </tbody>
