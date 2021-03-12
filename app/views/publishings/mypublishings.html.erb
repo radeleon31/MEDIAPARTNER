@@ -29,7 +29,8 @@
                                         <p class="card-text"><strong>$<%= number_with_delimiter(@revenue_count, :delimiter => ',') %></strong></p>
                                         <hr class="blue_line mt10 mb10"/>
                                       </div>
-                                        <a href="javascript: void(0);" class="btn btn-warning rounded-pill">Go To Channel Analytics</a>
+                                          <%= link_to 'Go To Channel Analytics', channels_path, class:"btn btn-warning rounded-pill"%>
+
                                     </div> <!-- end card-body-->
                                 </div> <!-- end card-->
                             </div>

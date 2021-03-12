@@ -77,14 +77,14 @@
     <h2><%= publishing.title.first(15) %></h2>
     <p><%= publishing.description.first(15) %></p>
   </div>
-  <div class="card-product-infos text-center">
+  <div class="card-product-infos text-center ">
   <% if publishing.youtube_video_id %>
     <h2><%= publishing.published_at.to_datetime.strftime('%b %d, %Y') %></h2>
   <%else %>
       <h2><%= publishing.scheduled_at.strftime('%b %d, %Y') %></h2>
   <% end %>
   </div>
-  <div class="card-product-infos text-center">
+  <div class="card-product-infos text-center ">
     <h2><%= number_with_delimiter(publishing.views, :delimiter => ',') %></h2>
   </div>
    <div class="card-product-infos text-center">
