@@ -6,7 +6,7 @@
     <div class="container pushing-aside d-flex justify-content-between pt-2">
       <div>
         <h1 class="text-left  mt-4 h1 custom-font-size"> Pending and Published Posts</h1>
-    <h2 class="text-left  display-4 custom-font-size-sub"> You currently have <strong> <%= @publishings.where(status:"Published on Youtube").count%> </strong> published posts and <strong><%= @publishings.where(status:"Pending").count%> </strong>pending posts to published </h2>
+    <h2 class="text-left  display-4 custom-font-size-sub"> You currently have <strong> <%= @publishings.where(status:"Published on Youtube").count%> </strong> published posts and <strong><%= @publishings.where(status:"Pending").count%> </strong>pending posts to be published </h2>
       </div>
       <div>
       <%= link_to "New Post", new_publishing_path, class:"btn btn-warning rounded-pill "%>
