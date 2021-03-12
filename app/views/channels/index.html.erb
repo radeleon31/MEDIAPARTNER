@@ -107,7 +107,7 @@
           <% videos_top = Publishing.limit(6) %>
           <%= bar_chart videos_top.group(:title).sum(:revenue), legend: true, height: "500px", width: "920px", 
 
-            title:"Revenue Totals by Video- TOP 6 ",curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#0000FF", "#999"] %>
+            title:"Revenue Totals by Video - TOP6 ",curve: false, prefix: "$", thousands: ",", xtitle: "Video", ytitle: "Revenue", colors: ["#0000FF", "#999"] %>
         </div>
       </div>
 
