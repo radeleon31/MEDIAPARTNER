@@ -2,6 +2,7 @@ class ChannelsController < ApplicationController
 
     def index
       # ojo, debos cambiar esto por el current 
+      
       @user = current_user
 
       if params[:query].present?
@@ -35,7 +36,7 @@ class ChannelsController < ApplicationController
       @percent_watch_count = @percent_watch_count / @publishings.count
       @channels = Channel.where(user: current_user).order(created_at: :desc)
       @name_view = "Perfomance"
-  
+      # raise
     end
     def show
 
