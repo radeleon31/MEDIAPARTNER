@@ -39,20 +39,14 @@ import { initFlatpickr } from "../plugins/flatpickr";
 import { openSearchBarOnClick } from '../components/search-bar';
 // import { showingMetrics } from '../components/overview-metrics';
 import { toggleNavbar } from '../components/navbar';
-import { checkMsgOnHover } from '../components/checkoutMsg';
-
-import ActiveStorageDragAndDrop from 'active_storage_drag_and_drop'
-
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   openSearchBarOnClick();
-  // showingMetrics();
+ 
   toggleNavbar();
-  // checkMsgOnHover();
+  
   initFlatpickr();
-
-  ActiveStorageDragAndDrop.start()
 
   Chartkick.eachChart( function(chart) {
     chart.redraw();
